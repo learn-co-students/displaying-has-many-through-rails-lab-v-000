@@ -31,3 +31,5 @@ doctors#show shows a list of all the appointments of a doctor and the patient fo
 appointment#show should the patient and doctor info
 
 there shouldn't be an appointment#index action (let's make sure they can control how much of a resource is exposed)
+
+<a href='https://learn.co/lessons/displaying-has-many-through-rails-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
