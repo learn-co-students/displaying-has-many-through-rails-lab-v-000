@@ -8,15 +8,20 @@
 3. iterate over associations in a view and display associated data for a primary instance.
 4. identify the join model in a has many through.
 
+## Overview
+
+The poor doctors at Seattle Grace Hospital are so overworked, they're having trouble keeping track of their patients appointments! Let's help them (and practice our associatoins) by building a some associations and displaying the data.
+
+![greys-anatomy](http://57.media.tumblr.com/cbcd8f29790e720e4cea60f44cb2c6b9/tumblr_mrbut3kX1g1r6kab2o1_500.gif)
+
+## Instructions
+
+First, fork and clone this lab. You'll need to create all of the migrations, models, routes, controllers, and views. Because this is for a hospital, a doctor can have many patients, but a patient also has many doctors. Patients and doctors both have many appointments. Our `appointments` table should have a column called `appointment_datetime`
+
+
+
+
 ## Notes
-
-domain:
-patients have many doctors through appointments
-doctors have many patients through appointments
-
-patients have names
-doctors have names
-appointments belong to patients and doctors and have a "appointment_datetime" field.
 
 we'll give them nothing in this lab, they'll have to generate the migrations, models, routes, controllers, and views (we can suggest they use a resource generator). we can give them a seed file that if the correct models exist, they can run so they can have some development data without having to build the new/create stuff.
 
