@@ -18,6 +18,8 @@ The poor doctors at Seattle Grace Hospital are so overworked, they're having tro
 
 First, fork and clone this lab. <em>Before anything</em>, note that when you generate models, controllers, etc, be sure to include this option, so that it skips tests (which we already have): `--no-test-framework`
 
-You'll need to create all of the migrations, models, routes, controllers, and views. Because this is for a hospital, a doctor can have many patients, but a patient also has many doctors. Patients and doctors both have many appointments. Our `appointments` table should have a column called `appointment_datetime`. We've provided a seeds file so you can have some data to play around with - run `rake db:seed` once your migrations and models are complete. 
+You'll need to create all of the migrations, models, routes, controllers, and views. Because this is for a hospital, a doctor can have many patients, but a patient also has many doctors. Patients and doctors both have many appointments. Our `appointments` table should have a column called `appointment_datetime`. When you display this datetime, make sure it's in a human readable format. The tests will be expecting "January 12, 2016 at 3:00"
+
+We've provided a seeds file so you can have some data to play around with - run `rake db:seed` once your migrations and models are complete. 
 
 <a href='https://learn.co/lessons/displaying-has-many-through-rails-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
