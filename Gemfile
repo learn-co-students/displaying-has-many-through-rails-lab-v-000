@@ -43,5 +43,6 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
-  gem "database_cleaner"
+  gem 'database_cleaner'
+  gem 'pry'
 end
