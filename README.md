@@ -18,6 +18,8 @@ The poor doctors at Seattle Grace Hospital are so overworked, they're having tro
 
 First, fork and clone this lab. You'll need to create all of the migrations, models, routes, controllers, and views. Because this is for a hospital, a doctor can have many patients, but a patient also has many doctors. Patients and doctors both have many appointments. Our `appointments` table should have a column called `appointment_datetime`
 
+<em>Before anything</em>, note that when you generate models, controllers, etc, be sure to include this option, so that it skips tests (which we already have): `--no-test-framework`
+
 
 
 
