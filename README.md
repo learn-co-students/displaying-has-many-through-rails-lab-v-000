@@ -20,8 +20,6 @@ First, fork and clone this lab. <em>Before anything</em>, note that when you gen
 
 You'll need to create all of the migrations, models, routes, controllers, and views for this lab.
 
-## Instructions
-
 1. Create migrations and models for doctor, patient, and appointment. Because this is for a hospital, a doctor can have many patients, but a patient also has many doctors. Patients and doctors both have many appointments. Our `appointments` table should have a column called `appointment_datetime` to represent the date and time the appointment will take place. ( When you display this datetime, make sure it's in a human readable format. The tests will be expecting "January 12, 2016 at 3:00")
 
 2. Create a Doctor's index page which displays each doctor's name, a link to their show page, and a count of their patients.
