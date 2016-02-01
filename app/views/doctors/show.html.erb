@@ -1,0 +1,6 @@
+<h1><%=@doctor.name%>'s Appointments!</h1>
+
+<%@doctor.appointments.each do |appo| %>
+  <h3>Patient: <%= link_to appo.patient_name, patient_path(appo.patient)%></h3>
+  <h3>When?: <%=appo.human_readable%></h3>
+<%end%>
