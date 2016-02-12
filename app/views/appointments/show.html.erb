@@ -1,0 +1,6 @@
+<h1>Appointments</h1>
+
+<% Appointment.all.each do |app| %>
+  <%= link_to app.doctor.name, doctor_path %>
+  <%= link_to app.patient.name, patient_path %>
+<% end %>
