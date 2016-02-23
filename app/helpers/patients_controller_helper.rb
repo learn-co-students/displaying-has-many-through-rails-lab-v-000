@@ -1,0 +1,2 @@
+module PatientsControllerHelper
+end
