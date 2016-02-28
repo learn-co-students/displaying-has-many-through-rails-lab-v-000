@@ -1,0 +1,6 @@
+<h1>Listing Patients</h1>
+<ul>
+<% @patients.each do |patient| %>
+  <li>Name: <%= patient.name %> Number of Appointments: <%= patient.num_appointments %></li>
+<% end %>
+</ul> 
