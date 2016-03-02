@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "patients", type:  :feature do
   before do
     Doctor.create([

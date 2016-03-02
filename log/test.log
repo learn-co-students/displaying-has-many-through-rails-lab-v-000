@@ -8485,3 +8485,623 @@ Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms)
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.0ms)[0m  begin transaction
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (128.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (104.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateDoctors (1)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "doctors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "1"]]
+  [1m[35m (106.3ms)[0m  commit transaction
+Migrating to CreatePatients (2)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "patients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (12.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "2"]]
+  [1m[35m (109.6ms)[0m  commit transaction
+Migrating to CreateAppointments (3)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "appointment_datetime" datetime, "patient_id" integer, "doctor_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (12.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "3"]]
+  [1m[35m (109.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (125.1ms)[0m  DELETE FROM "doctors";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'doctors';
+  [1m[36m (108.6ms)[0m  [1mDELETE FROM "patients";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'patients';[0m
+  [1m[35m (108.6ms)[0m  DELETE FROM "appointments";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'appointments';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (105.1ms)[0m  [1mDELETE FROM "doctors";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'doctors';[0m
+  [1m[35m (109.0ms)[0m  DELETE FROM "patients";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'patients';
+  [1m[36m (124.8ms)[0m  [1mDELETE FROM "appointments";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'appointments';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (109.5ms)[0m  DELETE FROM "doctors";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'doctors';
+  [1m[36m (108.6ms)[0m  [1mDELETE FROM "patients";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'patients';[0m
+  [1m[35m (108.6ms)[0m  DELETE FROM "appointments";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'appointments';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (32.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (70.8ms)[0m  [1mDELETE FROM "doctors";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (32.7ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'doctors';[0m
+  [1m[35m (109.4ms)[0m  DELETE FROM "patients";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'patients';
+  [1m[36m (108.6ms)[0m  [1mDELETE FROM "appointments";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'appointments';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (107.0ms)[0m  DELETE FROM "doctors";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'doctors';
+  [1m[36m (108.9ms)[0m  [1mDELETE FROM "patients";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'patients';[0m
+  [1m[35m (108.8ms)[0m  DELETE FROM "appointments";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'appointments';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (107.1ms)[0m  [1mDELETE FROM "doctors";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'doctors';[0m
+  [1m[35m (71.6ms)[0m  DELETE FROM "patients";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'patients';
+  [1m[36m (56.6ms)[0m  [1mDELETE FROM "appointments";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'appointments';[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Hawkeye Pierce"], ["department", "Surgery"], ["created_at", "2016-03-02 21:56:00.179331"], ["updated_at", "2016-03-02 21:56:00.179331"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (18.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Homer Simpson"], ["age", 38], ["created_at", "2016-03-02 21:56:00.272000"], ["updated_at", "2016-03-02 21:56:00.272000"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-03-15 18:00:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:00.399534"], ["updated_at", "2016-03-02 21:56:00.399534"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/appointments/1" for 127.0.0.1 at 2016-03-02 21:56:00 +0000
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAppointment Load (0.2ms)[0m  SELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered appointments/show.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 9993ms (Views: 9863.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (32.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Hawkeye Pierce"], ["department", "Surgery"], ["created_at", "2016-03-02 21:56:10.592942"], ["updated_at", "2016-03-02 21:56:10.592942"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Homer Simpson"], ["age", 38], ["created_at", "2016-03-02 21:56:10.627569"], ["updated_at", "2016-03-02 21:56:10.627569"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-03-15 18:00:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:10.629509"], ["updated_at", "2016-03-02 21:56:10.629509"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/appointments/1" for 127.0.0.1 at 2016-03-02 21:56:10 +0000
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAppointment Load (0.1ms)[0m  SELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.0ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered appointments/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Hawkeye Pierce"], ["department", "Surgery"], ["created_at", "2016-03-02 21:56:10.681356"], ["updated_at", "2016-03-02 21:56:10.681356"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Homer Simpson"], ["age", 38], ["created_at", "2016-03-02 21:56:10.683074"], ["updated_at", "2016-03-02 21:56:10.683074"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-03-15 18:00:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:10.737755"], ["updated_at", "2016-03-02 21:56:10.737755"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/appointments" for 127.0.0.1 at 2016-03-02 21:56:10 +0000
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (37.9ms)[0m  [1mDELETE FROM "doctors";[0m
+  [1m[35m (32.6ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'doctors';[0m
+  [1m[35m (37.4ms)[0m  DELETE FROM "patients";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'patients';
+  [1m[36m (51.2ms)[0m  [1mDELETE FROM "appointments";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'appointments';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:10.934375"], ["updated_at", "2016-03-02 21:56:10.934375"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bart Simpson"], ["age", 10], ["created_at", "2016-03-02 21:56:10.968879"], ["updated_at", "2016-03-02 21:56:10.968879"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-01-11 20:20:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:10.970754"], ["updated_at", "2016-03-02 21:56:10.970754"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/doctors/1" for 127.0.0.1 at 2016-03-02 21:56:11 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (108.5ms)
+Completed 200 OK in 162ms (Views: 111.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.226051"], ["updated_at", "2016-03-02 21:56:11.226051"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bart Simpson"], ["age", 10], ["created_at", "2016-03-02 21:56:11.240241"], ["updated_at", "2016-03-02 21:56:11.240241"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-01-11 20:20:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:11.242282"], ["updated_at", "2016-03-02 21:56:11.242282"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/doctors/1" for 127.0.0.1 at 2016-03-02 21:56:11 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAppointment Load (0.0ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  [1m[35mPatient Load (0.0ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (34.7ms)[0m  DELETE FROM "doctors";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'doctors';
+  [1m[36m (35.3ms)[0m  [1mDELETE FROM "patients";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'patients';[0m
+  [1m[35m (34.9ms)[0m  DELETE FROM "appointments";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'appointments';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.441353"], ["updated_at", "2016-03-02 21:56:11.441353"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Hawkeye Pierce"], ["department", "Surgery"], ["created_at", "2016-03-02 21:56:11.476013"], ["updated_at", "2016-03-02 21:56:11.476013"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Leonard 'Bones' McCoy"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.477611"], ["updated_at", "2016-03-02 21:56:11.477611"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Phillip Chandler"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.479013"], ["updated_at", "2016-03-02 21:56:11.479013"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Michaela Quinn"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.512880"], ["updated_at", "2016-03-02 21:56:11.512880"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Homer Simpson"], ["age", 38], ["created_at", "2016-03-02 21:56:11.514357"], ["updated_at", "2016-03-02 21:56:11.514357"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bart Simpson"], ["age", 10], ["created_at", "2016-03-02 21:56:11.515767"], ["updated_at", "2016-03-02 21:56:11.515767"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (18.4ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Marge Simpson"], ["age", 36], ["created_at", "2016-03-02 21:56:11.529425"], ["updated_at", "2016-03-02 21:56:11.529425"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lisa Simpson"], ["age", 8], ["created_at", "2016-03-02 21:56:11.549168"], ["updated_at", "2016-03-02 21:56:11.549168"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Maggie Simpson"], ["age", 1], ["created_at", "2016-03-02 21:56:11.550745"], ["updated_at", "2016-03-02 21:56:11.550745"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-03-15 18:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-03-02 21:56:11.564698"], ["updated_at", "2016-03-02 21:56:11.564698"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (19.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-01-11 20:20:00.000000"], ["patient_id", 2], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:11.585150"], ["updated_at", "2016-03-02 21:56:11.585150"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-04-22 14:00:00.000000"], ["patient_id", 3], ["doctor_id", 5], ["created_at", "2016-03-02 21:56:11.586638"], ["updated_at", "2016-03-02 21:56:11.586638"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2017-10-30 15:00:00.000000"], ["patient_id", 4], ["doctor_id", 4], ["created_at", "2016-03-02 21:56:11.588180"], ["updated_at", "2016-03-02 21:56:11.588180"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-07-11 16:00:00.000000"], ["patient_id", 5], ["doctor_id", 3], ["created_at", "2016-03-02 21:56:11.602340"], ["updated_at", "2016-03-02 21:56:11.602340"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-05-31 17:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-03-02 21:56:11.603763"], ["updated_at", "2016-03-02 21:56:11.603763"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2017-06-03 10:00:00.000000"], ["patient_id", 3], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:11.605079"], ["updated_at", "2016-03-02 21:56:11.605079"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors"  ORDER BY "doctors"."id" ASC LIMIT 1[0m
+  [1m[35mPatient Load (0.0ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 2]]
+Started GET "/patients" for 127.0.0.1 at 2016-03-02 21:56:11 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?  [["patient_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?  [["patient_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 4]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?  [["patient_id", 5]]
+  Rendered patients/index.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.784615"], ["updated_at", "2016-03-02 21:56:11.784615"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Hawkeye Pierce"], ["department", "Surgery"], ["created_at", "2016-03-02 21:56:11.786267"], ["updated_at", "2016-03-02 21:56:11.786267"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Leonard 'Bones' McCoy"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.787676"], ["updated_at", "2016-03-02 21:56:11.787676"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Phillip Chandler"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.821645"], ["updated_at", "2016-03-02 21:56:11.821645"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Michaela Quinn"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:11.823004"], ["updated_at", "2016-03-02 21:56:11.823004"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (32.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Homer Simpson"], ["age", 38], ["created_at", "2016-03-02 21:56:11.857029"], ["updated_at", "2016-03-02 21:56:11.857029"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Bart Simpson"], ["age", 10], ["created_at", "2016-03-02 21:56:11.858478"], ["updated_at", "2016-03-02 21:56:11.858478"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Marge Simpson"], ["age", 36], ["created_at", "2016-03-02 21:56:11.859785"], ["updated_at", "2016-03-02 21:56:11.859785"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Lisa Simpson"], ["age", 8], ["created_at", "2016-03-02 21:56:11.893609"], ["updated_at", "2016-03-02 21:56:11.893609"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Maggie Simpson"], ["age", 1], ["created_at", "2016-03-02 21:56:11.894871"], ["updated_at", "2016-03-02 21:56:11.894871"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-03-15 18:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-03-02 21:56:11.896391"], ["updated_at", "2016-03-02 21:56:11.896391"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-01-11 20:20:00.000000"], ["patient_id", 2], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:11.910090"], ["updated_at", "2016-03-02 21:56:11.910090"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-04-22 14:00:00.000000"], ["patient_id", 3], ["doctor_id", 5], ["created_at", "2016-03-02 21:56:11.911471"], ["updated_at", "2016-03-02 21:56:11.911471"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2017-10-30 15:00:00.000000"], ["patient_id", 4], ["doctor_id", 4], ["created_at", "2016-03-02 21:56:11.912838"], ["updated_at", "2016-03-02 21:56:11.912838"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-07-11 16:00:00.000000"], ["patient_id", 5], ["doctor_id", 3], ["created_at", "2016-03-02 21:56:11.946783"], ["updated_at", "2016-03-02 21:56:11.946783"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-05-31 17:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-03-02 21:56:11.948321"], ["updated_at", "2016-03-02 21:56:11.948321"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2017-06-03 10:00:00.000000"], ["patient_id", 3], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:11.949629"], ["updated_at", "2016-03-02 21:56:11.949629"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors"  ORDER BY "doctors"."id" ASC LIMIT 1
+  [1m[36mPatient Load (0.0ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 2]]
+Started GET "/patients/2" for 127.0.0.1 at 2016-03-02 21:56:11 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 2]]
+  [1m[35mDoctor Load (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered patients/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 71ms (Views: 70.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:12.072741"], ["updated_at", "2016-03-02 21:56:12.072741"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Hawkeye Pierce"], ["department", "Surgery"], ["created_at", "2016-03-02 21:56:12.074675"], ["updated_at", "2016-03-02 21:56:12.074675"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Leonard 'Bones' McCoy"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:12.125013"], ["updated_at", "2016-03-02 21:56:12.125013"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Phillip Chandler"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:12.126505"], ["updated_at", "2016-03-02 21:56:12.126505"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Michaela Quinn"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:12.127913"], ["updated_at", "2016-03-02 21:56:12.127913"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Homer Simpson"], ["age", 38], ["created_at", "2016-03-02 21:56:12.161926"], ["updated_at", "2016-03-02 21:56:12.161926"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Bart Simpson"], ["age", 10], ["created_at", "2016-03-02 21:56:12.163434"], ["updated_at", "2016-03-02 21:56:12.163434"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Marge Simpson"], ["age", 36], ["created_at", "2016-03-02 21:56:12.197289"], ["updated_at", "2016-03-02 21:56:12.197289"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Lisa Simpson"], ["age", 8], ["created_at", "2016-03-02 21:56:12.198565"], ["updated_at", "2016-03-02 21:56:12.198565"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Maggie Simpson"], ["age", 1], ["created_at", "2016-03-02 21:56:12.199724"], ["updated_at", "2016-03-02 21:56:12.199724"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-03-15 18:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-03-02 21:56:12.233994"], ["updated_at", "2016-03-02 21:56:12.233994"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-01-11 20:20:00.000000"], ["patient_id", 2], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:12.235577"], ["updated_at", "2016-03-02 21:56:12.235577"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-04-22 14:00:00.000000"], ["patient_id", 3], ["doctor_id", 5], ["created_at", "2016-03-02 21:56:12.237057"], ["updated_at", "2016-03-02 21:56:12.237057"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2017-10-30 15:00:00.000000"], ["patient_id", 4], ["doctor_id", 4], ["created_at", "2016-03-02 21:56:12.307576"], ["updated_at", "2016-03-02 21:56:12.307576"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-07-11 16:00:00.000000"], ["patient_id", 5], ["doctor_id", 3], ["created_at", "2016-03-02 21:56:12.309294"], ["updated_at", "2016-03-02 21:56:12.309294"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-05-31 17:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-03-02 21:56:12.346142"], ["updated_at", "2016-03-02 21:56:12.346142"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2017-06-03 10:00:00.000000"], ["patient_id", 3], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:12.382611"], ["updated_at", "2016-03-02 21:56:12.382611"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors"  ORDER BY "doctors"."id" ASC LIMIT 1
+  [1m[36mPatient Load (0.0ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 2]]
+Started GET "/patients/2" for 127.0.0.1 at 2016-03-02 21:56:12 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 2]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered patients/show.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (72.1ms)[0m  DELETE FROM "doctors";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'doctors';
+  [1m[36m (54.8ms)[0m  [1mDELETE FROM "patients";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'patients';[0m
+  [1m[35m (72.0ms)[0m  DELETE FROM "appointments";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'appointments';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:12.762241"], ["updated_at", "2016-03-02 21:56:12.762241"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:12.764192"], ["updated_at", "2016-03-02 21:56:12.764192"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-12-25 00:00:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:12.798626"], ["updated_at", "2016-03-02 21:56:12.798626"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:12.814766"], ["updated_at", "2016-03-02 21:56:12.814766"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:12.816189"], ["updated_at", "2016-03-02 21:56:12.816189"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-12-25 00:00:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:12.817742"], ["updated_at", "2016-03-02 21:56:12.817742"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:12.908810"], ["updated_at", "2016-03-02 21:56:12.908810"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:12.910437"], ["updated_at", "2016-03-02 21:56:12.910437"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-12-25 00:00:00.000000"], ["patient_id", 1], ["doctor_id", 1], ["created_at", "2016-03-02 21:56:12.924416"], ["updated_at", "2016-03-02 21:56:12.924416"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (70.7ms)[0m  DELETE FROM "doctors";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'doctors';
+  [1m[36m (37.9ms)[0m  [1mDELETE FROM "patients";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'patients';[0m
+  [1m[35m (86.9ms)[0m  DELETE FROM "appointments";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'appointments';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:13.124643"], ["updated_at", "2016-03-02 21:56:13.124643"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Bill Gates"], ["age", 60], ["created_at", "2016-03-02 21:56:13.126535"], ["updated_at", "2016-03-02 21:56:13.126535"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:13.160510"], ["updated_at", "2016-03-02 21:56:13.160510"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.162506"], ["updated_at", "2016-03-02 21:56:13.162506"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 2], ["created_at", "2016-03-02 21:56:13.196763"], ["updated_at", "2016-03-02 21:56:13.196763"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:13.199408"], ["updated_at", "2016-03-02 21:56:13.199408"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bill Gates"], ["age", 60], ["created_at", "2016-03-02 21:56:13.249394"], ["updated_at", "2016-03-02 21:56:13.249394"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:13.250974"], ["updated_at", "2016-03-02 21:56:13.250974"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.301232"], ["updated_at", "2016-03-02 21:56:13.301232"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 2], ["created_at", "2016-03-02 21:56:13.302899"], ["updated_at", "2016-03-02 21:56:13.302899"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:13.337896"], ["updated_at", "2016-03-02 21:56:13.337896"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Bill Gates"], ["age", 60], ["created_at", "2016-03-02 21:56:13.339425"], ["updated_at", "2016-03-02 21:56:13.339425"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:13.340715"], ["updated_at", "2016-03-02 21:56:13.340715"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.374928"], ["updated_at", "2016-03-02 21:56:13.374928"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 2], ["created_at", "2016-03-02 21:56:13.376591"], ["updated_at", "2016-03-02 21:56:13.376591"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAppointment Load (0.0ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:13.412700"], ["updated_at", "2016-03-02 21:56:13.412700"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (53.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Bill Gates"], ["age", 60], ["created_at", "2016-03-02 21:56:13.414246"], ["updated_at", "2016-03-02 21:56:13.414246"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:13.468579"], ["updated_at", "2016-03-02 21:56:13.468579"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.470305"], ["updated_at", "2016-03-02 21:56:13.470305"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 2], ["created_at", "2016-03-02 21:56:13.484109"], ["updated_at", "2016-03-02 21:56:13.484109"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (58.1ms)[0m  [1mDELETE FROM "doctors";[0m
+  [1m[35m (32.7ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'doctors';[0m
+  [1m[35m (38.4ms)[0m  DELETE FROM "patients";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'patients';
+  [1m[36m (102.8ms)[0m  [1mDELETE FROM "appointments";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'appointments';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:13.810513"], ["updated_at", "2016-03-02 21:56:13.810513"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:13.812534"], ["updated_at", "2016-03-02 21:56:13.812534"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:13.814468"], ["updated_at", "2016-03-02 21:56:13.814468"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.816133"], ["updated_at", "2016-03-02 21:56:13.816133"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 2], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.859636"], ["updated_at", "2016-03-02 21:56:13.859636"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:13.890984"], ["updated_at", "2016-03-02 21:56:13.890984"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:13.892597"], ["updated_at", "2016-03-02 21:56:13.892597"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:13.963139"], ["updated_at", "2016-03-02 21:56:13.963139"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.964748"], ["updated_at", "2016-03-02 21:56:13.964748"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 2], ["patient_id", 1], ["created_at", "2016-03-02 21:56:13.966357"], ["updated_at", "2016-03-02 21:56:13.966357"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:14.039147"], ["updated_at", "2016-03-02 21:56:14.039147"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:14.073805"], ["updated_at", "2016-03-02 21:56:14.073805"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:14.075431"], ["updated_at", "2016-03-02 21:56:14.075431"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:14.109724"], ["updated_at", "2016-03-02 21:56:14.109724"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 2], ["patient_id", 1], ["created_at", "2016-03-02 21:56:14.111431"], ["updated_at", "2016-03-02 21:56:14.111431"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mAppointment Load (0.1ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?  [["patient_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Russell Wilson"], ["age", 27], ["created_at", "2016-03-02 21:56:14.147564"], ["updated_at", "2016-03-02 21:56:14.147564"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Derek Shepherd"], ["department", "Neurosurgery"], ["created_at", "2016-03-02 21:56:14.149336"], ["updated_at", "2016-03-02 21:56:14.149336"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-03-02 21:56:14.183567"], ["updated_at", "2016-03-02 21:56:14.183567"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 1], ["patient_id", 1], ["created_at", "2016-03-02 21:56:14.185347"], ["updated_at", "2016-03-02 21:56:14.185347"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "doctor_id", "patient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-10-01 00:00:00.000000"], ["doctor_id", 2], ["patient_id", 1], ["created_at", "2016-03-02 21:56:14.199213"], ["updated_at", "2016-03-02 21:56:14.199213"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT "doctors".* FROM "doctors" INNER JOIN "appointments" ON "doctors"."id" = "appointments"."doctor_id" WHERE "appointments"."patient_id" = ?  [["patient_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (161.0ms)[0m  DELETE FROM "doctors";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'doctors';
+  [1m[36m (161.5ms)[0m  [1mDELETE FROM "patients";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'patients';[0m
+  [1m[35m (165.8ms)[0m  DELETE FROM "appointments";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'appointments';
