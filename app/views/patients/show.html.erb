@@ -1,0 +1,8 @@
+<h1>Welcome, <%= @patient.name %></h1>
+
+<h2>Your Appointments</h2>
+<ul>
+  <% @patient.appointments.each do |a| %>
+    <li><%= a.appointment_datetime.strftime("%B %-d, %Y at %k:%M")%> with <%= link_to a.doctor.name, doctor_path(a.doctor)%></li>
+  <% end %>
+</ul>
