@@ -1,0 +1,14 @@
+<%= form_for @appointment do |f| %>
+  <%= f.label :appointment_datetime %>
+  <%= datetime_local_field(:appointment, :appointment_datetime) %><br>
+
+  <%= f.label :doctor_id, "Doctor" %>
+  <%= f.collection_select :doctor_id, Doctor.all, :id, :name %>
+  <br>
+
+  <%= f.label :patient_id, "Patient" %>
+  <%= f.collection_select :patient_id, Patient.all, :id, :name %>
+  <br>
+
+  <%= f.submit %>
+<% end %>
