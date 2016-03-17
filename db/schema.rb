@@ -21,9 +21,6 @@ ActiveRecord::Schema.define(version: 20160317201540) do
     t.datetime "updated_at",           null: false
   end
 
-  add_index "appointments", ["doctor_id"], name: "index_appointments_on_doctor_id"
-  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id"
-
   create_table "doctors", force: :cascade do |t|
     t.string   "name"
     t.string   "department"
