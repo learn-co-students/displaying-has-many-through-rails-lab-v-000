@@ -1,0 +1,3 @@
+<p>Date: <%= @appointment.readable_date %></p>
+<p>Patient: <%= link_to @appointment.patient.name, @appointment.patient %></p>
+<p>Doctor: <%= link_to @appointment.doctor.name, @appointment.doctor %></p>
