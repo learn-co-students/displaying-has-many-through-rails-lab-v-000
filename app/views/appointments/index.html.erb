@@ -1,0 +1,10 @@
+
+<h1>Appointments</h1>
+<br></br>
+<ul>
+<%@appointments.each do |app| %>
+<h3>Doctor: <%=app.doctor%></h3>
+<h3>Patient: <%=app.patient%></h3>
+<br></br>
+<%end%>
+</ul>
