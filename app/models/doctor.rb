@@ -5,4 +5,5 @@ class Doctor < ActiveRecord::Base
   def patient_count
     self.patients.count
   end
+  
 end
