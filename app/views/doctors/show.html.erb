@@ -1,0 +1,14 @@
+<h1>Doctors#show</h1>
+<p>Find me in app/views/doctors/show.html.erb</p>
+
+
+
+<%= @doctor.name%><br><br>
+<% @doctor.appointments.each do |a| %>
+  <%= a.real_time%><br>
+<% end %>
+
+
+<% @doctor.patients.each do |p| %>
+  <%= link_to p.name, patient_path(p)%>
+<% end %>

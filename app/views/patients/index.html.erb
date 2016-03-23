@@ -1,0 +1,12 @@
+
+
+<ul>
+
+  <% Patient.all.each do |p| %>
+    <% p.appointments.map do |time| %>
+    <li>Name: <%= p.name %> Number of Appointments: <%= p.appointments.count %></li>
+
+    <li><%= time.real_time %></li>
+    <% end %>
+  <% end %>
+</ul>
