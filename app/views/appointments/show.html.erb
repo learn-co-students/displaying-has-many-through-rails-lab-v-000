@@ -1,0 +1,7 @@
+<h2>Appointment:</h2>
+
+<p>Appointment Time: <%= @appointment.normalize_time %></p>
+<p>
+  <%=link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %> -
+  <%=link_to @appointment.patient.name, patient_path(@appointment.doctor) %>
+</p>
