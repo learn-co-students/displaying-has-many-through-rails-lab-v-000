@@ -44,5 +44,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'pry'
+  gem 'pry-rails'
+  gem 'learn-co'
 end
