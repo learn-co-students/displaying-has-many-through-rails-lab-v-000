@@ -1,0 +1,34 @@
+[31mF[0m[31mF[0m[31mF[0m
+
+Failures:
+
+  1) appointments should display an appontment's doctor
+     [31mFailure/Error: [0m@hawkeye = [1;34;4mDoctor[0m.create({[35mname[0m: [31m[1;31m"[0m[31mHawkeye Pierce[1;31m"[0m[31m[0m, [35mdepartment[0m: [31m[1;31m"[0m[31mSurgery[1;31m"[0m[31m[0m})[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant Doctor[0m
+     [36m# ./spec/features/appointments_spec.rb:3:in `block (2 levels) in <top (required)>'[0m
+
+  2) appointments should display an appontment's patient
+     [31mFailure/Error: [0m@hawkeye = [1;34;4mDoctor[0m.create({[35mname[0m: [31m[1;31m"[0m[31mHawkeye Pierce[1;31m"[0m[31m[0m, [35mdepartment[0m: [31m[1;31m"[0m[31mSurgery[1;31m"[0m[31m[0m})[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant Doctor[0m
+     [36m# ./spec/features/appointments_spec.rb:3:in `block (2 levels) in <top (required)>'[0m
+
+  3) appointments should not have an index page
+     [31mFailure/Error: [0m@hawkeye = [1;34;4mDoctor[0m.create({[35mname[0m: [31m[1;31m"[0m[31mHawkeye Pierce[1;31m"[0m[31m[0m, [35mdepartment[0m: [31m[1;31m"[0m[31mSurgery[1;31m"[0m[31m[0m})[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant Doctor[0m
+     [36m# ./spec/features/appointments_spec.rb:3:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 0.00087 seconds (files took 0.16495 seconds to load)
+[31m3 examples, 3 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/features/appointments_spec.rb:8[0m [36m# appointments should display an appontment's doctor[0m
+[31mrspec ./spec/features/appointments_spec.rb:13[0m [36m# appointments should display an appontment's patient[0m
+[31mrspec ./spec/features/appointments_spec.rb:18[0m [36m# appointments should not have an index page[0m
+
