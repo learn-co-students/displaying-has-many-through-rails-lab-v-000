@@ -5,6 +5,14 @@ describe "doctors", type:  :feature do
     Appointment.create(appointment_datetime: DateTime.new(2016, 01, 11, 20, 20, 0), patient_id: 1, doctor_id: 1)
   end
 
+  describe '#index page' do
+    it "displays doctor's name, appointments and links to show page" do
+      visit doctors_path
+      expect(page).to have_content("Name: Meredith Grey Number of Patients: 1")
+    end
+  end
+
+
   describe "#show page" do
     it "shows all of a doctor's appointment times in a human readable format" do
       visit doctor_path(@meredith)
