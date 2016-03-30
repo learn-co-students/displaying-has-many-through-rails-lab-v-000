@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:appt_time] = '%B %d, %Y at %H:%M'
