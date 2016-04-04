@@ -28,8 +28,8 @@ Patient.create([
 Appointment.create([
   {appointment_datetime: DateTime.new(2016, 03, 15, 18, 00, 0), patient_id: 1, doctor_id: 2},
   {appointment_datetime: DateTime.new(2016, 01, 11, 20, 20, 0), patient_id: 2, doctor_id: 1},
-  {appointment_datetime: DateTime.new(2016, 04, 22, 14, 00, 0), patient_id: 3, doctor_id:5 },
-  {appointment_datetime: DateTime.new(2017, 10, 30, 15, 00, 0), patient_id: 4, doctor_id:4 },
+  {appointment_datetime: DateTime.new(2016, 04, 22, 14, 00, 0), patient_id: 3, doctor_id: 5},
+  {appointment_datetime: DateTime.new(2017, 10, 30, 15, 00, 0), patient_id: 4, doctor_id: 4},
   {appointment_datetime: DateTime.new(2016, 07, 11, 16, 00, 0), patient_id: 5, doctor_id: 3},
   {appointment_datetime: DateTime.new(2016, 05, 31, 17, 00, 0), patient_id: 1, doctor_id: 2},
   {appointment_datetime: DateTime.new(2017, 06, 03, 10, 00, 0), patient_id: 3, doctor_id: 1}
