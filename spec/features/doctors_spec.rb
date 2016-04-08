@@ -1,3 +1,5 @@
+require 'pry'
+
 describe "doctors", type:  :feature do
   before do
     @meredith = Doctor.create({name: "Meredith Grey", department: "Internal Medicine"})
