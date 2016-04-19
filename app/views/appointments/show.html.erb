@@ -1,0 +1,4 @@
+<h1>Your Appointment Information</h1>
+Doctor: <%= link_to @appointment.doctor_name, doctor_path(@appointment.doctor)%><br />
+Patient: <%= link_to @appointment.patient_name, patient_path(@appointment.patient)%><br />
+Time: <%= @appointment.appointment_datetime.to_formatted_s(:long_ordinal)%>
