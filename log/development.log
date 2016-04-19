@@ -2609,3 +2609,20 @@ Processing by DoctorsController#show as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered doctors/show.html.erb within layouts/application (3.7ms)
 Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-19 15:34:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/antoniodavid/.rvm/gems/ruby-2.2.3/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 17ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/appointments/1" for ::1 at 2016-04-19 15:34:42 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAppointment Load (0.2ms)[0m  SELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered appointments/show.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 231ms (Views: 216.2ms | ActiveRecord: 1.7ms)
