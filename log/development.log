@@ -1388,3 +1388,796 @@ ActionController::RoutingError (No route matches [GET] "/appointments"):
 
 
 Started PUT "/console/repl_sessions/19fd3bd72aaf6ef0150de016d6af5629" for ::1 at 2016-01-15 13:12:58 -0500
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateDoctors (20160420011425)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "doctors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160420011425"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Migrating to CreatePatients (20160420011537)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "patients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160420011537"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateAppointments (20160420011800)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "appointment_datetime" datetime, "doctor_id" integer, "patient_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_appointments_on_doctor_id" ON "appointments" ("doctor_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160420011800"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT "doctors".* FROM "doctors"
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mAppointment Load (0.1ms)[0m  SELECT "appointments".* FROM "appointments"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Meredith Grey"], ["department", "Internal Medicine"], ["created_at", "2016-04-20 01:22:42.551843"], ["updated_at", "2016-04-20 01:22:42.551843"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Hawkeye Pierce"], ["department", "Surgery"], ["created_at", "2016-04-20 01:22:42.555679"], ["updated_at", "2016-04-20 01:22:42.555679"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Leonard 'Bones' McCoy"], ["department", "Internal Medicine"], ["created_at", "2016-04-20 01:22:42.558063"], ["updated_at", "2016-04-20 01:22:42.558063"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Phillip Chandler"], ["department", "Internal Medicine"], ["created_at", "2016-04-20 01:22:42.560650"], ["updated_at", "2016-04-20 01:22:42.560650"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "doctors" ("name", "department", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Michaela Quinn"], ["department", "Internal Medicine"], ["created_at", "2016-04-20 01:22:42.562972"], ["updated_at", "2016-04-20 01:22:42.562972"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Homer Simpson"], ["age", 38], ["created_at", "2016-04-20 01:22:42.567569"], ["updated_at", "2016-04-20 01:22:42.567569"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Bart Simpson"], ["age", 10], ["created_at", "2016-04-20 01:22:42.569855"], ["updated_at", "2016-04-20 01:22:42.569855"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Marge Simpson"], ["age", 36], ["created_at", "2016-04-20 01:22:42.571873"], ["updated_at", "2016-04-20 01:22:42.571873"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Lisa Simpson"], ["age", 8], ["created_at", "2016-04-20 01:22:42.574049"], ["updated_at", "2016-04-20 01:22:42.574049"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "patients" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Maggie Simpson"], ["age", 1], ["created_at", "2016-04-20 01:22:42.575969"], ["updated_at", "2016-04-20 01:22:42.575969"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-03-15 18:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-04-20 01:22:42.581002"], ["updated_at", "2016-04-20 01:22:42.581002"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-01-11 20:20:00.000000"], ["patient_id", 2], ["doctor_id", 1], ["created_at", "2016-04-20 01:22:42.583293"], ["updated_at", "2016-04-20 01:22:42.583293"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-04-22 14:00:00.000000"], ["patient_id", 3], ["doctor_id", 5], ["created_at", "2016-04-20 01:22:42.585703"], ["updated_at", "2016-04-20 01:22:42.585703"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2017-10-30 15:00:00.000000"], ["patient_id", 4], ["doctor_id", 4], ["created_at", "2016-04-20 01:22:42.587813"], ["updated_at", "2016-04-20 01:22:42.587813"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2016-07-11 16:00:00.000000"], ["patient_id", 5], ["doctor_id", 3], ["created_at", "2016-04-20 01:22:42.590234"], ["updated_at", "2016-04-20 01:22:42.590234"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["appointment_datetime", "2016-05-31 17:00:00.000000"], ["patient_id", 1], ["doctor_id", 2], ["created_at", "2016-04-20 01:22:42.592917"], ["updated_at", "2016-04-20 01:22:42.592917"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("appointment_datetime", "patient_id", "doctor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["appointment_datetime", "2017-06-03 10:00:00.000000"], ["patient_id", 3], ["doctor_id", 1], ["created_at", "2016-04-20 01:22:42.595669"], ["updated_at", "2016-04-20 01:22:42.595669"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 21:54:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 14ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors" for 127.0.0.1 at 2016-04-19 21:54:12 -0400
+Processing by DoctorsController#index as HTML
+  Rendered doctors/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 283ms (Views: 273.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:54:12 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:54:12 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:54:12 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:54:12 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:54:12 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:54:12 -0400
+
+
+Started GET "/doctors" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+Processing by DoctorsController#index as HTML
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT "doctors".* FROM "doctors"
+  Rendered doctors/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 21:57:15 -0400
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2016-04-19 21:57:37 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 74ms (Views: 56.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2016-04-19 21:57:40 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1mSELECT "doctors".* FROM "doctors"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 5]]
+  Rendered doctors/index.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 98ms (Views: 95.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 21:59:36 -0400
+
+
+Started GET "/doctors" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1mSELECT "doctors".* FROM "doctors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "patients" INNER JOIN "appointments" ON "patients"."id" = "appointments"."patient_id" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 5]]
+  Rendered doctors/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:00:35 -0400
+
+
+Started GET "/appointments/1" for 127.0.0.1 at 2016-04-19 22:06:04 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.2ms)[0m  [1mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered appointments/show.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 53ms (Views: 42.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/appointments/1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAppointment Load (0.1ms)[0m  SELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered appointments/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:07:21 -0400
+
+
+Started GET "/appointments/1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.2ms)[0m  [1mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered appointments/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:09:09 -0400
+
+
+Started GET "/patients/1" for 127.0.0.1 at 2016-04-19 22:09:10 -0400
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered patients/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2016-04-19 22:09:13 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/appointments/1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAppointment Load (0.2ms)[0m  SELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered appointments/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 47ms (Views: 36.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:10:28 -0400
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2016-04-19 22:19:34 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAppointment Load (0.3ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `datetime' for #<Appointment:0x007f8b74526848>):
+    2: <h3>Department: <%=@doctor.department%></h3>
+    3: <h3>Appointments</h3>
+    4: <%@doctor.appointments.each do |appointment|%>
+    5: 	<h4><%=appointment.datetime%></h4>
+    6: 	<%=link_to appointment.patient.name, patient_path(appointment.patient)%>
+    7: <%end%>
+  app/views/doctors/show.html.erb:5:in `block in _app_views_doctors_show_html_erb___1067483773936001546_70118367048180'
+  app/views/doctors/show.html.erb:4:in `_app_views_doctors_show_html_erb___1067483773936001546_70118367048180'
+
+
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.6ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.2ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2016-04-19 22:19:34 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAppointment Load (0.1ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `datetime' for #<Appointment:0x000000051f8330>):
+    2: <h3>Department: <%=@doctor.department%></h3>
+    3: <h3>Appointments</h3>
+    4: <%@doctor.appointments.each do |appointment|%>
+    5: 	<h4><%=appointment.datetime%></h4>
+    6: 	<%=link_to appointment.patient.name, patient_path(appointment.patient)%>
+    7: <%end%>
+  app/views/doctors/show.html.erb:5:in `block in _app_views_doctors_show_html_erb___1067483773936001546_70118372287200'
+  app/views/doctors/show.html.erb:4:in `_app_views_doctors_show_html_erb___1067483773936001546_70118372287200'
+
+
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.7ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.6ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAppointment Load (0.1ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 2]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:19:51 -0400
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2016-04-19 22:20:13 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAppointment Load (0.2ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `date' for Tue, 15 Mar 2016 18:00:00 UTC +00:00:Time):
+    2: <h3>Department: <%=@doctor.department%></h3>
+    3: <h3>Appointments</h3>
+    4: <%@doctor.appointments.each do |appointment|%>
+    5: 	<h4><%=appointment.appointment_datetime.date%></h4>
+    6: 	<%=link_to appointment.patient.name, patient_path(appointment.patient)%>
+    7: <%end%>
+  app/views/doctors/show.html.erb:5:in `block in _app_views_doctors_show_html_erb___1067483773936001546_70118481089520'
+  app/views/doctors/show.html.erb:4:in `_app_views_doctors_show_html_erb___1067483773936001546_70118481089520'
+
+
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.1ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.3ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAppointment Load (0.1ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?  [["doctor_id", 2]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:20:21 -0400
+
+
+Started GET "/patients" for 127.0.0.1 at 2016-04-19 22:31:52 -0400
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.3ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  Rendered patients/index.html.erb within layouts/application (46.7ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `patients' for #<#<Class:0x007f8b74905c70>:0x007f8b74904f00>
+Did you mean?  @patients):
+    1: <%patients.each do |patient|%>
+    2: 	<ul>
+    3: 		Name: <%=link_to patient.name, patient_path(patient)%> Number of Appointments: <%=patient.appointments.count%>
+    4: 	</ul>
+  app/views/patients/index.html.erb:1:in `_app_views_patients_index_html_erb__1055591719853066667_70118466394440'
+
+
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.5ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.6ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.3ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?  [["patient_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?  [["patient_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 5]]
+  Rendered patients/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:32:08 -0400
+
+
+Started GET "/patients/1" for 127.0.0.1 at 2016-04-19 22:38:02 -0400
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered patients/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/patients/1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAppointment Load (0.1ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered patients/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:38:17 -0400
+
+
+Started GET "/patients/1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered patients/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-19 22:41:55 -0400
