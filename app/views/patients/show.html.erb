@@ -1,0 +1,6 @@
+
+<% @patient.appointments.each do |apt| %>
+	 <%= link_to apt.doctor.name, doctor_path(apt.doctor.id) %>
+	 <%= apt.appointment_datetime.strftime('%B %e, %Y') %> at 
+	 <%= apt.appointment_datetime.strftime('%H:%M') %> <br>
+<% end %>
