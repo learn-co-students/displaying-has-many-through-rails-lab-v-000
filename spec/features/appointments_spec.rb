@@ -18,7 +18,5 @@ describe "appointments", type:  :feature do
   it "should not have an index page" do
     expect {visit('/appointments')}.to raise_error(ActionController::RoutingError)
   end
-
-
-
+  
 end
