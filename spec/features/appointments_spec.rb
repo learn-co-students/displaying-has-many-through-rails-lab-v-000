@@ -14,7 +14,7 @@ describe "appointments", type:  :feature do
     visit appointment_path(@appointment)
     expect(page).to have_link("Homer Simpson", href: patient_path(@homer))
   end
-
+  
   it "should not have an index page" do
     expect {visit('/appointments')}.to raise_error(ActionController::RoutingError)
   end
