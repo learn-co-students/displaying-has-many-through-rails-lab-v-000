@@ -10,7 +10,7 @@
 
 ## Overview
 
-The poor doctors at Seattle Grace Hospital are so overworked, they're having trouble keeping track of their patients appointments! Let's help them (and practice our associations) by building a some associations and displaying the data.
+The poor doctors at Seattle Grace Hospital are so overworked, they're having trouble keeping track of their patients appointments! Let's help them (and practice our associations) by building some associations and displaying the data.
 
 ![greys-anatomy](http://57.media.tumblr.com/cbcd8f29790e720e4cea60f44cb2c6b9/tumblr_mrbut3kX1g1r6kab2o1_500.gif)
 
@@ -35,3 +35,5 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 We've provided a seeds file so you can have some data to play around with - run `rake db:seed` once your migrations and models are complete.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/displaying-has-many-through-rails-lab' title='Displaying Has Many Through Rails Lab'>Displaying Has Many Through Rails Lab</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/displaying-has-many-through-rails-lab'>Displaying Has Many Through Lab</a> on Learn.co and start learning to code for free.</p>
