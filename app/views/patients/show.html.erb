@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<ul>
+  <% @patient.appointments.each do |appointment| %>
+    <li>
+      <%= appointment.in_readable_form %>
+      <%=link_to appointment.doctor.name, doctor_path(appointment.doctor) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
