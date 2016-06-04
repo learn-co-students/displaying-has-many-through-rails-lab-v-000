@@ -6,9 +6,9 @@ Appointments:<br>
 <br>
 <ul>
 <% @doctor.appointments.each do |appointment| %>
-  <li>Date and Time: <%= appointment.appointment_datetime.strftime("%b %d, %Y at %l:%M") %></li>
+  <li>Date and Time: <%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %></li>
   <li>Patient Name: <%= appointment.patient.name %></li>
-  <li>Patient's Page: <%= link_to "Link", appointment.patient %></li>
+  <li>Link: <%= link_to appointment.patient.name, appointment.patient %></li>
   <br>
 <% end %>
 </ul>
