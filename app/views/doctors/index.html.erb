@@ -1,0 +1,7 @@
+<% @doctors.each do |doctor| %>
+  Doctor's Name: <%= doctor.name %><br>
+  Link: <%= link_to "Doctor's Homepage", doctor %><br>
+  Number of Patients: <%= doctor.patients.count %>
+  <br>
+  <br>
+<% end %>
