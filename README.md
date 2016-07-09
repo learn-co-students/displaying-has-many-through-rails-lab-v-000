@@ -13,7 +13,7 @@
 The poor doctors at Seattle Grace Hospital are so overworked, they're having trouble keeping track of their patients appointments! Let's help them (and practice our associations) by building a some associations and displaying the data.
 
 ![greys-anatomy](http://57.media.tumblr.com/cbcd8f29790e720e4cea60f44cb2c6b9/tumblr_mrbut3kX1g1r6kab2o1_500.gif)
-
+dfasdfasdfasdfasdf
 ## Instructions
 
 First, fork and clone this lab. <em>Before anything</em>, note that when you generate models, controllers, etc, be sure to include this option, so that it skips tests (which we already have): `--no-test-framework`
