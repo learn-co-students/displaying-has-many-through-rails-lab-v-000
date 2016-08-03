@@ -1,0 +1,6 @@
+<%= @patient.appointments.each do |appointment| %>
+  <!-- shows all of a patients's appointment times in a human readable format -->
+  <p><%= appointment.appointment_datetime.strftime("%B %d, %Y at %R")%></p>
+   <!-- links to the doctors show page by name for the doctor of each appointment -->
+  <p><%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %></p>
+<% end %>
