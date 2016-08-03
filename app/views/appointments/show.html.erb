@@ -1,0 +1,4 @@
+<!-- should display an appontment's doctor -->
+<%= link_to @appointment.doctor.name, doctor_path(@appointment) %>
+<!-- should display an appontment's patient -->
+<%= link_to @appointment.patient.name, patient_path(@appointment) %>
