@@ -4,7 +4,8 @@ describe "appointments", type:  :feature do
     @homer = Patient.create({name: "Homer Simpson", age:38})
     @appointment = Appointment.create({appointment_datetime: DateTime.new(2016, 03, 15, 18, 00, 0), patient: @homer, doctor: @hawkeye})
   end
-
+  #require 'pry'
+  #binding.pry
   it "should display an appontment's doctor" do
     visit appointment_path(@appointment)
     expect(page).to have_link("Hawkeye Pierce", href: doctor_path(@hawkeye))
