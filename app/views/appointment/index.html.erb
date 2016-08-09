@@ -1,0 +1,6 @@
+<h1>Appointments</h1>
+<ul> <% @appointments.each do |appointment| %>
+  <h3><%= link_to appointment.appointment_datetime %></h3>
+
+  <% end %>
+</ul>
