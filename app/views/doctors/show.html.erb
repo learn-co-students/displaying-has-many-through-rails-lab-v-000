@@ -1,0 +1,25 @@
+Doctors show page <br>
+
+
+                                               <!--
+1) doctors #show page links to the patients show page by name for each appointment
+Failure/Error: expect(page).to have_link("Bart Simpson", href: patient_path(@bart))
+expected to find link "Bart Simpson" with href "/patients/1" but there were no matches
+# ./spec/features/doctors_spec.rb:18:in `block (3 levels) in <top (required)>'             -->
+
+<!--  link_to @appointment.doctor.name, doctor_path(@appointment.doctor.id)  -->
+
+
+<% @doctor.patients.all.each do |pa| %>
+    <%= link_to pa.name, patient_path(pa.id)%>
+
+<%end %>
+
+<% @doctor.appointments.all.each do |a| %>
+  <% month= a.appointment_datetime.strftime("%B") %>
+  <% date= a.appointment_datetime.strftime("%d") %>
+  <% year= a.appointment_datetime.strftime("%Y") %>
+  <% time= a.appointment_datetime.strftime("%T") %>
+  <%= month%> <%=date%>, <%=year%> at <%= time.chomp!(":00") %>
+  <br />
+<% end %>

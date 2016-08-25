@@ -1,0 +1,17 @@
+Patient Show page
+<br />
+
+
+<% @patient.doctors.all.each do |pa| %>
+    <%= link_to pa.name, doctor_path(pa.id)%>
+
+<%end %>
+
+<% @patient.appointments.all.each do |a| %>
+  <% month= a.appointment_datetime.strftime("%B") %>
+  <% date= a.appointment_datetime.strftime("%d") %>
+  <% year= a.appointment_datetime.strftime("%Y") %>
+  <% time= a.appointment_datetime.strftime("%T") %>
+  <%= month%> <%=date%>, <%=year%> at <%= time.chomp!(":00") %>
+  <br />
+<% end %>

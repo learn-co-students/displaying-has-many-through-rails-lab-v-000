@@ -1,0 +1,21 @@
+<!-- it "should display an appontment's doctor" do
+  visit appointment_path(@appointment)
+  expect(page).to have_link("Hawkeye Pierce", href: doctor_path(@hawkeye))
+end -->
+<!-- (@appointment.doctor.name) -->
+ <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor.id) %>
+ <!-- => Appointment(id: integer, appointment_datetime: datetime,
+ patient: string, doctor: string, patient_id: integer, doctor_id: integer, created_at: datetime, updated_at: dateti -->
+
+<!--
+ @hawkeye = Doctor.create({name: "Hawkeye Pierce", department: "Surgery"})
+ @homer = Patient.create({name: "Homer Simpson", age:38})
+ @appointment = Appointment.create({appointment_datetime: DateTime.new(2016, 03, 15, 18, 00, 0), patient: @homer, doctor: @hawkeye}) -->
+<!--
+
+   it "should display an appontment's patient" do
+     visit appointment_path(@appointment)
+     expect(page).to have_link("Homer Simpson", href: patient_path(@homer))
+   end -->
+
+<%= link_to  @appointment.patient.name,  patient_path(@appointment.patient.id) %>
