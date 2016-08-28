@@ -1,0 +1,9 @@
+<% @doctor.appointments.each do |appointment| %>
+  <% date_time = appointment.appointment_datetime.to_formatted_s(:long).split(" ")  %>
+  <% date_time_pop = date_time.pop %>
+  <%= "#{date_time.join(" ")} at #{date_time_pop}" %>
+<% end %>
+<br>
+<% @doctor.patients.each do |patient| %>
+  <%= link_to "#{patient.name}", patient_path(patient) %>
+<% end %>
