@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "doctors", type:  :feature do
+describe "doctors", type: :feature do
   before do
     @meredith = Doctor.create({name: "Meredith Grey", department: "Internal Medicine"})
     @bart = Patient.create(name: "Bart Simpson", age:10 )
@@ -13,10 +13,9 @@ describe "doctors", type:  :feature do
       expect(page).to have_content("January 11, 2016 at 20:20")
     end
 
-    it "links to the patients show page by name for each appointment" do
+    it "links to the patient's show page by name for each appointment" do
       visit doctor_path(@meredith)
       expect(page).to have_link("Bart Simpson", href: patient_path(@bart))
     end
   end
-
 end
