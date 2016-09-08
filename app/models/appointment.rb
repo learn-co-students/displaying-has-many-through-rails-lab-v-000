@@ -4,6 +4,6 @@ class Appointment < ActiveRecord::Base
 
   def day_and_time
     t = self.appointment_datetime.to_datetime
-    t.strftime(format='%B %d, %Y at %I:%M%P')
+    t.strftime(format='%B %d, %Y at %H:%M%P')
   end
 end
