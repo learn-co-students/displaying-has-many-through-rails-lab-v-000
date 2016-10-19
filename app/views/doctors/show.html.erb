@@ -1,9 +1,8 @@
-<h1>Doctor Page</h1>
+<h2><%= @doctor.name %></h2>
+<h2><%= @doctor.department %></h2>
 
-<% @doctors.each do |doctor| %>
-<h3><%= link_to doctor.name %></h3>
-Doctor Appointments:<br>
-<% doctor.appointments.each do |appt| %>
-Patient: <%= link_to appt.get_patient, patient_path %> | Time: <%= link_to appt.formatted_appt, appointment_path %> <br>
-<% end %>
-<% end %>
+Appointments: <br>
+  <% @doctor.appointments.each do |appt| %>
+    <%= link_to appt.patient.name, patient_path(appt.patient) %> at
+    <%= link_to appt.formatted_appt %> <br>
+  <% end %>

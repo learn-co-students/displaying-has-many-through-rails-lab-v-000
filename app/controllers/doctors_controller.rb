@@ -1,9 +1,7 @@
 class DoctorsController < ApplicationController
-   before_action :doctors, only: [:show]
-
-
 
   def show
+    @doctor = Doctor.find(params[:id])
   end
 
 
@@ -14,7 +12,4 @@ class DoctorsController < ApplicationController
     params.require(:doctor).permit(:name, :department, :appointments)
   end
 
-  def doctors
-    @doctors = Doctor.all
-  end
 end
