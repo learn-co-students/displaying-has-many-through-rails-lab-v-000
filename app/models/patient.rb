@@ -7,6 +7,5 @@ class Patient < ActiveRecord::Base
   end
 
   def show
-    
   end
 end
