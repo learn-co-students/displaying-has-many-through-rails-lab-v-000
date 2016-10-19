@@ -1,0 +1,8 @@
+<h1>Appointments Page</h1>
+
+<h2>All Appointments</h2>
+<% @appointments.each do |appointment| %>
+  <h3>Doctor: <%= link_to appointment.get_doctor, doctor_path %> | Patient: <%= link_to appointment.get_patient, patient_path %></h3>
+<% end %>
+
+
