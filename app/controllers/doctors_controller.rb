@@ -13,6 +13,8 @@ class DoctorsController < ApplicationController
   end
 
   def show
+    #binding.pry
+    @doctor = Doctor.find(params[:id])
   end
 
   def update

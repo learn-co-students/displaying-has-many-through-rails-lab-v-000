@@ -19,7 +19,6 @@ describe 'Doctor' do
   end
 
   it 'has many appointments' do
-    #binding.pry
     expect(@mcdreamy.appointments).to eq([@appointment1, @appointment2])
   end
 
