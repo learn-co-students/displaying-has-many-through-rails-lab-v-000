@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
   
   def index
+    @patients = Patient.all
   end
   
   def create
@@ -13,6 +14,8 @@ class PatientsController < ApplicationController
   end
 
   def show
+    #binding.pry
+    @patient = Patient.find_by(id: params[:id])
   end
 
   def update
