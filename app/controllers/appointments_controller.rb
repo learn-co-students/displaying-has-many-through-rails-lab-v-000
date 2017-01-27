@@ -1,10 +1,8 @@
 class AppointmentsController < ApplicationController
 
   def show
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find_by(params[:id])
   end
 
-  def index
-  end
 
 end
