@@ -1,0 +1,3 @@
+<h1><%= @appointment.human_time %></h1>
+<h3>Appointment scheduled between:</h3>
+<p>Doctor <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor)%> and Patient <%= link_to @appointment.patient.name, patient_path(@appointment.patient)%></p>
