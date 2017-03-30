@@ -1,0 +1,10 @@
+<h1>Appointments Page!!!</h1>
+
+  <%= link_to @appointment.patient.name, @appointment.patient %>
+  <%= link_to @appointment.doctor.name, @appointment.doctor %>
+  <%= @appointment.appointment_datetime.to_formatted_s(:long) %>
+
+
+
+
+
