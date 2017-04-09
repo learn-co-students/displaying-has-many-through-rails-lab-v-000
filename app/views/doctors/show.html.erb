@@ -1,0 +1,11 @@
+<% @doctor.appointments.each do |app| %>
+  <%= link_to app.patient.name, patient_path(app.patient) %>
+  <%= app.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
+<% end %>
+
+
+<!--
+expected to find text "January 11, 2016 at 20:20" in "2016-01-11 20:20:00 UTC"
+
+t = Appointment.first.appointment_datetime
+t.strftime("%B %d, %Y at %M")
