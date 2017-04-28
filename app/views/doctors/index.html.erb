@@ -1,0 +1,6 @@
+views/doctors/index<br/>
+
+<%= @doctors.each do |doc| %>
+  <%= link_to doc.name, doc %>
+  Patient count: <%= doc.patient_count %> <br/>
+<% end %>
