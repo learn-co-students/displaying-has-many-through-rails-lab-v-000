@@ -4,5 +4,5 @@ views/doctor/show<br/>
 <%= @doctor.department %><br/>
 <%= @doctor.appointments.each do |appt| %>
   <%= link_to appt.patient.name, appt.patient %>
-  <%= appt.appointment_datetime %><br/>
+  <%= appt.date_nice_format %><br/>
 <% end %>

@@ -6,7 +6,6 @@ class DoctorsController < ApplicationController
 
   def show
     @doctor = Doctor.find(params[:id])
-    # @doctor = Doctor.find_by(doctor_params)
   end
 
   # private
