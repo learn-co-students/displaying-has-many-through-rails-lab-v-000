@@ -1,0 +1,6 @@
+views/patients/index<br/>
+
+<%= @patients.each do |patient| %>
+  <%= link_to patient.name, patient %><br/>
+  Appointment count: <%= patient.appointment_count %><br/>
+<% end %>
