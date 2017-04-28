@@ -1,10 +1,10 @@
 views/patients/show <br/><br/>
 
-<ul>
-  Name: <%= @patient.name %>
+
+  Name: <%= @patient.name %><br/>
   <%= @patient.appointments.each do |appt| %>
     Number of appointments: <%= @patient.appointment_count %><br/>
     <%= appt.date_nice_format %><br/>
     with <%= link_to appt.doctor.name, appt.doctor %><br/><br/>
   <% end %>
-</ul>
+
