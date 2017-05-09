@@ -1,4 +1,6 @@
 <%="#{@doctor.name}, #{@doctor.department}"%> <br>
 <% @doctor.appointments.each do |app| %>
-  <%="#{app.appointment_datetime.strftime("%B %d, %Y at %l:%M")}"%><br>
+  <%="#{app.appointment_datetime.strftime("%B %d, %Y at %k:%M")}"%><br>
+  <a href="/patients/<%=app.patient.id%>"><%=app.patient.name%></a>"<br>
+
 <%end%>
