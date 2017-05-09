@@ -1,0 +1,3 @@
+<%@patients.each do |patient| %>
+  <%=link_to patient.name, patient_url(patient) %>, <%=patient.appointments.count%><br>
+<%end%>
