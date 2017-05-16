@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @doctor.name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @doctor.department %>
+</p>
+
+<% @doctor.appointments.each do |a| %>
+
+  <p>
+    <strong>Appointment Time:</strong>
+    <%= a.date_time %>
+  </p>
+
+  <p>
+    <strong>Patient:</strong>
+    <%= link_to a.patient.name, a.patient %>
+  </p>
+
+<% end %>
