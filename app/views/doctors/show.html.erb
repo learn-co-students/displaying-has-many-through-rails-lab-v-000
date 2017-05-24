@@ -5,5 +5,5 @@
 
 <% @doctor.appointments.each do |appt| %>
   <strong><p>Patient: <%= link_to appt.patient.name, patient_path(appt.patient) %></p></strong>
-  <p>Time: <%= appt.appointment_datetime.strftime(" %B %e, %Y at %l:%M") %></p>
+  <p>Time: <%= appt.appointment_datetime.strftime(" %B %e, %Y at %k:%M") %></p>
 <% end %>
