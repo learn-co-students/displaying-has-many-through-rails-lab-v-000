@@ -1,0 +1,6 @@
+
+<ul>
+    <li><%= @appointment.appointment_datetime.to_formatted_s(:long_ordinal) %> </li>
+    <li><%= @appointment.patient.name %> </li>
+    <li><%= @appointment.doctor.name  %> </li>
+</ul>
