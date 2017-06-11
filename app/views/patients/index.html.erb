@@ -3,12 +3,12 @@
 <div>
   <ul>
     <% @patients.each do |p| %>
-      <li><%= link_to p.name, patient_path(p) %></li>
-      <li><%= p.appointment_count %></li>
+      Name: <li><%= link_to p.name, patient_path(p) %></li>
+      Number of Appointments: <li><%= p.appointment_count %></li>
     <% end %>
   </ul>
 
 
-<% end %>
+
 
 </div>
