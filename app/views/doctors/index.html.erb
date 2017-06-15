@@ -1,0 +1,11 @@
+Create a Doctor#index page that displays each doctor's name, a link to their show page, and a count of their patients.
+
+<h2>Doctors index</h2>
+<div id="doctors-list">
+  <ul>
+  	<% @doctors.each do |doctor|%>
+  	  <%= link_to doctor.name, doctor_path(doctor.id)%>
+  	  <span> has <%= doctor.patients.all.count %> patients</span><br>
+    <% end%>
+  </ul>	
+</div>
