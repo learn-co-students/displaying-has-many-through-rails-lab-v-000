@@ -1,8 +1,8 @@
 <h1>Appointment Display:</h1>
 
 <div><label for="">Doctor:</label></div>
-<div><%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %></div>
+<div><%= link_to @appointment.doctor_name, doctor_path(@appointment.doctor) %></div>
 
 
 <div><label for="">Patient:</label></div>
-<div><%= link_to @appointment.patient.name, patient_path(@appointment.patient) %></div>
+<div><%= link_to @appointment.patient_name, patient_path(@appointment.patient) %></div>
