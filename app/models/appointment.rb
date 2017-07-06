@@ -3,10 +3,14 @@ class Appointment < ActiveRecord::Base
     belongs_to :patient
 
     def doctor_name
-        doctor.name
+        if doctor
+            doctor.name
+        end
     end
 
     def patient_name
-        patient.name
+        if patient
+            patient.name
+        end
     end
 end
