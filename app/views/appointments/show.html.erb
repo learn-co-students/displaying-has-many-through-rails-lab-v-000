@@ -1,7 +1,7 @@
 <h3>
   Appointment<br>
-  <small><%= @appointment.appointment_datetime.strftime("%B %d, %Y at %R") %></small>
+  <small><%= @appointment.readable_appointment_datetime %></small>
 </h3>
 
-Doctor: <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %><br>
-Patient: <%= link_to @appointment.patient.name, patient_path(@appointment.patient) %>
+Doctor: <%= link_to @appointment.doctor_name, doctor_path(@appointment.doctor) %><br>
+Patient: <%= link_to @appointment.patient_name, patient_path(@appointment.patient) %>

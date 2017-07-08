@@ -7,8 +7,8 @@
 <ul>
   <% @doctor.appointments.sort_by{|appointment| appointment.appointment_datetime}.each do |appointment| %>
     <li>
-      <%= appointment.appointment_datetime.strftime("%B %d, %Y at %R") %><br>
-      Patient: <%= link_to appointment.patient.name, patient_path(appointment.patient) %>
+      <%= appointment.readable_appointment_datetime %><br>
+      Patient: <%= link_to appointment.patient_name, patient_path(appointment.patient) %>
     </li><br>
   <% end %>
 </ul>
