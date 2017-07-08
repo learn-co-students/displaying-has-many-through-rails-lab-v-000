@@ -1,0 +1,10 @@
+<h2>Patients</h2>
+
+<ul>
+  <% @patients.sort_by{|patient| [patient.name.split(" ").last, patient.name.split(" ").first]}.each do |patient| %>
+    <li>
+      Name: <%= link_to patient.name, patient_path(patient) %><br>
+      Number of Appointments: <%= patient.appointments.count %>
+    </li><br>
+  <% end %>
+</ul>
