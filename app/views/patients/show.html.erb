@@ -1,0 +1,4 @@
+<% @patient.appointments.each do |apt| %>
+  <%= link_to apt.doctor.name, apt.doctor %><br>
+  <%= apt.readable_time %>
+<% end %>
