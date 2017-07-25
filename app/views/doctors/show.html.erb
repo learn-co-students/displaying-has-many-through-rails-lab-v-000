@@ -1,0 +1,7 @@
+<h1><%= @doctor.name.titlecase %>'s Appointments:</h1>
+
+<% @doctor.appointments.each do |app| %>
+	Who: <%= link_to app.patient.name, patient_path(app.patient) %>
+	<br>
+	When: <%= app.appointment_datetime.strftime("%B %e, %Y at %H:%M %p") %> <br>
+<% end -%>
