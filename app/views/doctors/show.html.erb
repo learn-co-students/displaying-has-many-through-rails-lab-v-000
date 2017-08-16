@@ -1,0 +1,14 @@
+<!-- Create a Doctor#show page that displays the doctor's name, department, and appointments, with each appointment's date,
+time, and patient name (linking to the patient's show page). -->
+
+<h2><%= @doctor.name %></h2>
+<p>
+  Department: <%= @doctor.department %>
+</p>
+Appointments:
+  <ul>
+    <% @doctor.appointments.each do |apt| %>
+      <li><%= apt.appointment_datetime.strftime('%B %d, %Y') %> <%= apt.appointment_datetime.strftime("at %H:%M") %> -
+      <%= link_to apt.patient.name, patient_path(apt.patient) %></il>
+    <% end %>
+  </ul>

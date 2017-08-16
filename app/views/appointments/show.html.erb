@@ -1,0 +1,7 @@
+<!-- Create an Appointment#show page that shows the date, time, patient, and doctor for that particular appointment. -->
+
+<h2>
+  <%= @appointment.appointment_datetime.strftime('%B %d, %Y') %>
+  <%= link_to @appointment.patient.name, patient_path(@appointment.patient) %>
+  <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
+</h2>
