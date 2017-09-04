@@ -5,5 +5,11 @@
 		<h3><%= patient.name %></h3>
 		<h4><%= patient.age %></h4>
 		<%= link_to patient.name, patient_path(patient) %>
+
+		<h3>Appointments:</h3>
+		<%= patient.appointments.each do |appointment| %>
+			<%= patient.name %> <br />
+			<%= appointment.human_date %>
+		<% end %>
 	</p>
 <% end %>
