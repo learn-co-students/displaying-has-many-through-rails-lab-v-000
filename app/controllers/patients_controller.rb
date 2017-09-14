@@ -4,7 +4,8 @@ class PatientsController < ApplicationController
     @patients = Patient.all
   end
 
-  def show 
+  def show
     @patient = Patient.find(params[:id])
-  end 
+    @patient_appointments = @patient.appointments
+  end
 end

@@ -1,3 +1,8 @@
 <h1>Patient's Show Page </h1>
 Name: <%= @patient.name %></br>
-Age: <%= @patient.age %>
+Age: <%= @patient.age %></br>
+
+Appointments:
+  <% @patient_appointments.each do |appointment| %>
+   <li><%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %></li>
+  <% end %>
