@@ -1,2 +1,8 @@
 <h1>Doctor's Show Page </h1>
 <%= @doctor.name %>
+<ul>
+  <% @doctor_appointment_datetime.each do |doctors_appointment| %>
+  <li><%= doctors_appointment.appointment_datetime.strftime("%B %d, %Y at %I:%M%p")%></li>
+  <% end %>
+
+</ul>

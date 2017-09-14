@@ -6,6 +6,7 @@ class DoctorsController < ApplicationController
 
   def show
     @doctor = Doctor.find(params[:id])
+    @doctor_appointment_datetime = @doctor.appointments
   end
 
 end
