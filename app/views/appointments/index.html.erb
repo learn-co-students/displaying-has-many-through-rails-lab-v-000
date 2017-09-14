@@ -1,0 +1,8 @@
+<h1>Appointment Index Page</h1>
+<% @appointments.each do |appointment| %>
+Doctor: <%= appointment.doctor.name %></br>
+Patient: <%= appointment.patient.name %></br>
+  age: <%= appointment.patient.age %></br>
+Datetime: <%= appointment.appointment_datetime.strftime("%B %d, %Y at %I:%M%p") %>
+<br></br>
+<% end %>
