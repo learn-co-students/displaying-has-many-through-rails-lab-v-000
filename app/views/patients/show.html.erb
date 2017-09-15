@@ -1,0 +1,8 @@
+<h3> <%= @patient.name %> </h3>
+
+<fieldset>
+  <% @patient.appointments.each do |appointment| %>
+    <p><%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %><p>
+    <p><%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %><p>
+  <% end %>
+</fieldset>
