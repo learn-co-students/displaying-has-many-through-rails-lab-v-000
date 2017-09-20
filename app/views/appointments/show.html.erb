@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Appointment datetime:</strong>
+  <%= @appointment.appointment_datetime %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= link_to "#{@appointment.doctor.name}",doctor_path(@appointment.doctor_id) %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= link_to "#{@appointment.patient.name}", patient_path(@appointment.patient_id) %>
+</p>
+
+
