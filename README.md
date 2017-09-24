@@ -36,3 +36,4 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 We've provided a seed file so you can have some data to play around with –– run `rake db:seed` once your migrations and models are complete.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/displaying-has-many-through-rails-lab' title='Displaying Has Many Through Rails Lab'>Displaying Has Many Through Rails Lab</a> on Learn.co and start learning to code for free.</p>
+rails generate controller appointments
