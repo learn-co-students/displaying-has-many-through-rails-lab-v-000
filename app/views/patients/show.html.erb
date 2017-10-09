@@ -1,0 +1,17 @@
+<h1><%= @patient.name %></h1>
+
+<table border="1">
+	<strong>Appointments</strong>
+	<thead>
+		<th>Date Time</th>
+		<th>Doctor</th>
+	</thead>
+	<tbody>
+		<% @patient.appointments.each do |apt| %>
+		<tr>
+			<td align="center"><%= apt.formatted_date_time %> with </td>
+			<td align="center"><%= link_to apt.doctor_name, doctor_path(apt.doctor) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
