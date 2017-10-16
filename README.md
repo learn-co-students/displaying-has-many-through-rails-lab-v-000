@@ -30,7 +30,7 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 3. Create a `Doctor#show` page that displays the doctor's name, department, and appointments, with each appointment's date, time, and patient name (linking to the patient's show page).
 
 4. Create a `Patient#show` page that lists the date and time for each of their appointments and links to the corresponding doctor's show page.
-
+https://apidock.com/ruby/DateTime/strftime
 5. Create a `Patient#index` page that displays a link to each patient's show page and the total number of appointments they have.
 
 6. Create an `Appointment#show` page that shows the date, time, patient, and doctor for that particular appointment. Note that there should NOT be an `Appointment#index` page –– we don't want to have all of the appointments on display for anyone to see.
