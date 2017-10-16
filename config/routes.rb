@@ -1,34 +1,4 @@
 Rails.application.routes.draw do
-  get 'patients/index'
-
-  get 'patients/show'
-
-  get 'patients/new'
-
-  get 'patients/create'
-
-  get 'patients/destroy'
-
-  get 'patients/update'
-
-  get 'patients/edit'
-
-  get 'doctors/index'
-
-  get 'doctors/show'
-
-  get 'doctors/new'
-
-  get 'doctors/create'
-
-  get 'doctors/destroy'
-
-  get 'doctors/update'
-
-  get 'doctors/edit'
-
-  get 'appointments/show'
-
   resources :doctors
   resources :patients
   resources :appointments, only: [:show]
