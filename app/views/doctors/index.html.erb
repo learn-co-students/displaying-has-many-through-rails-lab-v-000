@@ -1,0 +1,9 @@
+Doctor Index:
+<ul>
+  <% @doctors.each do |doctor| %>
+    <li>
+      <strong>Doctor Name:</strong> <%= link_to doctor.name, doctor %> <br />
+      <strong>Patient Count:</strong> <%= doctor.patients.size %>
+    </li>
+  <% end %>
+</ul>
