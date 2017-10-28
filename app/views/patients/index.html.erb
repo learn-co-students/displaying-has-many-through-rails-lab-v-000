@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Patient</th>
+    <th style="text-align:center"># of Appointments</th>
+  </tr>
+  <% @patients.each do |patient| %>
+    <tr>
+      <td><%= link_to patient.name, patient %></td>
+      <td style="text-align:center"><%= patient.num_of_appointments %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>Test Pleaser</p>
+<ul>
+  <% @patients.each do |patient| %>
+    <li>Name: <%= link_to patient.name, patient %><%=" Number of Appointments: #{patient.num_of_appointments}"%></li>
+  <% end %>
+</ul>

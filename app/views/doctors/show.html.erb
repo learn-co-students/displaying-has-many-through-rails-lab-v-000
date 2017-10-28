@@ -1,0 +1,16 @@
+<h2><%= @doctor.name %></h2>
+<h3><%= @doctor.department %></h3>
+<h3><%= pluralize(@doctor.num_of_appointments, "appointment") %></h3>
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Patient</th>
+  </tr>
+  <% @appointments.each do |appt| %>
+    <tr>
+      <td><%= link_to appt.formatted_time, appt %></td>
+      <td><%= link_to appt.patient.name, appt.patient %></td>
+    </tr>
+  <% end %>
+</table>

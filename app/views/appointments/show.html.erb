@@ -1,0 +1,3 @@
+<h3> <%= @appointment.formatted_time %> </h3>
+<p style="text-indent: 25px"><b>Patient:</b> <%= link_to @appointment.patient.name, @appointment.patient %> </p>
+<p style="text-indent: 25px"><b>Doctor:</b> <%= link_to @appointment.doctor.name, @appointment.doctor %> </p>
