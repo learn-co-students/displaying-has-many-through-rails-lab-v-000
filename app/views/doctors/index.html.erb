@@ -1,0 +1,6 @@
+<h2>Doctor Directory</h2>
+
+<% @doctors.each do |doctor| %>
+  <p><%= link_to doctor.name, doctor_path(doctor) %><br>
+  Patient Caseload: <%= doctor.patients.count %>
+<% end %>
