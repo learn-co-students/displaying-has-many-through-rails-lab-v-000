@@ -1,21 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'patient/show'
-
-  get 'patient/index'
-
-  get 'patients_controller/show'
-
-  get 'patients_controller/index'
-
-  get 'doctors_controller/show'
-
-  get 'doctors_controller/index'
-
-  get 'doctor/index'
-
-  get 'doctor/show'
-
   resources :doctors
   resources :patients
   resources :appointments, only: [:show]
