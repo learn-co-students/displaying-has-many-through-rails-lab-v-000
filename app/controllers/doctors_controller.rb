@@ -1,6 +1,7 @@
 class DoctorsController < ApplicationController
 
   def index
+    @docters = Doctor.all
   end
 
   def show
