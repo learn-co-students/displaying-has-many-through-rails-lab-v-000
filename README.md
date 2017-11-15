@@ -21,6 +21,12 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 
 ***NOTE***: As with much of our Rails curriculum, remember to always use the `--no-test-framework` flag when you generate models, controllers, etc. That way, the Rails generators will not create additional tests on top of the test suite that already comes with the lesson. E.g., `rails g model User username:string email:string --no-test-framework`.
 
+rails g resource Doctors name:string department:string --no-test-framework
+rails g resource Patients name:string age:integer --no-test-framework
+rails g resource Appointment_DateTime name:string department:string --no-test-framework
+
+appointment_datetime: DateTime.new(2016, 12, 25), patient: @patient, doctor: @mcdreamy
+
 1. Create migrations and models for doctor, patient, and appointment. Because this is for a hospital, a doctor can have many patients, but a patient can also have many doctors. Patients and doctors both have many appointments. Our `appointments` table should have a column called `appointment_datetime` to represent the date and time the appointment will take place. (When you display this datetime, make sure it's in a human readable format. The tests will be expecting "January 12, 2016 at 3:00".)
 
 2. Create a `Doctor#index` page that displays each doctor's name, a link to their show page, and a count of their patients.
