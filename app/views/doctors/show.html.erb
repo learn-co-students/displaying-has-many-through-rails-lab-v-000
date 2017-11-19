@@ -1,0 +1,8 @@
+<h2> Dr. <%= @doctor.name%>'s Appointments</h2><br>
+<ul>
+<% @doctor.appointments.each_with_index do |appointment, index| %>
+  <li><h3> Appointment #<%= index + 1%></h3></li>
+  <p>Patient: <%= link_to appointment.patient_name, patient_path(appointment.patient) %></p>
+  <p>Date: <%= appointment.date%></p>
+</ul>
+<% end %>
