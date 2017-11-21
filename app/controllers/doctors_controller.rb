@@ -9,6 +9,7 @@ class DoctorsController < ApplicationController
     @appointments = @doctor.appointments
   end
 
+
   private
 
   def set_doctor
