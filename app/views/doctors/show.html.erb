@@ -1,0 +1,11 @@
+Doctor: <%= @doctor.name%>
+
+<% @doctor.patients.each do |p| %>
+<li><%=link_to p.name, patient_path(p) %>
+</li>
+<% end %>
+
+<% @doctor.appointments.each do |a| %>
+<li><%=a.show_datetime %>
+</li>
+<% end %>
