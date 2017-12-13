@@ -1,0 +1,11 @@
+<h1>Patient Index</h1>
+
+<!--Capybara bitches at me 'ambiguous match' when <ul> tags are inside of the erb @patients iteration, so moving it out -->
+<ul>
+<% @patients.each do |pat| %>
+  <li>
+  <%= "Name: #{pat.name}" %><br>
+  <%= "Number of Appointments: #{pat.appointments.size}" %><br><br>
+  </li>
+<% end %>
+</ul>
