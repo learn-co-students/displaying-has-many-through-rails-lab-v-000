@@ -36,3 +36,37 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 We've provided a seed file so you can have some data to play around with –– run `rake db:seed` once your migrations and models are complete.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/displaying-has-many-through-rails-lab' title='Displaying Has Many Through Rails Lab'>Displaying Has Many Through Rails Lab</a> on Learn.co and start learning to code for free.</p>
+
+appointments
+  should display an appointment's doctor (FAILED - 1)
+  should display an appointment's patient (FAILED - 2)
+  should not have an index page (FAILED - 3)
+
+doctors
+  #show page
+    shows all of a doctor's appointment times in a human readable format (FAILED - 4)
+    links to the patient's show page by name for each appointment (FAILED - 5)
+
+patients
+  #index page
+    lists all of the patients and the number of appointments they have (FAILED - 6)
+  #show page
+    shows all of a patient's appointment times in a human readable format (FAILED - 7)
+    links to the doctor's show page by name for the doctor of each appointment (FAILED - 8)
+
+Appointment
+  has a date and time (FAILED - 9)
+  belongs to a patient (FAILED - 10)
+  belongs to a doctor (FAILED - 11)
+
+Doctor
+  has a name (FAILED - 12)
+  has a department (FAILED - 13)
+  has many appointments (FAILED - 14)
+  has many patients, through appointments (FAILED - 15)
+
+Patient
+  has a name (FAILED - 16)
+  has an age (FAILED - 17)
+  has many appointments (FAILED - 18)
+  has many doctors, through appointments (FAILED - 19)
