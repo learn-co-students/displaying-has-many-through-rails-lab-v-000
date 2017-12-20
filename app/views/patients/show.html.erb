@@ -1,0 +1,7 @@
+<h1><%= @patient.name %></h1>
+<h3>Age: <%= @patient.age %></h3>
+
+<h2>Appointments - <%= @patient.appointments.size %></h2>
+<% @patient.appointments.each {|a| %>
+    <%= "#{a.appointment_datetime.strftime("%B %d, %Y at %H:%M")}" %> - <%= link_to "#{a.doctor.name}", doctor_path(a.doctor) %><br>
+<% } %>
