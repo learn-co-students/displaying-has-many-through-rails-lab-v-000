@@ -1,0 +1,4 @@
+<h1>Doctors</h1>
+<% @doctors.each {|d| %>
+    <%= link_to d.name, doctors_path(d) %>
+<% } %>
