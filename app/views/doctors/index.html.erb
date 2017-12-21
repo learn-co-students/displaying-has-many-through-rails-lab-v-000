@@ -1,0 +1,9 @@
+   <h1> Doctors of Seatle Grace</h1>
+    <ul>
+    <% @doctors.each do |doc| %>
+    <li>
+        <%= link_to doc.name, doctor_path(doc) %> 
+        <%= doc.patients.length %>
+    </li>
+<%end%>
+</ul>
