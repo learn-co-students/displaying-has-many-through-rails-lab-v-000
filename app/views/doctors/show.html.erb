@@ -1,0 +1,12 @@
+<%= form_for(@doctor) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<p>
+Appointments:
+</p>
+<% @doctor.appointments.each do |appt|%>
+<%= link_to appt.patient.name, patient_path(appt.patient)%><br>
+<%= appt.appointment_datetime.strftime("%B %d, %Y at %H:%M")%><br>
+<%end%>
+<%end%>
