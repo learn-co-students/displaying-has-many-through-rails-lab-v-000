@@ -4,5 +4,5 @@
 <h4>Patients:</h4>
 <% @doctor.appointments.each do |a|%>
   <%=link_to a.patient.name, patient_path(a.patient)%>
-  <%=a.appointment_datetime%><br>
+  <%=a.datetime%><br>
 <%end%>

@@ -4,7 +4,7 @@
   <li>
     Patient: <%= link_to a.patient.name, patient_path(a.patient) %><br>
     Doctor: <%= link_to a.doctor.name, doctor_path(a.doctor) %><br>
-    Time: <%= a.appintment_datetime %>
+    Time: <%= a.appointment_datetime.strftime("%B %e, %Y at %:z") %>
   </li>
 <% end %>
 </ul>
