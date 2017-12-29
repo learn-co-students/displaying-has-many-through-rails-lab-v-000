@@ -5,6 +5,6 @@ class PatientsController < ApplicationController
     
     def show
         # binding.pry
-        @patient = Patient.find_by(params[:id])
+        @patient = Patient.find(params[:id])
     end 
 end
