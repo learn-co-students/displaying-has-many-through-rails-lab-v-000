@@ -1,10 +1,8 @@
 class DoctorsController < ApplicationController
+
   def show
       @doctor = Doctor.find(params[:id])
-      if @doctor.appointments.last.try(:name)
-        @recipe.appointments.build
-      end
-    end
+  end
 
     def index
       @doctors = Doctor.all
