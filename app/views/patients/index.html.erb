@@ -2,13 +2,8 @@
 <ul>
   <% @patients.each do |p| %>
 <li>
-  Name: <%= link_to p.name, patient_path(p) %>
+  Name: <%= link_to p.name, doctor_path(p) %>
   Number of Appointments: <%= p.appointments.count %>
 </li>
 <% end %>
 </ul>
-
-<!--links to the doctor's show page by name for the doctor of each appointment
-<% @doctor.each do |d| %>
-  <%= link_to d.name, doctor_path(d) %>
-<% end %-->
