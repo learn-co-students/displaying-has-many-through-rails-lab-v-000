@@ -1,4 +1,6 @@
 <% @patient.appointments.each do |appt| %>
+<!-- lists the date and time for each of their appointments-->
 <%= appt.appointment_datetime.strftime("%B %d, %Y at %R") %>
+<!-- links to the corresponding doctor's show page. -->
 <%= link_to appt.doctor.name, doctor_path(appt.doctor) %>
 <% end %>
