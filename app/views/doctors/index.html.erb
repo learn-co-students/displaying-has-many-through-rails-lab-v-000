@@ -1,0 +1,3 @@
+<% Doctor.all.each do |doc| %>
+<br><%= link_to doc.name, doctor_path(doc) %>, <%= doc.department %>
+<% end %>
