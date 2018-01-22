@@ -1,0 +1,11 @@
+
+
+Appointment for: <% @patient.name %>	
+
+ 
+<% @patient.appointments.each do |appointment| %>
+
+	<%= appointment.display_time %>
+ 	<%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %>
+
+ 	<% end %>

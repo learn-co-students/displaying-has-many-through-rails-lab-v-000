@@ -1,8 +1,7 @@
-<h1>Doctor#index</h1>
-<p>Find me in app/views/doctor/index.html.erb</p>
+
 <h2>Doctors</h2>
  <ul>
- 	<% doctors.each do |doctor| %>
+ 	<% @doctors.each do |doctor| %>
  	   <li><%= link_to doctor.name, doctor_path(doctor) %>
  	   	<%= doctor.patient_count %> patients 
  	   </li>
