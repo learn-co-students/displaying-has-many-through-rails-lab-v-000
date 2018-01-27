@@ -1,0 +1,12 @@
+<h1>Appointments</h1>
+
+<ul>
+  <% @appointments.each do |apt| %>
+    <li>
+      Doctor: <%= link_to apt.doctor.name, doctor_path(apt.doctor) %><br>
+      Patient: <%= link_to apt.patient.name, patient_path(apt.patient) %><br>
+      Appointment Time: <%= link_to apt.apt_time, appointment_path(apt) %>
+    </li>
+    <br><br>
+  <% end %>
+</ul>
