@@ -29,7 +29,7 @@ describe "patients", type:  :feature do
       ])
 
       @meredith = Doctor.first
-      @bart = Patient.find(2)
+      @bart = Patient.find_by(name: "Bart Simpson")
   end
 
   describe "#index page" do
