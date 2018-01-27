@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Patients</h1>
+  <ul>
+    <% @patients.each do |patient| %>
+        <li>Name: <%= patient.name %> Number of Appointments: <%= patient.appointments.count %></li>
+        <li><%= patient.age %></li>
+        <li><%= link_to 'Show', patient %></li>
+        <li><%= link_to 'Edit', edit_patient_path(patient) %></li>
+        <li><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% end %>
+  </ul>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>
