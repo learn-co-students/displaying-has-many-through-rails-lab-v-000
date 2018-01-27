@@ -1,0 +1,5 @@
+<h1>Appointment Show Page</h1>
+<ol><% @appointments.each do |a| %>
+  <li><%= a.proper_date %> - <%= link_to a.doctor.name, doctor_path(a.doctor) %> - <%= link_to a.patient.name, patient_path(a.patient) %> </li>
+  <% end %>
+</ol>
