@@ -1,4 +1,4 @@
-# Displaying Has Many Through Rails Lab
+ # Displaying Has Many Through Rails Lab
 
 ## Objectives
 

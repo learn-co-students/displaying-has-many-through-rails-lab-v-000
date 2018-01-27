@@ -1,0 +1,10 @@
+<h1> Doctors </h1>
+
+<% @doctors.each do |doc| %>
+  <h3>Doctor:</h3><%= link_to doc.name, doctor_path(doctor) %>
+  <ul>
+    <% doc.patients.each do |pat| %>
+      <li><%=pat.name%></li>
+      <% end %>
+  </ul>
+<% end %>
