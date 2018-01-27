@@ -1,0 +1,11 @@
+<%= form_for @doctor do |f| %>
+  Title: <%= f.text_field :name %> <br>
+  Dept:  <%= f.text_field :department %> <br>
+  <%= f.fields_for :appointments do |appointment| %>
+    <%= ing.label :datetime %>
+    <%= ing.text_field :datetime %>
+    <%= ing.label :patients.name %>
+    <%= ing.text_field :quantity %> <br>
+  <% end %>
+  <%= f.submit %>
+<% end %>

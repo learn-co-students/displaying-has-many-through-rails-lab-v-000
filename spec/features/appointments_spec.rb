@@ -8,6 +8,7 @@ describe "appointments", type:  :feature do
   end
 
   it "should display an appointment's doctor" do
+    binding.pry
     visit appointment_path(@appointment)
     expect(page).to have_link("Hawkeye Pierce", href: doctor_path(@hawkeye))
   end
