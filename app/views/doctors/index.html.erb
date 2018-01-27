@@ -1,0 +1,18 @@
+<h1>Doctor Directory</h1>
+
+<table border="1">
+	<thead>
+		<th>Name</th>
+		<th>Info Link</th>
+		<th># of Patients</th>
+	</thead>
+	<tbody>
+		<% @doctors.each do |doc| %>
+			<tr>
+				<td align="center"><%= doc.name %></td>
+				<td align="center"><%= link_to 'Info', doctor_path(doc) %></td>
+				<td align="center"><%= doc.number_of_patients %></td>
+			</tr>
+		<% end %>		
+	</tbody>
+</table>
