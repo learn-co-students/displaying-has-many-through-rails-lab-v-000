@@ -1,0 +1,15 @@
+<div>
+  <h1>Doctors</h1>
+</div>
+
+<ul>
+  <% @doctors.each do |doc| %>
+    <li>
+      Name: <%= link_to doc.name, doc %>
+      <br />
+      Department: <%= doc.department %>
+      <br />
+      <%= doc.patients.count %> <%= 'patient'.pluralize(doc.patients.count)%>        
+    </li>
+  <% end %>
+</ul>
