@@ -1,0 +1,9 @@
+<h1>Patients</h1>
+
+<ul>
+<%= @patients.each do |patient| %>
+  <li>
+    Name: <%= patient.name%> Number of Appointments: <%= Appointment.where("patient_id =?", patient.id ).count %>
+  </li>
+<% end %>
+</ul>
