@@ -1,0 +1,13 @@
+<%= form_for @doctor do |f| %>
+    <%=f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :department %>
+    <%= f.text_field :department %>
+
+      <%= f.fields_for :patients do |patient| %>
+          Name:<%= patient.text_field :name %><br>
+          Age:<%= patient.text_field :age %>
+      <% end %>
+
+    <%= f.submit %>
+<% end %>
