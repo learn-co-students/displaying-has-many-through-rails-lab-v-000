@@ -1,0 +1,25 @@
+<h1>Patients</h1>
+
+<ul>
+  <%= @patients.each do |i| %>
+    <li>
+      <h3>Name: <%= i.name %></h3>
+      <h4>Number of Appointments: <%= i.appointments.size %></h4>
+      <ol>
+        <%= i.appointments.each do |appointment| %>
+          <li>
+            <%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %><br>
+          </li>
+        <% end %>
+      </ol>
+      <h4>Number of Doctors: <%= i.doctors.size %></h4>
+      <ol>
+        <%= i.doctors.each do |doctor| %>
+          <li>
+            <%= link_to doctor.name, doctor %><br>
+          </li>
+        <% end %>
+      </ol>
+    </li>
+  <% end %>
+</ul>

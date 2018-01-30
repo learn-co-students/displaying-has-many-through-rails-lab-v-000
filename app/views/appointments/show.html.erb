@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BasicNestedFormsLab</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<h2>Appointment from <%= @appointment.appointment_datetime %></h2>
 
-<%= yield %>
-
-</body>
-</html>
+Doctor: <%= link_to @doctor.name, @doctor %><br>
+Patient: <%= link_to @patient.name, @patient %>
