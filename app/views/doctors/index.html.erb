@@ -1,0 +1,6 @@
+<h1>Doctors at Seattle Grace Hospital</h1>
+<% @doctors.each do |doctor| %>
+  <%= link_to doctor.name, doctor_path(doctor) %>
+  <%= doctor.patient_count %> <%= "patient".pluralize(doctor.patient_count) %>
+  <br> </br>
+<% end %>
