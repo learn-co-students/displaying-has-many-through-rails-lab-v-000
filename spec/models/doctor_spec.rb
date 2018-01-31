@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Doctor' do
-
+#
   before do
     @mcdreamy = Doctor.create(name: "Derek Shepherd", department: "Neurosurgery")
     @patient1 = Patient.create(name: "Bill Gates", age: 60)
