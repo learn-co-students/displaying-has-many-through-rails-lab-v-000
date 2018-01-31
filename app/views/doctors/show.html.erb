@@ -1,0 +1,7 @@
+<h1><%=@doctor.name%></h1>
+<% if !@doctor.appointments.empty?%>
+  <% !@doctor.appointments.each do |appointment| %>
+    <h4><%=appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M")%></h4>
+    <h4><%= link_to appointment.patient.name, patient_path(appointment.patient) %></h4>
+  <% end %>
+<%end%>

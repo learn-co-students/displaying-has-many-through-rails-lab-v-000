@@ -1,0 +1,2 @@
+module PateintsHelper
+end
