@@ -1,0 +1,5 @@
+<h1><%=@patient.name%></h1>
+<%@patient.appointments.each do |app|%>
+<h2><%=app.format_time%></h2>
+<h2><%=link_to app.doctor.name, doctor_path(app.doctor)%></h2>
+<%end%>
