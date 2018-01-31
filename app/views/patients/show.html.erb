@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %><br />
+</p>
+
+<ul>
+<% @patient.appointments.each do |appointment| %>
+<!-- .to_formatted_s(:long) converts the datetime into Month dayOfMonth, year -->
+    <li><%= appointment.appointment_datetime.strftime("%B %-d, %Y at %H:%M") %>
+    <li><%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %>
+<% end %>
+</ul>

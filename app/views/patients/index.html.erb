@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <ul>
+    <% @patients.each do |patient| %>
+    
+      <% patient.appointments.each do |appointment| %>
+     
+        <li><label>Name: <%= patient.name %> Number of Appointments: <%= patient.appointments.count %></label><br />
+        <!-- <li><label></label> -->
+
+      <% end %> 
+
+        
+    <% end %>
+  </ul>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>
