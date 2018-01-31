@@ -1,0 +1,3 @@
+<% @patient.appointments.each do |appt| %>
+<%= link_to appt.doctor.name, appt.doctor %><%= appt.readable_time %>
+<% end %>
