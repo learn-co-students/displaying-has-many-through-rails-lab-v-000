@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    Patients Appointments:
+    <tr>
+      <th>Patient's Name</th>
+      <th>Patient's Age</th>
+      <th>Amount of Appointments</th>
+    </tr>
+
+  </thead>
+  <tbody>
+
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= link_to patient.name, patient_path(patient) %></td>
+        <td><%= patient.age %></td>
+        <td><%= patient.appointments.size %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+
+</table>
+
+<ul>
+  <% @patients.each do |patient| %>
+    <li>Name: <%= link_to patient.name, patient_path(patient) %> Number of Appointments: <%= patient.appointments.size %></td>
+  <% end %>
+</ul>
