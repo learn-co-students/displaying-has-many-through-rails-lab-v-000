@@ -1,0 +1,9 @@
+<h1>Patients:</h1>
+<ul>
+<% @patients.each do |p| %>
+  <fieldset>
+    <h3>Name: <%= p.name %></h3>
+    <h3>Number of Appointments: <%= p.appointments.count %></h3>
+  </fieldset>
+<% end %>
+</ul>

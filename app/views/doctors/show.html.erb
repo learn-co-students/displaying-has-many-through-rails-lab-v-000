@@ -1,0 +1,7 @@
+<h1>Appointments:</h1>
+<% @appointments.each do |appt| %>
+  <fieldset>
+    <h3><%= appt.datetime %></h3>
+    <%= link_to appt.patient_name, patient_path(appt.patient) %>
+  </fieldset>
+<% end %>
