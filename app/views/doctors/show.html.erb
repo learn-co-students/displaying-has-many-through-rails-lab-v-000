@@ -1,0 +1,5 @@
+
+<%= @doctor.appointments.each do |x| %>
+<%= link_to x.patient.name, patient_path(x.patient) %>
+<%= x.parse_time %>
+<% end %>
