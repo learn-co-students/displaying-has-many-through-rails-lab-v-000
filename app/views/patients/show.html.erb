@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+  <table>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <h1>It's A Patient Show Page!!</h1>
+    <%= @patient.name %><br>
+    <h3>Dr. Grey's Appointments!!</h3>
+    <% @patient.appointments.each do |apt| %><br>
+      <%= link_to apt.doctor.name, apt.doctor %><br>
+      <%= apt.appointment_datetime.to_formatted_s(:long) %><br> 
+    <% end %> 
