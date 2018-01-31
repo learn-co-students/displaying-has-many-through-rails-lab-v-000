@@ -1,0 +1,14 @@
+#Schema
+
+Appointment
+appointment_datetime: t.DateTime
+belongs_to patient
+belongs_to doctor
+
+Doctor
+name:string
+department: string
+
+Patient
+name: string
+age: integer
