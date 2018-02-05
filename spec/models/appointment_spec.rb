@@ -1,23 +1,23 @@
 require 'rails_helper'
 
-describe 'Appointment' do
-
+describe "appointments", type:  :feature do
   before do
-    @mcdreamy = Doctor.create(name: "Derek Shepherd", department: "Neurosurgery")
-    @patient = Patient.create(name: "Russell Wilson", age: 27)
-    @appointment = Appointment.create({appointment_datetime: DateTime.new(2016, 12, 25), patient: @patient, doctor: @mcdreamy})
+    @hawkeye = Doctor.create({name: "Hawkeye Pierce", department: "Surgery"})
+    @homer = Patient.create({name: "Homer Simpson", age:38})
+    @appointment = Appointment.create({appointment_datetime: DateTime.new(2016, 03, 15, 18, 00, 0), patient: @homer, doctor: @hawkeye})
   end
 
-  it 'has a date and time' do
-    expect(@appointment.appointment_datetime.strftime('%B %d, %Y')).to eq('December 25, 2016')
+  it "should display an appointment's doctor" do
+    visit appointment_path(@appointment)
+    expect(page).to have_link("Hawkeye Pierce", href: doctor_path(@hawkeye))
   end
 
-  it 'belongs to a patient' do
-    expect(@appointment.doctor).to be(@mcdreamy)
+  it "should display an appointment's patient" do
+    visit appointment_path(@appointment)
+    expect(page).to have_link("Homer Simpson", href: patient_path(@homer))
   end
 
-  it 'belongs to a doctor' do
-    expect(@appointment.patient).to be(@patient)
+  it "should not have an index page" do
+    expect {visit('/appointments')}.to raise_error(ActionController::RoutingError)
   end
-
 end
