@@ -1,0 +1,5 @@
+<h1>Appointments:</h1>
+<% if @appointment %>
+<%= link_to @appointment.patient.name, @appointment.patient %>
+<%= link_to @appointment.doctor.name, @appointment.doctor %>
+<% end %>
