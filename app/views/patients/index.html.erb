@@ -1,0 +1,8 @@
+<h1>All the Patients!</h1>
+<ul>
+  <%= div_for(@patients, class: "patient-index-page") do |patient| %>
+    <h2>Name: <%= patient.name %></h2><br>
+    <p>Number of Appointments: <%= patient.appointments.length %></p><br>
+    <br>
+  <% end %>
+</ul>
