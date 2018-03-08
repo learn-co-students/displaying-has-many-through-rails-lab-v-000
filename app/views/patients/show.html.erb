@@ -1,0 +1,6 @@
+<h1><%= @patient.name %>'s appointments:</h1>
+<%= div_for(@patient.appointments, class: "patient-show-page") do |appt| %>
+  <p>
+    <%= appt.appointment_datetime.strftime("%B %d, %Y at %H:%M") %><%= link_to appt.doctor.name, doctor_path(appt.doctor) %>
+  </p>
+<% end %>

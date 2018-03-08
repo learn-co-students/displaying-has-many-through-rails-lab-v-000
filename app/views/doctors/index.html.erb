@@ -1,0 +1,3 @@
+<%= div_for(@doctors, class: "doctors-index-page") do |doctor| %>
+  <%= link_to doctor.name, doctor_path(doctor) %> has <%= doctor.patient_count %>
+<% end %>
