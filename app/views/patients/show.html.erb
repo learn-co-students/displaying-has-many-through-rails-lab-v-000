@@ -1,0 +1,4 @@
+Patient: <%=@patient.name%>
+<%@patient.appointments.each do |a| %>
+<div><%=link_to a.doctor.name, a.doctor%>, at <%=a.readable_time%></div>
+<% end %>
