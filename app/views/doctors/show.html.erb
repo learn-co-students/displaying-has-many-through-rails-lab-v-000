@@ -1,0 +1,8 @@
+<h1>Appointments and Patients</h1>
+
+<ul>
+    <% @appointments.each do |appointment| %>
+        <li><%= link_to "#{appointment.datetime_to_readable}" + " - " + "#{appointment.patient.name}", patient_path(appointment.patient) %></li>
+    <% end %>
+</ul>
+
