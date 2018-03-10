@@ -1,0 +1,6 @@
+<h1>Appointments</h1>
+
+<ul>
+    <li>Doctor: <%= link_to @appointment.doctor.name, doctor_path(@doctor) %></li>
+    <li>Patient: <%= link_to @appointment.patient.name, patient_path(@patient) %></li>
+</ul>
