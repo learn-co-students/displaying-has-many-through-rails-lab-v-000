@@ -1,0 +1,12 @@
+<h1>List of Patients</h1>
+
+<ul>
+  <% @patients.each_with_index do |patient, index| %>
+    <label style="font-weight: bold;">Patient <%= index + 1 %></label>
+    <li>Name: <%= patient.name %></li>
+    <li>Number of Appointments: <%= patient.appointments.count %></li>
+    <hr>
+  <% end %>
+</ul>
+
+<!-- displays a link to each patient's show page and the total number of appointments they have. -->
