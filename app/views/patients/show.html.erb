@@ -1,0 +1,12 @@
+<h1>Patient Show Page</h1>
+
+<ul>
+  <% @patient.appointments.each_with_index do |appointment, index| %>
+    <label style="font-weight: bold;">Appointment <%= index + 1 %></label>
+    <li>Date and Time: <%= appointment.readable_appointment_time %></li>
+    <li>Doctor: <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %></li>
+    <hr>
+  <% end %>
+</ul>
+
+<!-- (date and time for each of their appointments and links to the corresponding doctor's show page.) -->
