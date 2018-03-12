@@ -1,29 +1,31 @@
 class DoctorsController < ApplicationController
 	def index
-		@doctors = doctor.all
+		@doctors = Doctor.all
 	end
 
 	def show
-		@doctor = doctor.find(params[:id])
+		@doctor = Doctor.find(params[:id])
+		@patient = Patient.find(params[:id])
+		@doctor = Appointment.find(params[:id])
 	end
 
 	def new
-		@doctor = doctor.new
+		@doctor = Doctor.new
 		@patient = Patient.all
 	end
 
 	def create
-		doctor = doctor.create(params[:doctor])
+		doctor = Doctor.create(params[:doctor])
 		redirect_to doctor_path(doctor)
 	end
 
 	def edit
-		@doctor = doctor.find(params[:id])
+		@doctor = Doctor.find(params[:id])
 		@patient = Patient.all
 	end
 
 	def update
-		doctor = doctor.find(params[:id])
+		doctor = Doctor.find(params[:id])
 		doctor.update(params.require(:doctor))
 		redirect_to doctor_path(doctor)
 	end

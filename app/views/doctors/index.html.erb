@@ -1,7 +1,9 @@
-<h1>Doctors</h1>
+<h2>Doctors</h2>
 
 <ul>
-  <% @doctors.each do |d| %>
-    <li><%= link_to d.name, doctors_path(d) %></li>
-  <% end %>
+     <% @doctors.each do |doctor| %>
+     Name: <%= @pdoctor.name %>
+     Number of Appointments: <%= @appointment.ids %>
+  <li><%= link_to doctor.name, doctor_path(doctor) %></li>
+<% end %>
 </ul>
