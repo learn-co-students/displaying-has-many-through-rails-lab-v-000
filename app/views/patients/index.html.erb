@@ -2,8 +2,8 @@
 
 <ul>
      <% @patients.each do |patient| %>
-     Name: <%= @patient.name %>
-     Number of Appointments: <%= @appointment.id %>
+     Name: <%= patient.name %>
+     Number of Appointments: <%= appointment.id %>
   <li><%= link_to patient.name, patient_path(patient) %></li>
 <% end %>
 </ul>
