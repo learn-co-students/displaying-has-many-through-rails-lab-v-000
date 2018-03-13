@@ -5,8 +5,7 @@ class DoctorsController < ApplicationController
 
 	def show
 		@doctor = Doctor.find(params[:id])
-		@patient = Patient.find(params[:id])
-		@doctor = Appointment.find(params[:id])
+		
 	end
 
 	def new

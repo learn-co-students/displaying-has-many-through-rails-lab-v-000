@@ -2,10 +2,9 @@
 
 <ul>
 <% @appointments.each do |appointment| %>
- 
-  <li><%= appointment.doctor.name %><br> 
-    <li><%= link_to @doctor.name, doctors_path(appointment) %></li><br>
-      <li><%= appointment.patient.name %><br> 
-    <li><%= link_to @patient.name, patient_path(appointment) %></li>
+
+ <li><%= appointment.datetime %><br>
+  <li><%= @doctor.appointment %><br>
+      <li><%= @patient.appointment %><br>
 <% end %>
 </ul>
