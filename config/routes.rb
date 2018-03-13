@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get "appointments/:id", to: "appointments#show"
+  resources :doctors
+  resources :patients
   resources :doctors
   resources :patients
   resources :appointments, only: [:show]
