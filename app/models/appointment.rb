@@ -3,6 +3,6 @@ class Appointment < ActiveRecord::Base
   belongs_to :doctor
 
   def date_string
-    self.appointment_datetime.strftime('%B %e, %Y at %l:%M')
+    self.appointment_datetime.strftime('%B %e, %Y at %k:%M')
   end
 end

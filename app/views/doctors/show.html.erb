@@ -3,6 +3,6 @@
 <h2><%= @doctor.department %></h2>
 
 <% @doctor.appointments.each do |appointment| %>
-  <h4><%= appointment.patient.name %></h4>
+  <h4><%= link_to appointment.patient.name, patient_path(appointment.patient) %></h4>
   <h4><%= appointment.date_string %></h4>
 <% end %>
