@@ -1,7 +1,7 @@
 <h3>Appointments</h2>
 
 <ul>
-<% Appointment.all.each do |appointment| %>
+<% @appointments.each do |appointment| %>
 
  <li><%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %><br>
   <li><%= link_to appointment.patient_id, patients_path(@patient)  %><br>
