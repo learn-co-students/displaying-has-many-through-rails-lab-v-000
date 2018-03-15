@@ -3,9 +3,8 @@
 <h3>Appointments</h2>
 
 <ul>
-<% Appointment.all.each do |appointment| %>
-  <li><%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %><br>
+<% @patient.appointments.each do |appointment| %>
+<li><%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %><br>
     <li><%= link_to appointment.doctor.name, doctors_path(@doctor) %></li>
-    <li><%= link_to appointment.patient.name, patients_path(@patient) %></li>
 <% end %>
 </ul>

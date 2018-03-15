@@ -5,11 +5,14 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-  
+
   end
 
   def new
     @patient = Patient.new
+    @patient.appointments.build(appointment_datetime: params[:appointment_datetime])
+   @patient.appointments.build(doctor_id: params[:doctor_id])
+    @doctors = Doctor.all
   end
 
   def create
