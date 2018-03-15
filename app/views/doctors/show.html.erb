@@ -2,9 +2,9 @@
 
 <ul>
 <% Doctor.all. each do |doctor| %>
-  <li><%= doctor.appointments %><br>
+  <li><%= doctor.appointments.appointment_datetime %><br>
   <li><%= doctor.patients.name %><br>
-    <li><%= link_to doctor.patients, patients_path(@patient) %></li>
+    <li><%= link_to doctor.patients.name, patients_path(patient) %></li>
 
 
 <% end %>
