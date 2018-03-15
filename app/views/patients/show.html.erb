@@ -4,8 +4,8 @@
 
 <ul>
 <% @patient.appointments.each do |appointment| %>
-  <li><%= appointment.appointment_datetime %><br>
-  <li><%= appointment.doctor.name %><br>
-    <li><%= link_to @doctor.name, doctors_path(appointment) %></li>
+  <li><%= @appointment.appointment_datetime %><br>
+    <li><%= link_to @appointment.doctor_id, doctors_path(@doctor) %></li>
+    <li><%= link_to @appointment.patient_id, patient_path(@patient) %></li>
 <% end %>
 </ul>
