@@ -1,0 +1,7 @@
+<% Doctor.all.each do |doctor| %>
+  <%= link_to doctor.name, doctor_path(doctor) %>
+<% end %>
+
+<% Patient.all.each do |patient| %>
+  <%= link_to patient.name, patient_path(patient) %>
+<% end%>
