@@ -1,0 +1,13 @@
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/displaying-has-many-through-lab/.bundle/gems/json-1.8.6/ext/json
+/Users/mikekruszewski/.rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20180321-63195-1ke3zfk.rb extconf.rb
+creating Makefile
+
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/displaying-has-many-through-lab/.bundle/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/displaying-has-many-through-lab/.bundle/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/displaying-has-many-through-lab/.bundle/gems/json-1.8.6/ext/json
+make "DESTDIR=" install
