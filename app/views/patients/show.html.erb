@@ -1,6 +1,6 @@
 <ul>
   <%= @patient.appointments.each do |appointment| %>
   <li>Date: <%= appointment.appointment_datetime %></li>
-  <li>Doctor: <%= link_to appointment.doctor.name doctor_path(appointment.doctor) %></li>
+  <li>Doctor: <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %></li>
   <% end %>
 </ul>

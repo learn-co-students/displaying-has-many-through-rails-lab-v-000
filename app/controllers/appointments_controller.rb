@@ -4,8 +4,10 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
-  def create
+  def index
   end
+
+  
 
 end
 
