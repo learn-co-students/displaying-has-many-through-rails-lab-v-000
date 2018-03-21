@@ -5,6 +5,6 @@ def index
  end
 
 def show
-   @doctors = Doctor.find(params[:id])
+   @doctor = Doctor.find(params[:id])
  end
 end
