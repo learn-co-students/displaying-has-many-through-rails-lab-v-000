@@ -1,0 +1,4 @@
+<h1>Doctors Directory</h1>
+<%Doctor.all.each do |doctor|%>
+<p><%=link_to doctor.name, doctor_path(doctor)%></p>
+<%end%>
