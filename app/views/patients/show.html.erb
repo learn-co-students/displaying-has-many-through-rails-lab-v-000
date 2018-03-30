@@ -1,0 +1,5 @@
+<ul>
+  <% @patient.appointments.each do |appointment| %>
+    <li><%= link_to appointment.doctor.name, doctor_path(appointment.doctor_id)%> at <%= appointment.normaltime%></li>
+  <% end %>
+</ul>
