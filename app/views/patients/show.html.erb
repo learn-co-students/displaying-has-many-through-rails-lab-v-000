@@ -1,7 +1,7 @@
-<% Appointment.all.each do |appointment| %>
+<% @patient.appointments.each do |appointment| %>
   <%= appointment.datetime_in_human_readable_format %>
 <% end %>
 
-<% Doctor.all.each do |doctor| %>
+<% @patient.doctors.each do |doctor| %>
   <%= link_to doctor.name, doctor_path(doctor) %>
 <% end %>
