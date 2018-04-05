@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <ul>
+    <% @doctors.each do |doctor|%>
+       <li> Name: <%= link_to doctor.name, doctor_path(doctor)%> <%= doctor.patient_count%></li>
+    <%end%>
+    </ul>
+</body>
+
+</html>
+
