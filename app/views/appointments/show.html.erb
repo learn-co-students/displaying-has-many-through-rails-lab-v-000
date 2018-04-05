@@ -1,0 +1,7 @@
+<!-- shows the date, time, patient, and doctor for that particular appointment. -->
+
+<h3>Appointment on <%= @appointment.appointment_datetime.strftime("%B %-d, %Y") %> at <%= @appointment.appointment_datetime.strftime("%H:%M") %></h3>
+
+Doctor: <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor.id)%><br>
+Department: <%= @appointment.doctor.department %><br>
+Patient: <%= link_to @appointment.patient.name, patient_path(@appointment.patient.id) %>
