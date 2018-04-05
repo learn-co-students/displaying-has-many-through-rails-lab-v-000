@@ -1,0 +1,5 @@
+# Illustration available here: https://i.imgur.com/YIUhixA.png
+class Doctor < ActiveRecord::Base
+  has_many :appointments
+  has_many :patients, through: :appointments
+end
