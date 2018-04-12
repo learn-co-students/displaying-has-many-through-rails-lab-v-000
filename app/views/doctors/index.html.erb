@@ -1,0 +1,13 @@
+<!-- displays each doctor's name, a link to their show page, and a count of their patients. -->
+<h2>Doctors</h2>
+<ul>
+  <% @doctors.each do |doctor| %>
+    <li>
+      <p>
+        <%= link_to doctor.name, doctor %>
+        <br>
+        Patients: <%= doctor.patient_count %>
+      </p>
+    </li>
+  <% end %>
+</ul>
