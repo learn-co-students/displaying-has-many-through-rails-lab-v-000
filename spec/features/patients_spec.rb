@@ -34,7 +34,7 @@ describe "patients", type:  :feature do
 
   describe "#index page" do
     it 'lists all of the patients and the number of appointments they have' do
-      visit patients_path
+      visit patients_path_url
       within("ul") do
         expect(page).to have_content("Name: Marge Simpson Number of Appointments: 2")
         expect(page).to have_content("Name: Bart Simpson Number of Appointments: 1")
@@ -44,13 +44,13 @@ describe "patients", type:  :feature do
 
   describe "#show page" do
     it "shows all of a patient's appointment times in a human readable format" do
-      visit patient_path(@bart)
+      visit patient_path_url(@bart)
       expect(page).to have_content("January 11, 2016 at 20:20")
     end
 
     it "links to the doctor's show page by name for the doctor of each appointment" do
-      visit patient_path(@bart)
-      expect(page).to have_link("Meredith Grey", href: doctor_path(@meredith))
+      visit patient_path_url(@bart)
+      expect(page).to have_link("Meredith Grey", href: doctor_path_url(@meredith))
     end
   end
 
