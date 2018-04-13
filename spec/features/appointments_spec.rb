@@ -8,13 +8,13 @@ describe "appointments", type:  :feature do
   end
 
   it "should display an appointment's doctor" do
-    visit appointment_path(@appointment)
-    expect(page).to have_link("Hawkeye Pierce", href: doctor_path(@hawkeye))
+    visit appointment_path_url(@appointment)
+    expect(page).to have_link("Hawkeye Pierce", href: doctor_path_url(@hawkeye))
   end
 
   it "should display an appointment's patient" do
-    visit appointment_path(@appointment)
-    expect(page).to have_link("Homer Simpson", href: patient_path(@homer))
+    visit appointment_path_url(@appointment)
+    expect(page).to have_link("Homer Simpson", href: patient_path_url(@homer))
   end
 
   it "should not have an index page" do

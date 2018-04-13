@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :doctors
-  resources :patients
-  resources :appointments, only: [:show]
+  get 'appointments/:id', to: 'appointments#show', as: :appointment_path
+
+  get 'patients/index', to: 'patients#index', as: :patients_path
+
+  get 'patients/:id', to: 'patients#show', as: :patient_path
+
+  get 'doctors/:id', to: 'doctors#show', as: :doctor_path
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

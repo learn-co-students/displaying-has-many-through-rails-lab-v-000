@@ -9,13 +9,13 @@ describe "doctors", type: :feature do
 
   describe "#show page" do
     it "shows all of a doctor's appointment times in a human readable format" do
-      visit doctor_path(@meredith)
+      visit doctor_path_url(@meredith)
       expect(page).to have_content("January 11, 2016 at 20:20")
     end
 
     it "links to the patient's show page by name for each appointment" do
-      visit doctor_path(@meredith)
-      expect(page).to have_link("Bart Simpson", href: patient_path(@bart))
+      visit doctor_path_url(@meredith)
+      expect(page).to have_link("Bart Simpson", href: patient_path_url(@bart))
     end
   end
 end
