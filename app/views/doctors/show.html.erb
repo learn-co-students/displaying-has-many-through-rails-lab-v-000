@@ -3,5 +3,5 @@
 <h3>Upcoming Appointments</h3>
 
 <% @doctor.appointments.each do |appointment| %>
-<%= link_to appointment.appointment_datetime.strftime("%B %-d, %Y at %H:%M"), post_path(post) %>
+<%= link_to appointment.appointment_datetime.strftime("%B %-d, %Y at %H:%M"), appointment_path(appointment) %>
 <% end %>
