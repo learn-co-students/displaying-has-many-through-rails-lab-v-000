@@ -2,8 +2,8 @@
  <% @appointments.each do |appt|%>
  	<%pat = appt.patient%>
  	<%tme = appt.appointment_datetime.to_formatted_s(:long)%>
- 	<%binding.pry%>
- 	<li><%=link_to pat.name, pat %> <%=appt.appointment_datetime.to_formatted_s(:long)%></li>
+ 	<%tme.insert(-6,"at ")%>
+ 	<li><%=link_to pat.name, pat %> <%=tme%></li>
  <%end%>
 </ul>
 
