@@ -1,0 +1,15 @@
+<h2> <%= @doctor.name %></h2>
+<h3> <%= @doctor.department %></h3>
+
+<ul>
+<% @doctor.appointments.each do |appointment| %>
+  <li><%= "#{appointment_datetime} - #{appointment.patient}" %></li>
+<% end %>
+</ul>
+
+<!--	 []	displays the doctor's name
+	 []	department
+	 []	appointments with each appointment's 
+		[]	date
+		[]	time
+		[]	patient name (linking to the patient's show page) -->
