@@ -15,6 +15,7 @@ class DoctorsController < ApplicationController
 
 	def show
 		@doctor = Doctor.find(params[:id])
+
 	end
 
 	def update
@@ -31,7 +32,7 @@ class DoctorsController < ApplicationController
 
 	private
 	def doctor_params
-    params.require(:doctor).permit(:name, :department, appointment_attributes: [:id, :datetime])
+    params.require(:doctor).permit(:name, :department)
   	end
 
 end

@@ -8,6 +8,10 @@
 
 	 <ul>
 <% @doctors.each do |doctor| %>
-  <li><%= link_to doctor.name, doctor %></li>
+  <li>
+  	<%= doctor_path(@doctor_id) %>
+  	"Number of patients:" 
+  	<%= Patient.count(:all) %>
+  </li>
 <% end %>
 </ul>

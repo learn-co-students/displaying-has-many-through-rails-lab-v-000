@@ -3,7 +3,7 @@
 
 <ul>
 <% @doctor.appointments.each do |appointment| %>
-  <li><%= "#{appointment_datetime} - #{appointment.patient}" %></li>
+  <li><%= @appointment.appointment_datetime.t_datetime"(("%B %d, %Y") "at" ("%H:%M"))" - @appointment.patient %></li>
 <% end %>
 </ul>
 
