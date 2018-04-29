@@ -3,12 +3,12 @@ require 'pry'
 
 <h2> Appointments </h2>
 	<%= link_to doctor_path(@doctor_id) %>
-	<%= @appointment_datetime.t_datetime'(("%B %d, %Y") "at" ("%H:%M"))' %>
+	<%= @appointment_datetime"(("%B %d, %Y") "at" ("%H:%M"))" %>
   	
   	<%= link_to patient_path(@patient_id) %> 
 
 
-
+<% end %>
 
 <!--show doctor, date, time ("May 15, 2018 at 3:00"), patient
  appointments should display an appointment's doctor
