@@ -6,6 +6,7 @@ class PatientsController < ApplicationController
 
 	def show
 		@patient = Patient.find(params[:id])
+		redirect_to :patients
 	end
 
 	def index

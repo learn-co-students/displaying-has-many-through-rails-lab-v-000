@@ -1,1 +1,11 @@
-index.html.erb
+<h1>Patients</h1>
+
+	 <ul>
+<% @patients.each do |patient| %>
+  <li>
+  	<%= patients_path(@patient_id) %>
+  	"Number of appointments:" 
+  	<%= Appointment.count(:all) %>
+  </li>
+<% end %>
+</ul>

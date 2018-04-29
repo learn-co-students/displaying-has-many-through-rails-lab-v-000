@@ -9,7 +9,7 @@
 	 <ul>
 <% @doctors.each do |doctor| %>
   <li>
-  	<%= doctor_path(@doctor_id) %>
+  	<%= doctors_path(@doctor_id) %>
   	"Number of patients:" 
   	<%= Patient.count(:all) %>
   </li>
