@@ -3,5 +3,6 @@
 
 <% @doctor.appointments.each do |appointment| %>
   <%binding.pry%>
-  <h2> <%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %> </h2>
+  <h2>Appointment Time: <%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %> </h2>
+  <h2>Patient Name:  <%= link_to appointment.patient.name, patient_path(appointment.patient) %> </h2>
 <%end%>
