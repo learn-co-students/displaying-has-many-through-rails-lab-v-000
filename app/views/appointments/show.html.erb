@@ -1,16 +1,8 @@
 <h2> Appointments </h2>
-	<%= link_to doctors_path(@doctor_id) %>
-	binding.pry
+
+	<% appointments.each do |appointment| %>
 	<%= @appointment_datetime.strftime(("%B %d, %Y") at ("%H:%M")) %>
-  	
-  	<%= link_to patients_path(@patient_id) %> 
-
-
-<% end %>
-
-<!--show doctor, date, time ("May 15, 2018 at 3:00"), patient
- appointments should display an appointment's doctor
- appointments should display an appointment's patient
- appointments should not have an index page
- -->
+		<%= "#{doctor.name} - #{doctor.department}" %>
+		<%= "#{patient.name} - #{patient.age}" %>
+	<% end %>
 

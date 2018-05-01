@@ -1,11 +1,11 @@
 <h1>Patients</h1>
 
-	 <ul>
-<% @patients.each do |patient| %>
-  <li>
-  	<%= patients_path(@patient_id) %>
-  	"Number of appointments:" 
-  	<%= Appointment.count(:all) %>
-  </li>
-<% end %>
+	<ul>
+		<% @patients.each do |patient| %>
+  	<li>
+  			<%= patient_path(@patient.name) %>
+  			"Number of appointments:" 
+  			<%= Appointment.count(:all) %>
+  	</li>
+	<% end %>
 </ul>

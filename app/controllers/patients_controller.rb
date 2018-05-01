@@ -2,6 +2,7 @@ class PatientsController < ApplicationController
 
 	def new
 		@patient = Patient.new
+		redirect_to :patient
 	end
 
 	def show
@@ -11,10 +12,12 @@ class PatientsController < ApplicationController
 
 	def index
 		@patients = Patient.all 
+		redirect_to :patients
 	end
 
 	def create
-
+		@patient = Patient.create(params[:id])
+		redirect_to :patient
 	end
 
 	def update
@@ -23,7 +26,7 @@ class PatientsController < ApplicationController
 	private
 
 	def patient_params
-		params.require(:patient).permit(:name, :age)
+		params.require(:patient).permit(:name, :age, doctor_attributes: [:name, :department], appointment_attributes: [:day, :date, :hour, :min])
 	end
 
 	
