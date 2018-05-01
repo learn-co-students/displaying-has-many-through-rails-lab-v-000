@@ -3,5 +3,6 @@
 <ul>
   <%@patient.appointments.each do |appointment| %>
     <li>Time: <%=appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %> </li>
+    <li> <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %> </li>
   <% end %>
 </ul>
