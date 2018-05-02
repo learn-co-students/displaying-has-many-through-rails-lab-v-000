@@ -1,8 +1,8 @@
 <h1>Patients</h1>
 
-	<% patient.appointment.each do |patient| %>
+	<% patient.each do |patient| %>
 	<%= @appointment_datetime.strftime(("%B %d, %Y") at ("%H:%M")) %>
-	<%= doctor_path(@doctor.name) %>
+	<%= doctor_path(@doctor) %>
 
 	<% end %>
 

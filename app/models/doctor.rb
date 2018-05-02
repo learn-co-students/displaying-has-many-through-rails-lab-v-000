@@ -8,7 +8,7 @@ class Doctor < ActiveRecord::Base
   		end
   	end
 
-  	def appointments_attributes=(appointment_attributes)
+  	def appointment_attributes=(appointment_attributes)
   			self.appointment = Appointment.where(:appointment_datetime => appointment_attributes[:appointment_datetime]).first_or_create do
   		end
   	end

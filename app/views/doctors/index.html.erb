@@ -1,15 +1,9 @@
 <h1>Doctors</h1>
 
-<!-- [] displays each doctor's name
-	 []	a link to their show page
-	 []	a count of their patients
-
-	 -->
-
-	 <ul>
-<% @doctors.each do |doctor| %>
+<ul>
+<% @doctors.name.each do |doctor| %>
   <li>
-  	<%= doctors_path(@doctor_id) %>
+  	<% doctors_path(@doctor_id) %>
   	"Number of patients:" 
   	<%= Patient.count(:all) %>
   </li>
