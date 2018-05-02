@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
 
 	def show
 		@appointment = Appointment.find(params[:id])
-		redirect_to :appointment
+		redirect_to :appointments
 	end
 
 	# def update

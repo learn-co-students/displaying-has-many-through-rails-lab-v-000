@@ -4,7 +4,7 @@
 	<% @doctor.appointments.each do |appointment| %>
 	<li> <%= @doctor.name doctor_path(@doctor)%></li>
 	<li> <%= @patient.name patient_path(@patient) %>
-  	<li><%= @appointment_datetime.t_datetime"(("%B %d, %Y") "at" ("%H:%M"))" %> "-" <%= @appointment.patient %></li>
+  	<li><%= @appointment_path.t_datetime"(("%B %d, %Y") "at" ("%H:%M"))" %> "-" <%= @appointment.patient %></li>
 	<% end %>
 </ul>
 

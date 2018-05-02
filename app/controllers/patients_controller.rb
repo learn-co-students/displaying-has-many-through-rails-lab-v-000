@@ -1,9 +1,9 @@
 class PatientsController < ApplicationController
 
-	def new
-		@patient = Patient.new
-		redirect_to :patient
-	end
+	# def new
+	# 	@patient = Patient.new
+	# 	redirect_to :patient
+	# end
 
 	def show
 		@patient = Patient.find(params[:id])
@@ -15,13 +15,13 @@ class PatientsController < ApplicationController
 		redirect_to :patients
 	end
 
-	def create
-		@patient = Patient.create(params[:id])
-		redirect_to :patient
-	end
+	# def create
+	# 	@patient = Patient.create(params[:id])
+	# 	redirect_to :patient
+	# end
 
-	def update
-	end
+	# def update
+	# end
 
 	private
 
