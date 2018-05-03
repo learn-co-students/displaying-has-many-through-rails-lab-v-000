@@ -1,23 +1,12 @@
-<h2><%= @doctor.name %></h2>
+<h2><%= @doctor.name, @doctor.department %></h2>
 	has these appointments
 <ul>
 	<% @doctor.appointments.each do |appointment| %>
-	<li> <%= @doctor.name doctor_path(@doctor)%></li>
-	<li> <%= @patient.name patient_path(@patient) %>
-  	<li><%= @appointment_path.t_datetime"(("%B %d, %Y") "at" ("%H:%M"))" %> "-" <%= @appointment.patient %></li>
+	<li> <% link_to doctor_path(@doctor)%></li>
+	<li> <% link_to patient_path(@patient) %>
+  	<li><% @appointment_path.t_datetime"(("%B %d, %Y") "at" ("%H:%M"))" %> "-" <%= @appointment.patient %></li>
 	<% end %>
 </ul>
 
 
 
-<!--  <li><%= "#{ingredient.name} - #{ingredient.quantity}" %></li>
-<% end %>
-</ul>
-
-# app/views/users/show.html.erb
- 
-<h2><%= @user.username %> </h2> has commented on the following posts:
- 
-<% @user.posts.each do |post| %>
-  <%= link_to post.title, post_path(post) %>
-<% end %>

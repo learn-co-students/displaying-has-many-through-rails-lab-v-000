@@ -1,9 +1,9 @@
 <h1>Doctors</h1>
 
 <ul>
-<% @doctors.name.each do |doctor| %>
+<% @doctors.each do |doctor| %>
   <li>
-  	<% doctors_path(@doctor_id) %>
+  	<%= doctor.name %>
   	"Number of patients:" 
   	<%= Patient.count(:all) %>
   </li>

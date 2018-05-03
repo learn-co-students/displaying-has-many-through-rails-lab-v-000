@@ -3,9 +3,9 @@
 	<ul>
 		<% @patients.each do |patient| %>
   	<li>
-  			<%= patient_path(@patient.name) %>
+  			<%= patient.name %>
   			"Number of appointments:" 
-  			<%= Appointment.count(:all) %>
+  			<%= patient.appointments.count %>
   	</li>
 	<% end %>
 </ul>
