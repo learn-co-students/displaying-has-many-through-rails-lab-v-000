@@ -22,16 +22,16 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 
 2. 	Create a Doctor#index page that 
 	 [x] displays each doctor's name
-	 []	a link to their show page
+	 [x]	a link to their show page
 	 [x]	a count of their patients
 
 3.	Create a Doctor#show page that 
-	 []	displays the doctor's name
-	 []	department
-	 []	appointments with each appointment's 
-		[]	date
-		[]	time
-		[]	patient name (linking to the patient's show page)
+	 [x]	displays the doctor's name
+	 [x]	department
+	 [x]	appointments with each appointment's 
+		[x]	date
+		[x]	time
+		[x]	patient name (linking to the patient's show page)
 
 
 4.	Create a Patient#show page that 

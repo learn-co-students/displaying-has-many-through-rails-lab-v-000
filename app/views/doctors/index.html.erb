@@ -3,7 +3,7 @@
 <ul>
 <% @doctors.each do |doctor| %>
   <li>
-  	<%= link_to doctor.name %>:
+  	Name: <%= link_to doctor.name %>:
   	Number of patients: 
   	<%= Patient.count(:all) %>
   </li>
