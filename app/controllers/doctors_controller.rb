@@ -16,7 +16,6 @@ class DoctorsController < ApplicationController
 
 	def show
 		@doctor = Doctor.find(params[:id])
-		redirect_to :doctors
 	end
 
 	# def update
@@ -31,9 +30,9 @@ class DoctorsController < ApplicationController
 	# def edit
 	# end
 
-	# private
-	# def doctor_params
- #    params.require(:doctor).permit(:name, :department, patient_attributes: [:name, :age], appointment_attributes: [:day, :date, :hour, :min])
- #  	end
+	private
+	def doctor_params
+    params.require(:doctor).permit(:name, :department, patient_attributes: [:name, :age], appointment_attributes: [:day, :date, :hour, :min])
+  	end
 
 end

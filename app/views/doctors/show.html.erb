@@ -1,12 +1,20 @@
-<h2><%= @doctor.name, @doctor.department %></h2>
+<h2> Appointments by Doctor's Names </h2>
+
+	<%= doctor.name, doctor.department %>
 	has these appointments
-<ul>
-	<% @doctor.appointments.each do |appointment| %>
-	<li> <% link_to doctor_path(@doctor)%></li>
-	<li> <% link_to patient_path(@patient) %>
-  	<li><% @appointment_path.t_datetime"(("%B %d, %Y") "at" ("%H:%M"))" %> "-" <%= @appointment.patient %></li>
-	<% end %>
-</ul>
+	<%= link_to doctor.appointment_datetime.strftime(("%A, %B %d, %Y") at ("%H:%M")) %> 
+	<%= link_to doctor.patient.name %> 
+	
 
 
 
+
+
+		
+	<!--Create a Doctor#show page that 
+	 []	displays the doctor's name
+	 []	department
+	 []	appointments with each appointment's 
+		[]	date
+		[]	time
+		[]	patient name (linking to the patient's show page) -->

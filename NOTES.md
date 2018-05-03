@@ -18,7 +18,7 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 		belongs_to doctors
 		belongs_to patients
 
-	[x]	appointment_datetime (string?) displays "May 15, 2018 at 3:00"
+	[]	appointment_datetime (string?) displays "May 15, 2018 at 3:00"
 
 2. 	Create a Doctor#index page that 
 	 [x] displays each doctor's name
@@ -41,7 +41,7 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 
 5.	Create a Patient#index page that 
 	 []	displays a link to each patient's show page 
-	 []	displays the total number of appointments they have
+	 [x]	displays the total number of appointments they have
 
 6.	Create an Appointment#show page that 
 	[]	shows the date
