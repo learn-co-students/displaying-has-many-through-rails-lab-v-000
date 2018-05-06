@@ -13,7 +13,7 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = doctor.create(doctor_params)
+    @doctor = Doctor.create(doctor_params)
      redirect_to doctor_path(@doctor)
    end
 
