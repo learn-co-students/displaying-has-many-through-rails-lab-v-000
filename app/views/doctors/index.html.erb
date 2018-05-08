@@ -1,0 +1,6 @@
+<!-- Create a Doctor#index page that displays each doctor's name,
+ a link to their show page, and a count of their patients. -->
+<% @doctors.each do |doc| %>
+  <p><%= link_to doc.name, doctor_path(doc) %></p>
+  <p> Total patients: <%= doc.patients.count %></p>
+<% end %>
