@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Appointment datetime:</strong>
+  <%= @appointment.appointment_datetime.strftime("%B %d, %Y at %H:%I") %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= link_to @appointment.patient.name, patient_path(@appointment.patient) %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
+</p>
+
+
+anuary 11, 2016 at 20:20
