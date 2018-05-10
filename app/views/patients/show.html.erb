@@ -1,0 +1,4 @@
+<%= @patient.appointments.each do |appointment| %>
+<%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
+<%= link_to @doctor.name, doctor_path(@doctor) if @doctor.id == appointment.doctor_id %>
+<% end %>
