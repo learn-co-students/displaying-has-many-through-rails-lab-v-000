@@ -1,0 +1,4 @@
+<% @patient.appointments.each do |appt| %>
+  <%= appt.appointment_datetime.to_formatted_s(:long).gsub(/(\d) (\d)/, '\1 at \2') %>
+  <%= link_to appt.doctor.name, doctor_path(appt.doctor) %>
+<%end%>
