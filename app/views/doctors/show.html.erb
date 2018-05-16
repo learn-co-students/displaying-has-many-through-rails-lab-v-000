@@ -1,0 +1,8 @@
+<% require 'date' %>
+<% @doctor.appointments.each do |a| %>
+<%= a.appointment_datetime.to_datetime.strftime('%B %d, %Y at %H:%M') %>
+<% end %>
+<br>
+<%= @doctor.patients.each do |p| %>
+<%= link_to p.name, patient_path(p)%>
+<% end %>
