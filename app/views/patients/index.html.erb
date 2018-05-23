@@ -1,0 +1,7 @@
+<h1>Registered Patients at Seattle Grace Hospital</h1>
+<ul>
+  <% @patients.each do | patient | %>
+    <li> <%= "Name: #{patient.name} Number of Appointments: #{patient.appointments.length}" %> </li>
+  <% end %>
+</ul>
+</table>
