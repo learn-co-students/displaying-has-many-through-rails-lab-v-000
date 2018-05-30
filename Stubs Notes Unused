@@ -1,0 +1,45 @@
+class Appointment < ActiveRecord::Base
+    belongs_to :doctor
+    belongs_to :patient  
+end
+
+class Doctor < ActiveRecord::Base
+    has_many :patients
+    has_many :appointments
+    has_many :appointments, through: :patient_appointments
+end
+
+class Patient < ActiveRecord::Base
+    belongs_to :doctor
+    has_many :appointments
+    has_many :appointments, through: :patient_appointments
+end
+
+ActiveRecord::Schema.define(version: 20180529200410) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "appointment_datetime"
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.string  "name"
+    t.string  "department"
+    t.integer "patient_id"
+    t.integer "appointment_id"
+  end
+
+  create_table "patient_appointments", force: :cascade do |t|
+    t.integer "patient_id"
+    t.integer "doctor_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string  :name
+    t.string  :age
+    t.integer :doctor_id
+    t.integer :appointment_id
+  end
+
+end
+
+
