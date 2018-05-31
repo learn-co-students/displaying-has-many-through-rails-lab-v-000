@@ -1,0 +1,7 @@
+<%= @doctor.name %>
+<%= @doctor.department %>
+
+<% @doctor.appointments.each do |appt| %>
+  <%= appt.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
+  <%= link_to @patient.name, @patient if appt.patient_id == @patient.id %> 
+<% end %>
