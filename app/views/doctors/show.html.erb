@@ -1,0 +1,10 @@
+
+<ul>
+<li>Doctor Name: <%= @doctor.name %></li>
+<li>Doctor Department: <%= @doctor.department %></li>
+<br>
+<% @doctor.appointments.map do |apt| %>
+<li>Appointment time: <%= apt.appointment_datetime.strftime("%B %d, %Y at %H:%M") %></li>
+<li>Patient Name: <%= link_to apt.patient.name, patient_path(apt.patient.id) %></li>
+<% end %>
+</ul>
