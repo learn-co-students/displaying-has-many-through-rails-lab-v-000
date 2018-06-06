@@ -28,6 +28,7 @@ class DoctorsController < ApplicationController
 
   def doctor_params
     params.require(:doctors).permit(:name, :department, :accepts_nested_attributes_for [
+      :id,
       :appointment_datetime,
 
       ])
