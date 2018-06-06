@@ -9,7 +9,7 @@ class DoctorsController < ApplicationController
   end
 
   def new
-
+    @doctor = Doctor.new
   end
 
   def edit
@@ -17,7 +17,7 @@ class DoctorsController < ApplicationController
   end
 
   def show
-
+    @doctor = Doctor.find(params[:id])
   end
 
   def update
@@ -27,7 +27,10 @@ class DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.require(:doctors).permit(:name, :department)
+    params.require(:doctors).permit(:name, :department, :accepts_nested_attributes_for [
+      :appointment_datetime,
+
+      ])
   end
 
 end
