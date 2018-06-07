@@ -5,7 +5,7 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @appointment = appointment.new
+    @appointment = Appointment.new
   end
 
   def edit
@@ -13,8 +13,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointment = appointment.find(params[:id])
-    binding.pry
+    @appointment = Appointment.find(params[:id])
   end
 
   def update
@@ -24,8 +23,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointments).permit(:name, :age)
+    params.require(:appointments).permit(:appointment_datetime, accepts_nested_attributes_for: [:name, :department])
   end
 
-end
 end
