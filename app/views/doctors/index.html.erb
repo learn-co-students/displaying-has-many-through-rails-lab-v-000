@@ -1,0 +1,4 @@
+<%= @doctor.each do |doc| %>
+<%= link_to doc.name, doc_path(doc) %>
+Number of Patients: <%= doc.patients.count %>
+<% end %>
