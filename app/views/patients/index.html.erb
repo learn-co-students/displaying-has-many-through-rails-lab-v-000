@@ -1,0 +1,10 @@
+<!-- Displays a link to each patient's show page and the total number of appointments they have. -->
+
+<h1>Seattle Grace Hospital - List of Patients</h1>
+
+<ul>
+  <% @patients.each do |patient| %>
+  <h3><li>Patient Name: <%= link_to patient.name, patient_path(patient) %></li></h3>
+  <li>Number of Appointments: <%= patient.appointments.count %></li>
+  <% end %>
+</ul>
