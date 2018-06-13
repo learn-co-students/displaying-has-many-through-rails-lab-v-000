@@ -1,0 +1,5 @@
+<h1>Doctors#index</h1>
+
+<% @doctors.each do |doc| %>
+  <%= link_to "#{doc.name} - #{doc.appointment_count} appointments" %> 
+<% end %>
