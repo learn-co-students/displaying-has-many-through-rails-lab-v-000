@@ -1,0 +1,7 @@
+<h1>Seattle Grace Hospital - Patients </h1>
+
+<ul>
+  <% @patients.each do |patient| %>
+    <li><%= link_to "Name: #{patient.name} Number of Appointments: #{patient.appt_count}", patient_path(patient)%></li>
+  <% end %>
+</ul>
