@@ -1,0 +1,5 @@
+<% @doctors.each do |doctor| %>
+  <% doctor.appointments.each.with_index(1) do |app, i| %>
+    <p><%= app.appointment_datetime.strftime('%c') %></p>
+  <% end %>
+<% end %>
