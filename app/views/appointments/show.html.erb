@@ -1,4 +1,4 @@
-<h3><%= @appointment.appointment_datetime %></h3>
+<h3><%= DateTime.parse(@appointment.appointment_datetime).strftime("%B %e, %Y at %H:%M") %></h3>
 <br>
 <h4><%= link_to @appointment.patient.name, patient_path(@appointment.patient) %></h4>
 <br>
