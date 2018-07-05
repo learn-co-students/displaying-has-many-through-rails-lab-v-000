@@ -1,0 +1,5 @@
+<ul>
+  <%@doctor.apps_sort_by_patient.each do |app|%>
+    <li><%=app.readable_time%> - <%=link_to app.patient.name, patient_path(app.patient)%></li>
+  <% end %>
+</ul>
