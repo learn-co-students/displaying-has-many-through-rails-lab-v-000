@@ -1,0 +1,6 @@
+<%= @patient.name %>
+<ul>
+  <% @patient.appointments.each do |app| %>
+    <li><%= app.d_normalize %> - <%= link_to app.doctor.name, doctor_path(app.doctor) %></li>
+  <% end %>
+</ul>
