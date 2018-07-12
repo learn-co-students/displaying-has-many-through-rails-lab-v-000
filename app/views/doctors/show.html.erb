@@ -1,0 +1,8 @@
+<h1>Show Doctor</h1>
+
+<h2><%= @doctor.name %> </h2>
+
+<% @doctor.appointments.each do |appointment| %>
+  <%= appointment.appointment_datetime
+  <%= link_to post.title, post_path(post) %>
+<% end %>
