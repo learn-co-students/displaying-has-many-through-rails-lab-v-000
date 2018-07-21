@@ -1,0 +1,5 @@
+<%= link_to @appointment.patient_name, patient_path(@appointment.patient)%>
+<br>
+<%=link_to @appointment.doctor_name, doctor_path(@appointment.doctor)%>
+<br>
+<%=@appointment.display_appointment%>
