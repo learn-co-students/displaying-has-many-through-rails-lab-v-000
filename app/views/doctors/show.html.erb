@@ -1,8 +1,16 @@
-<h1><%= @doctor.name %></h1>
+<!-- <h1><%= @doctor.name %></h1>
 <h3><%= @doctor.department %></h3>
 <h3><%= pluralize(@doctor.appointment_count, 'Appointment') %></h3>
 <ul>
   <% @doctor.appointments.each do |appt| %>
     <li><%= appt.readable_datetime %> - <%= link_to appt.patient_name, patient_path(appt.patient) %></li>
   <% end %>
-</ul>
+</ul> -->
+<div>
+<%= @doctor.name %></br>
+<%= @doctor.department %></br>
+<%= pluralize(@doctor.appointment_count, 'Appointment') %></br>
+  <% @doctor.appointments.each do |appt| %>
+    <%= appt.readable_datetime %> - <%= link_to appt.patient_name, patient_path(appt.patient) %></br>
+  <% end %>
+</div>

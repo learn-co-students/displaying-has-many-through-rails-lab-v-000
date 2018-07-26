@@ -11,6 +11,6 @@ class Appointment < ActiveRecord::Base
   end
 
   def readable_datetime
-    self.appointment_datetime.strftime("%B %e, %Y at %l:%M")
+    self.appointment_datetime.strftime("%B %e, %Y at %H:%M")
   end
 end
