@@ -5,4 +5,7 @@ class Doctor < ActiveRecord::Base
   def patient_count
     self.patients.count
   end
+  def appointment_count
+    self.appointments.count
+  end
 end
