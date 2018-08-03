@@ -1,10 +1,10 @@
-<h1>Create a new Doctor</h1>
-<%= form_for @doctor do |f| %>
-   Doctor's Name: 
+<h1>Create a new Patient</h1>
+<%= form_for @patient do |f| %>
+   Patient's Name: 
     <%= f.text_field :name %>
     <br></br>
-    Doctor's Department: 
-    <%= f.text_field :department %>
+    Patient's Age: 
+    <%= f.text_field :age %>
     <br></br>
     
     <%= fields_for :appointments do |a| %>
@@ -12,12 +12,12 @@
         <%= a.text_field :appointment_datetime%>
 
         <% end %>
-        <%= fields_for :patients do |p|%>
-        Patient's Name:
+        <%= fields_for :doctors do |p|%>
+        Doctor's Name:
         <%= p.text_field :name %>
         <br></br>
        
-       Patient's Age: <%= p.text_field :age %>
+       Doctor's Deparment: <%= p.text_field :department %>
         <% end %>
     <%= f.submit %>
 <% end %>
