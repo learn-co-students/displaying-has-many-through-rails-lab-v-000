@@ -1,0 +1,23 @@
+<h1>Create a new Patient</h1>
+<%= form_for @patient do |f| %>
+   Patient's Name: 
+    <%= f.text_field :name %>
+    <br></br>
+    Patient's Age: 
+    <%= f.text_field :age %>
+    <br></br>
+    
+    <%= fields_for :appointments do |a| %>
+        <%= a.label :appointment_datetime %>
+        <%= a.text_field :appointment_datetime%>
+
+        <% end %>
+        <%= fields_for :doctors do |p|%>
+        Doctor's Name:
+        <%= p.text_field :name %>
+        <br></br>
+       
+       Doctor's Deparment: <%= p.text_field :department %>
+        <% end %>
+    <%= f.submit %>
+<% end %>
