@@ -1,3 +1,3 @@
-class PatientsContoller < ApplicationController
+class PatientsController < ApplicationController
 
 end
