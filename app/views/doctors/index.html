@@ -1,3 +1,7 @@
-<h1><%= @doctors.each do |d| %></h1>
+<h1>Doctor Index</h1>
+
+<% @doctors.each do |d| %>
   <ul>
-    <li><%= link_to "#{d.name}, #{d.department}, #{d.pat}"
+    <li><%= link_to d.name, d_path(d) %></li>
+  </ul>
+<% end %>    

@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
 
-  belongs_to :doctors
-  belongs_to :patients
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
 end
