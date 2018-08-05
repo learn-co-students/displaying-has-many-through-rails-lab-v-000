@@ -15,8 +15,11 @@ class DoctorsController < ApplicationController
   end
 
   def index
+    @doctors = Doctor.all
   end
 
   def show
+    @doctor = Doctor.find(params[:id])
+    @patients = Patient.where(:id => @doctor.id)
   end
 end
