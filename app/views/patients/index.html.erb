@@ -1,3 +1,7 @@
+<ul>
+
 <% @patients.collect do |patient| %>
-Name: <%= patient.name %> Number of Appointments: <%= patient.appointments.count%>
-<% end %>
+  <li>Name: <%= patient.name %> Number of Appointments: <%= patient.appointments.count%></li>
+<%end%>
+
+</ul>
