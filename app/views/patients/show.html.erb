@@ -1,0 +1,15 @@
+<%binding.pry%>
+
+<h2> <%= @patient.name %></h2>
+
+<h2> <%= @patient.age %></h2>
+
+<% @patient.appointment.each do |app| %>
+
+  <li><%= link_to @app.appointment_datetime, appointment_path %></li>
+  <li><%= link_to @app.doctor.name doctor_path %></li>
+
+
+
+
+
