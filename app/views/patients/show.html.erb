@@ -1,15 +1,4 @@
-<%binding.pry%>
-
-<h2> <%= @patient.name %></h2>
-
-<h2> <%= @patient.age %></h2>
-
-<% @patient.appointment.each do |app| %>
-
-  <li><%= link_to @app.appointment_datetime, appointment_path %></li>
-  <li><%= link_to @app.doctor.name doctor_path %></li>
-
-
-
-
-
+<%= @patient.appointments.each do |t| %>
+<%= t.appointment_datetime.strftime("%B %d, %Y at %H:%M ") %>
+<%= link_to t.doctor.name, doctor_path(t.doctor_id) %>
+<%end%>
