@@ -1,0 +1,7 @@
+<h1><%= @appointment.doctor.name %></h1>
+
+<h3>Doctor: <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) if @appointment.doctor %></h3>
+
+<p><%= @appointment.patient.name %></p>
+
+<h3>Patient: <%= link_to @appointment.patient.name, patient_path(@appointment.patient) if @appointment.patient %></h3>
