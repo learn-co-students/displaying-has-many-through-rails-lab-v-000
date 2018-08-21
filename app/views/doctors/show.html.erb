@@ -1,0 +1,8 @@
+<h1><%= @doctor.name %></h1>
+<h3><%= @doctor.departmnet %></h3>
+<br>
+
+<% @doctor.appointments.each do |appt| %>
+  <%= appt.human_readable_datetime %>
+  <%= link_to appt.patient.name, patient_path(appt.patient) %>
+<% end %>
