@@ -1,0 +1,7 @@
+<h2>Patients</h2>
+
+  <ul>
+    <%= Patient.all.each do |patient| %>
+      <li>Name: <%= patient.name %> Number of Appointments: <%= patient.appointments.size %></li>
+    <% end %>
+  </ul>
