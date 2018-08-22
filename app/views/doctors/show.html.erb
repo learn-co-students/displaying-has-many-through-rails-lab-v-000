@@ -1,10 +1,12 @@
-<% binding.pry %>
+
+<% # binding.pry %>
+<% # rspec spec/features/doctors_spec.rb --f-f %>
 
 <h1><% @doctor %></h1>
 
 <ul>
   <% @doctor.patients.each do |patient| %>
-    <li><%= link_to patient.name, patient_path(@patient) %></li>
+    <li><%= link_to patient.name, patient_path(patient) %></li>
   <% end %>
 </ul>
 <br>
