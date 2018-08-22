@@ -2,7 +2,7 @@
 <% # binding.pry %>
 <% # rspec spec/features/doctors_spec.rb --f-f %>
 
-<h1><% @doctor %></h1>
+<h1><% @doctor.name %></h1>
 
 <ul>
   <% @doctor.patients.each do |patient| %>
