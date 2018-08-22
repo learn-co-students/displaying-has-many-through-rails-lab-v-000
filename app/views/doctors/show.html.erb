@@ -1,20 +1,11 @@
 
-<% # binding.pry %>
 <% # rspec spec/features/doctors_spec.rb --f-f %>
 
 <h1><% @doctor.name %></h1>
 
-<!--
-<ul>
-  <% # @doctor.patients.each do |patient| %>
-    <li><% #= link_to patient.name, patient_path(patient) %></li>
-  <% # end %>
-</ul>
-<br>
--->
-
 <ul>
   <% @doctor.appointments.each do |scheduled| %>
+<% binding.pry %>  
     <li><%= scheduled.appointment_datetime.to_formatted_s(:long) %></li>
     <li><%= link_to scheduled.patient.name, patient_path(patient) %></li>
   <% end %>
