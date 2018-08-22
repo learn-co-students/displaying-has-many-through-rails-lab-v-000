@@ -1,4 +1,4 @@
 <%@patient.appointments.each do |a|%>
-<%=a.appointment_datetime.to_formatted_s(:long).insert(16, " at ")%>
+<%=a.appointment_datetime.strftime("%B %d, %Y at %H:%M")%>
 <%=link_to a.doctor.name, doctor_path(a.doctor)%>
 <%end%>
