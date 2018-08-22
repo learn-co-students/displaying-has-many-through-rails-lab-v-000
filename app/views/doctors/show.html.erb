@@ -1,0 +1,17 @@
+<% binding.pry %>
+
+<h1><% @doctor %></h1>
+
+<ul>
+  <% @doctor.patients.each do |patient| %>
+    <li><%= link_to patient.name, patient_path(@patient) %></li>
+  <% end %>
+</ul>
+<br>
+
+<ul>
+  <% @doctor.appointments.each do |scheduled| %>
+    <li><%= scheduled.appointment_datetime.to_formatted_s(:long) %></li>
+  <% end %>
+</ul>
+
