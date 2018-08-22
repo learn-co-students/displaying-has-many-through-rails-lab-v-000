@@ -7,7 +7,7 @@ class DoctorsController < ApplicationController
   
   private 
   
-  def find_patient
-    @patient = Patient.find(params[:id])
+  def find_doctor
+    @doctor = Doctor.find(params[:id])
   end
 end
