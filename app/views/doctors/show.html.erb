@@ -5,7 +5,7 @@
 <h1><% @doctor.name %></h1>
 
 <% @doctor.appointments.each do |scheduled| %>
-  <%= scheduled.appointment_datetime.to_formatted_s(:long) %>
+  <%= scheduled.formatted_date %>
   <%= link_to scheduled.patient.name, patient_path(scheduled.patient) %>
 <% end %>
 
