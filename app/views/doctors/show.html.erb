@@ -7,7 +7,7 @@
   <% @doctor.appointments.each do |scheduled| %>
 <% binding.pry %>  
     <li><%= scheduled.appointment_datetime.to_formatted_s(:long) %></li>
-    <li><%= link_to scheduled.patient.name, patient_path(patient) %></li>
+    <li><%= link_to scheduled.patient.name, patient_path(scheduled.patient) %></li>
   <% end %>
 </ul>
 
