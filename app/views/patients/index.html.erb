@@ -1,5 +1,5 @@
 <% # binding.pry %>
 
 <% @patients.each do |patient| %>
-  <%= "Name: " + patient.name + " Number of Appointments: " + patient.appointments.length %>
+  <%= "Name: " + patient.name + " Number of Appointments: #{patient.appointments.length}" %>
 <% end %>
