@@ -1,0 +1,7 @@
+<% # binding.pry %>
+<% # rspec spec/features/appointments_spec.rb --f-f %>
+
+<%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
+
+<%= link_to @appointment.patient.name, patient_path(@appointment.patient) %>
+
