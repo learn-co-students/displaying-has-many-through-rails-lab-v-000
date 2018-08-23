@@ -1,2 +1,7 @@
-  <%binding.pry%>
-<h2> <%= @appointment.doctor%></h2>
+ # this hesitance from the show controller
+ 
+<h2> <%= link_to @appointment.doctor.name%></h2>
+<br>
+<p><%= @appointment.doctor.department%></p>
+<br>
+<p></p><%=@appointment.appointment_datetime%></p>
