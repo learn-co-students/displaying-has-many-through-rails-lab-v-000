@@ -1,9 +1,9 @@
 
 <h1><% @doctor.name %></h1>
 
-<% @doctor.appointments.each do |scheduled| %>
-  <%= scheduled.formatted_date %>
-  <%= link_to scheduled.patient.name, patient_path(scheduled.patient) %>
+<% @doctor.appointments.each do |appointment| %>
+  <%= appointment.formatted_date %>
+  <%= link_to appointment.patient.name, patient_path(appointment.patient) %>
 <% end %>
 
 

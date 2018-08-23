@@ -1,1 +1,7 @@
-<% binding.pry %>
+<% # binding.pry %>
+
+<%= @patient.appointments.each do |appointment| %>
+  <%= appointment.formatted_date %>
+  <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %>
+<% end %>
+
