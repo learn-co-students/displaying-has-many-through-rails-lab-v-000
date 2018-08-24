@@ -1,0 +1,8 @@
+ # this hesitance from the show controller
+  # you dont have have to iterate over appointment for this instances..
+
+    <h2> <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor)%></h2>
+<br>
+    <p><%= link_to @appointment.patient.name, patient_path(@appointment.patient)%></p>
+<br>
+    <p><%=@appointment.appointment_datetime%></p>
