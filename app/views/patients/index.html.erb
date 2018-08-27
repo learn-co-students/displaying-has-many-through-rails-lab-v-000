@@ -1,5 +1,9 @@
 <h1>Patients</h1>
 
+<ul>
 <%@patients.each do |p|%>
-  <p><%=p.name%> - <%=p.appointments.count%></p>
+  <li>Name: <%=p.name%> Number of Appointments: <%=p.appointments.count%></li>
 <%end%>
+</ul>
+
+<!-- "Name: Marge Simpson Number of Appointments: 2" -->
