@@ -1,0 +1,20 @@
+
+<h2> <%= @appointment.appointment_datetime %> </h2>
+
+<%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
+<%= link_to @appointment.patient.name, patient_path(@appointment.patient) %>
+
+
+# it "should display an appointment's doctor" do
+#     visit appointment_path(@appointment)
+#     expect(page).to have_link("Hawkeye Pierce", href: doctor_path(@hawkeye))
+#   end
+
+#   it "should display an appointment's patient" do
+#     visit appointment_path(@appointment)
+#     expect(page).to have_link("Homer Simpson", href: patient_path(@homer))
+#   end
+
+#   it "should not have an index page" do
+#     expect {visit('/appointments')}.to raise_error(ActionController::RoutingError)
+#   end
