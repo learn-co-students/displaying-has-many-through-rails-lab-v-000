@@ -1,0 +1,7 @@
+<h3><%= @patient.name %></h3>
+
+<ul>
+  <%= @patient.appointments.each do |apt| %>
+    <li><%= link_to apt.doctor.name, apt.doctor %>: <%= apt.appointment_datetime.strftime("%B %-d, %Y")%> at <%=apt.appointment_datetime.strftime("%k:%M")%></li>
+  <% end %>
+</ul>
