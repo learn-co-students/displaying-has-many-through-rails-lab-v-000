@@ -1,0 +1,7 @@
+<h2><%= @appointment.doctor.find(params[:id]) %> </h2>
+<h2><%= @appointment.patient.find(params[:id]) %> </h2>:
+
+
+<% @appointments.each do |appointment| %>
+  <%= link_to appointment.datetime, appointment_path(appointment) %>
+<% end %>
