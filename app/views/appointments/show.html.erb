@@ -1,0 +1,10 @@
+<h1>Your Appointment</h1>
+
+<p>Date and Time</p>
+<p><%= @appointment.to_string %></p>
+
+<p>Patient</p>
+<p><%= link_to @appointment.patient_name, patient_path(@appointment.patient) %></p>
+
+<p>Doctor</p>
+<p><%= link_to @appointment.doctor_name, doctor_path(@appointment.doctor) %></p>
