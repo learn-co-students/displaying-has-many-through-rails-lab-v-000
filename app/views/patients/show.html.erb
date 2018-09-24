@@ -1,2 +1,13 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+<h1><%= @patient.name %></h1>
+<fieldset>
+  <legend>Appointments</legend>
+    <ul>
+      <%= @patient.appointments.each do |appt| %>
+        <li>
+          <%= link_to appt.appointment_datetime.strftime("%B %e, %Y at %k:%M"), appointment_path(appt) %>
+          -
+          <%= link_to appt.doctor.name, doctor_path(appt.doctor) %>
+        </li>
+      <% end %>
+    </ul>
+</fieldset>
