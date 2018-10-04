@@ -1,0 +1,11 @@
+<h1>Doctor Profile</h1>
+<p>This page shows all of a doctor's appointment times in a human readable format.</p>
+
+Name: <%= @doctor.name %><br />
+Department: <%= @doctor.department %><br />
+
+<h2> Upcoming Appointments </h2><br />
+<% @doctor.appointments.each do |appointment| %>
+  <%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %> - <%= link_to appointment.patient.name, patient_path(appointment.patient)%>
+  <br />
+<% end %>
