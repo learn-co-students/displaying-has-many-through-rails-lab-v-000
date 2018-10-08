@@ -45,7 +45,7 @@ describe "patients", type:  :feature do
   describe "#show page" do
     it "shows all of a patient's appointment times in a human readable format" do
       visit patient_path(@bart)
-      expect(page).to have_content("January 11, 2016 at 20:20")
+      expect(page).to have_content("January 11, 2016 at 8:20 pm")
     end
 
     it "links to the doctor's show page by name for the doctor of each appointment" do
