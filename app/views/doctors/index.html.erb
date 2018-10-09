@@ -1,0 +1,7 @@
+<h2>Doctor's Directory</h2>
+
+<ul class="doctors">
+  <% @doctors.each do |doc| %>
+    <li><%= link_to doc.name, doctor_path(doc) %> - Department: <%= doc.department %></li>
+  <% end %>
+</ul>
