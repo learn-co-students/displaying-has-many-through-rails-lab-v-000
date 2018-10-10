@@ -5,7 +5,10 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    binding.pry
+    #binding.pry
+    if params[:id]
     @appointment = Appointment.find(params[:id])
+    end
   end
+
 end
