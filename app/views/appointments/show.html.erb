@@ -1,0 +1,4 @@
+<h2>Appointment <%= @appointment.id %></h2>
+  <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %> has
+  <%= link_to @appointment.patient.name, patient_path(@appointment.patient) %>
+  at <%= @appointment.appointment_datetime.to_formatted_s(:month_and_day_at_time) %>
