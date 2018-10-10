@@ -4,5 +4,8 @@ class DoctorsController < ApplicationController
   end
 
   def show
+    if params[:id]
+    @doctor = Doctor.find(params[:id])
+    end
   end
 end
