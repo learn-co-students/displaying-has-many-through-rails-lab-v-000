@@ -1,0 +1,14 @@
+<h1>Doctor Lists</h1>
+
+<table>
+  <tr>
+    <th>Name:</th>
+    <th>No. Appointments</th>
+  </tr>
+  <% @doctors.each do |doctor| %>
+  <tr>
+    <td><%= link_to doctor.name, doctor %></td>
+    <td><%= doctor.appointments.size %></td>
+  </tr>
+  <% end %>
+</table>
