@@ -19,6 +19,7 @@ describe 'Doctor' do
   end
 
   it 'has many appointments' do
+  
     expect(@mcdreamy.appointments).to eq([@appointment1, @appointment2])
   end
 
