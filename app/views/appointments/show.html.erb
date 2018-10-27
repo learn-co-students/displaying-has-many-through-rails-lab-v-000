@@ -1,0 +1,4 @@
+<a href="/doctors/<%=@appointment.doctor_id%>"><%=@appointment.doctor.name%></a>
+<a href="/patients/<%=@appointment.patient_id%>"><%=@appointment.patient.name%></a>
+
+<%= @appointment.appointment_datetime.strftime("%B %d, %G at %R") %>
