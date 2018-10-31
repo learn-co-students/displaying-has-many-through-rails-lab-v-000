@@ -1,5 +1,5 @@
   <% @doctor.appointments.each do |appointment| %>
-    <%= link_to appointment.datetime_convert, doctor_path(@doctor.name) %>
+    <%= link_to appointment.appointment_datetime.strftime("%B %-d, %Y at %H:%M"), doctor_path(@doctor.name) %>
   <% end %>
 
   <% @doctor.patients.each do |patient| %>
