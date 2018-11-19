@@ -1,0 +1,4 @@
+<h1>Appointment Information</h1>
+
+<p>Dr. <%= link_to @appointment.doctor.name, @appointment.doctor %></p>
+<p>Patient: <%= link_to @appointment.patient.name, @appointment.patient %></p>
