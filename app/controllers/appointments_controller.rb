@@ -1,6 +1,11 @@
 class AppointmentsController < ApplicationController
 
-  def appointment_datetime
-    "#{self.date} at #{self.time}"
+  def index
+    @appointments = Appointment.all
   end
+
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
+
 end

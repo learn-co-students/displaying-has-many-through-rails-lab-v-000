@@ -1,6 +1,6 @@
 <h2>Appointment</h2>
 
 
-<p><%= @appointment.doctor %><br>
-<%= @appointment.patient %><br>
+<p><%=link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %><br>
+<%= link_to @appointment.patient.name, patient_path(@appointment.patient) %><br>
 <%= @appointment.appointment_datetime %></p>
