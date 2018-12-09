@@ -1,0 +1,11 @@
+<h1>Doctor Show Page</h1>
+
+<h3><%= @doctor.name %></h3>
+
+<ul>
+  <% @doctor.appointments.each_with_index do |appointment, index| %>
+  <label>Appointment <%= index + 1 %></label>
+  <li><%= appointment.readable_appointment_time %></li>
+  <li><%= link_to appointment.patient_name, patient_path(appointment.patient) %></li>
+  <% end %>
+</ul>
