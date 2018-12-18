@@ -1,0 +1,8 @@
+require 'pry'
+
+<%= @appointment.each do |a| %>
+<%= a.appointment_datetime %>
+<%= link_to a.doctor.name, doctor_path(a.doctor) %>
+<%= link_to a.patient.name, patient_path(a.patient) %>
+
+<% end %>
