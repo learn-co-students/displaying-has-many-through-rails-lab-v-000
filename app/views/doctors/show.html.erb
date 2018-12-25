@@ -1,0 +1,9 @@
+doctor show.html.erb file
+
+
+<% @doctor.appointments.each do |doc| %>
+  <%= doc.appointment_datetime.strftime("%B %d, %Y at %H:%M.") %>
+  <%= link_to(doc.patient.name, patient_path(doc.patient)) %>
+<% end %>
+
+
