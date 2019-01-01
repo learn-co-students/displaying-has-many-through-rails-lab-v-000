@@ -1,0 +1,7 @@
+<% @appointments.each do |app| %>
+  <%= app.readable_datetime %>
+<% end %>
+
+<% @patients.each do |pat| %>
+  <%= link_to pat.name, patient_path(pat) %>
+<% end %>

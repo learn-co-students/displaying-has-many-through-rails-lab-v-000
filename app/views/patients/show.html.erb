@@ -1,0 +1,7 @@
+<% @appointments.each do |app| %>
+  <%= app.readable_datetime %>
+<% end %>
+
+<% @doctors.each do |doc| %>
+  <%= link_to doc.name, doctor_path(doc) %>
+<% end %>
