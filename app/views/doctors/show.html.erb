@@ -1,9 +1,13 @@
-<h2><%= @doctor.name %> </h2>
+<h3>Doctor: <%= @doctor.name %></h3>
 
-<% @doctor.patients.each do |patient| %>
-  <%= link_to patient.name, patient_path(patient) %>
-<% end %>
+<h3>Patients:</h3>
+  <ul>
+    <% @doctor.patients.each do |patient| %>
+      <li><%= link_to patient.name, patient_path(patient) %><br>
+        <ul><% patient.appointments.each do |appointment| %>
+          <li><%= link_to appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M"), appointment_path(appointment) %></li>
+        <% end %></ul>
+      </li>
+    <% end %>
+  </ul>
 
-<% @doctor.appointments.each do |appointment| %>
-  <%= link_to appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M"), appointment_path(appointment) %>
-<% end %>
