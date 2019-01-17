@@ -1,0 +1,20 @@
+<h1><%= @patient.name %></h1>
+<!-- appointment_datetime.strftime("%B  %d, %Y at %H:%M") -->
+<fieldset>
+  <legend>Appointments</legend>
+  <ul>
+    <% @patient.appointments.each.with_index(1) do |appointment, i| %>
+      <li>
+        <ul>
+          <p><%= link_to "Appointment: #{i}", appointment_path(appointment) %></p>
+          <li>
+            <%= appointment.appointment_datetime.strftime("%B  %d, %Y at %H:%M") %>
+          </li>
+          <li>
+            Doctor: <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</fieldset>

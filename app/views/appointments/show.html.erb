@@ -1,0 +1,16 @@
+<h1>Appointment:</h1>
+<h3><%=@appointment.appointment_datetime.strftime("%B  %d, %Y at %l:%M")%></h3>
+
+<fieldset>
+  <legend>Doctor:</legend>
+  <p>
+    <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor)%>
+  </p>
+</fieldset>
+
+<fieldset>
+  <legend>Patient:</legend>
+  <p>
+    <%= link_to @appointment.patient.name, patient_path(@appointment.patient)%>
+  </p>
+</fieldset>
