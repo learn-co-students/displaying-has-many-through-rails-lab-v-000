@@ -1,0 +1,19 @@
+<h2> <%= @doctor.name %> </h2>
+  <p>
+    Department: <%= @doctor.department %>
+  </p>
+  Appointments: <br> <br>
+
+  <% @doctor.appointments.each do |appointment| %>
+  <%= link_to appointment.patient.name, patient_path(appointment.patient) %>
+  <%= appointment.appointment_datetime.strftime("%B %e, %Y at %H:%M") %> <br> <br>
+  <% end %>
+
+
+<!-- it "shows all of a doctor's appointment times in a human readable format" do
+  visit doctor_path(@meredith)
+  expect(page).to have_content("January 11, 2016 at 20:20")
+
+it "  to the patient's show page by name for each appointment" do
+  visit doctor_path(@meredith)
+  expect(page).to have_link("Bart Simpson", href: patient_path(@bart)) -->
