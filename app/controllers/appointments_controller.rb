@@ -1,15 +1,9 @@
+require 'pry'
+
 class AppointmentsController < ApplicationController
 
   def show
-    @appointment = Appointment.find(params[appointment_params])
-
-  end
-
-  private
-
-  def appointment_params
-    params.require(:appointment).permit{(:doctor_id, :patient_id, :appointment_datetime)
-
+    @appointment = Appointment.find(params[:id])
   end
 
 end
