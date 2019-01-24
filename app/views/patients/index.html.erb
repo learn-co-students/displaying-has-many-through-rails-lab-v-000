@@ -1,0 +1,5 @@
+<ul>
+  <% @patients.each do |patient| %>
+    <span>Name: <%= patient.name %> Number of Appointments: <%= patient.appointments.count %></span>
+  <% end %>
+</ul>
