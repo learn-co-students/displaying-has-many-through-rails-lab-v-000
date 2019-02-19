@@ -2,6 +2,6 @@
 
 <ul>
 <%= @patient.appointments.each do |appointment| %>
-    <li><%= link_to appointment.doctor.name, doctor_path(appointment.doctor)%>, <%= appointment.date%> at <%=appointment.time%></li>
+    <li><%= link_to appointment.doctor.name, doctor_path(appointment.doctor)%>, <%= appointment.appointment_datetime.to_formatted_s(:long_ordinal) %></li>
   <%end%>
 </ul>
