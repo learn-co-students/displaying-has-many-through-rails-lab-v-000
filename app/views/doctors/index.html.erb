@@ -1,0 +1,4 @@
+<h1>Doctor lists</h1>
+<%@doctors.each do |doc|%>
+<li><%=link_to doc.name doctor_path(doc)%></li>
+<%end%>
