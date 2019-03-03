@@ -1,0 +1,15 @@
+Models
+	Doctors
+	Patients
+	Appointments
+
+Data
+	Doctors {:name, :department}
+	Patients {:name, :age}
+	Appointments {:datetime, :patient_id, :doctor_id}
+
+Relationships
+	Doctors has_many :patients, through: :appointments
+	Patients has_many :doctors, through: :appointments
+	Patients belong_to :doctors
+
