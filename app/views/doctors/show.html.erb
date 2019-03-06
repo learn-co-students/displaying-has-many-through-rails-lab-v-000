@@ -10,5 +10,14 @@
   <%= @doctor.department %>
 </p>
 
+<p>
+  <strong>Appointments:</strong>
+</p>
+
+  <% @doctor.appointments.each do |a| %>
+   <p><%= a.time %></p>
+  <% end %>
+</cp>
+
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
 <%= link_to 'Back', doctors_path %>
