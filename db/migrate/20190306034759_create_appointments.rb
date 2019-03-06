@@ -4,6 +4,8 @@ class CreateAppointments < ActiveRecord::Migration
       t.datetime :appointment_datetime
       t.string :doctor
       t.string :patient
+      t.integer :doctor_id
+      t.integer :patient_id
 
       t.timestamps null: false
     end

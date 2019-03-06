@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20190306034759) do
     t.datetime "appointment_datetime"
     t.string   "doctor"
     t.string   "patient"
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
