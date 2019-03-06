@@ -7,7 +7,7 @@
 
 <p>
   <strong>Doctor:</strong>
-  <%= @appointment.doctor_id %>
+  <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
 </p>
 
 <p>
