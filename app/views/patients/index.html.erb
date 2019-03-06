@@ -2,27 +2,14 @@
 
 <h1>Listing Patients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patients.each do |patient| %>
-      <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.age %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul>
+  <% @patients.each do |patient| %>
+      <li>Name: <%= patient.name %> Number of Appointments: <%= patient.appointments.size %>
+      <%= link_to 'Show', patient %>
+      <%= link_to 'Edit', edit_patient_path(patient) %>
+      <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% end %>
+</ul>
 
 <br>
 

@@ -10,5 +10,13 @@
   <%= @patient.age %>
 </p>
 
+<p>
+  <strong>Appointments:</strong>
+</p>
+
+<% @patient.appointments.each do |a| %>
+  <p><%= link_to a.doctor.name, doctor_path(a.doctor) %><%= a.time %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>

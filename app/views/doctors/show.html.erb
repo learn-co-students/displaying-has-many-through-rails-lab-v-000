@@ -14,10 +14,9 @@
   <strong>Appointments:</strong>
 </p>
 
-  <% @doctor.appointments.each do |a| %>
-   <p><%= a.time %></p>
-  <% end %>
-</cp>
+<% @doctor.appointments.each do |a| %>
+  <p><%= link_to a.patient.name, patient_path(a.patient) %><%= a.time %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
 <%= link_to 'Back', doctors_path %>
