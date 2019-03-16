@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
     def index
-        @appointments = Appointment.all
+        not_found
     end
 
     def new
@@ -18,4 +18,10 @@ class AppointmentsController < ApplicationController
     
     def destroy
     end    
+
+    private
+    def not_found
+        raise ActionController::RoutingError.new("not found")
+    end        
 end
+

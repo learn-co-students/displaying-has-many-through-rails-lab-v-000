@@ -1,3 +1,3 @@
-Doctor: <%= link_to @appointment.doctor.name, doctor_path(@doctor) %>
-Patient: <%= @appointment.patient.name %>
-Date: <%= @appointment.appointment_datetime %>
+Doctor: <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor)  %>
+Patient: <%= link_to @appointment.patient.name, patient_path(@appointment.patient) %>
+Date: <%= @appointment.datetime %>
