@@ -1,5 +1,6 @@
 class DoctorsController < ApplicationController
 
+
   def index
     @doctors = Doctor.all
   end
@@ -15,5 +16,15 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new
     if @doctor.save
-      
+      redirect_to @doctor
+    end
+  end
+
+
+  private
+
+  def doctor_params
+    params.require(:doctor).permit(:name, :department)
+  end
+
 end
