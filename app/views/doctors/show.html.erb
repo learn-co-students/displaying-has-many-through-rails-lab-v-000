@@ -1,1 +1,17 @@
-doctor show page
+<% require 'date' %>
+
+<div>
+  <ul>
+    <li><%= @doctor.name %><li>
+      <li><%= @doctor.department %><li>
+  </ul>
+  </div>
+  <div>
+  <% @doctor.appointments.each do |appt| %>
+
+
+      <%=appt.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
+      <%= link_to appt.patient_name, patient_path(appt.patient) %>
+
+  <% end %>
+</div>
