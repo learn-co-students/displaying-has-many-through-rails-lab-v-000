@@ -3,8 +3,8 @@ class Patient < ApplicationRecord
   has_many :appointments
   has_many :doctors, through: :appointments
 
-  def appointment_count
-    @appointments = Appointment.count
+  def count
+    self.appointments.count
 
   end
 end
