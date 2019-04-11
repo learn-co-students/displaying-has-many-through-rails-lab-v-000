@@ -1,0 +1,5 @@
+<ul>
+  <%= @doctor.appointments.each do |appt|%>
+    <li><%= appt.appointment_datetime %></li>
+  <%end%>
+</ul>
