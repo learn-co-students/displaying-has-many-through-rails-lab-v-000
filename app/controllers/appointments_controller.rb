@@ -4,12 +4,4 @@ class AppointmentsController < ApplicationController
     @appt = Appointment.find(params[:id])
   end
 
-  def new
-    @appt = Appointment.new
-  end
-
-  def create
-  end
-
-
 end
