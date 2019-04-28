@@ -1,16 +1,11 @@
 class AppointmentsController < ApplicationController
-  before_action :find_appointment [:show, :edit, :update, :destroy]
 
   def show
-
+    @appointment = Appointment.find(params[:id])
   end
 
   private
     def appointment_params
-      params.require(:appointment).permit(:name, :age)
-    end
-
-    def find_appointment
-      @appointment = Appointment.find([:id])
+      params.require(:appointment).permit(:appointment_datetime)
     end
 end
