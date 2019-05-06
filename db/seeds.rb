@@ -1,6 +1,3 @@
-Doctor.destroy_all
-Patient.destroy_all
-Appointment.destroy_all
 
 meredith = Doctor.create({name: "Meredith Grey", department: "Internal Medicine"})
 hawkeye = Doctor.create({name: "Hawkeye Pierce", department: "Surgery"})
