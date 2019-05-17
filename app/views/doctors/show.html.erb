@@ -1,0 +1,8 @@
+<%= @doctor.name %>
+
+
+<ul>
+  <% @doctor.appointments.each do |a| %>
+    <%= a.humanize %> <%= link_to a.patient.name, patient_path(a.patient) %>
+  <% end %>
+</ul>
