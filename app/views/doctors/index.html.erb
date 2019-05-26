@@ -1,0 +1,5 @@
+<!-- displays each doctor's name-->
+<%= @doctors.name %>
+
+<!--a link to their show page, and a count of their patients.-->
+  <%= link_to doctor_path(@appointment.doctor), @doctor.patient.count %>
