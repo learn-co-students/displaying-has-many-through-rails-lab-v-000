@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+Appointments:
+
+<ul>
+<% @doctor.appointments.each do |a| %>
+	<li><%= link_to a.patient.name, a.patient %> - <%= a.appointment_datetime.strftime("%B %e, %Y at %H:%M") %></li>
+<% end %>
+</ul>
+<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
+<%= link_to 'Back', doctors_path %>
