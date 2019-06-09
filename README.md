@@ -36,31 +36,3 @@ You'll need to create all of the migrations, models, routes, controllers, and vi
 We've provided a seed file so you can have some data to play around with –– run `rake db:seed` once your migrations and models are complete.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/displaying-has-many-through-rails-lab' title='Displaying Has Many Through Rails Lab'>Displaying Has Many Through Rails Lab</a> on Learn.co and start learning to code for free.</p>
-
-class CreateDoctors < ActiveRecord::Migration[5.0]
-  def change
-    create_table :doctors do |t|
-      t.string :name
-      t.string :department
-    end
-  end
-end
-
-class CreatePatients < ActiveRecord::Migration[5.0]
-  def change
-    create_table :patients do |t|
-      t.string :name
-      t.integer :age
-    end
-  end
-end
-
-class CreateAppointments < ActiveRecord::Migration[5.0]
-  def change
-    create_table :appointments do |t|
-      t.datetime :appointment_datetime
-      t.string :patient
-      t.string :doctor
-    end
-  end
-end
