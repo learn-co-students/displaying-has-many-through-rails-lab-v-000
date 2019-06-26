@@ -1,16 +1,16 @@
 <h1>New Doctor</h1>
 
-<%= form_for  :doctor, :url doctors_path do |f| %>
+<%= form_for (@doctor) do |f| %>
       <p>
       <%= f.label :name %><br>
-      <%= f.text_field :name %> 
+      <%= f.text_field :name %>
       </p>
 
       <p>
        <%= f.label   :department %> <br>
-       <%= f.text_field   :department %> 
+       <%= f.text_field   :department %>
       </p>
-      
+
       <p>
          <%= f.submit %>
       </p>
