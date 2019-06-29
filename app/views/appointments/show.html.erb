@@ -1,6 +1,6 @@
 <h2><%= Appointment %></h2>
 <p>
-  When: <%= @appointment.appointment_datetimestrftime("%B %e, %Y at %k:%M") %>
+  When: <%= @appointment.appointment_datetime.strftime("%B %e, %Y at %k:%M") %>
 </p>
 <p>
   Doctor: <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
