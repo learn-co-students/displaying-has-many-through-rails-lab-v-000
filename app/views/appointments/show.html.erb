@@ -1,0 +1,10 @@
+<h2><%= Appointment %></h2>
+<p>
+  When: <%= appointment.appointment_datetime %>
+</p>
+<p>
+  Doctor: <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %>
+</p>
+<p>
+  Patient: <%= link_to appointment.patient.name, patient_path(appointment.patient) %>
+</p>
