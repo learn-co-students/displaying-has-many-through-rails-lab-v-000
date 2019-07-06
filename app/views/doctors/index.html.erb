@@ -1,0 +1,7 @@
+<h1>Doctors</h1>
+
+<% @doctors.each do |d| %>
+  <p>
+    <%= link_to d.name + " - " + d.patients.size.to_s + " patient(s)", d %>
+  </p>
+<%end%>

@@ -1,0 +1,6 @@
+<h2>Appointment for:</h2>
+<p><b><%= link_to @appointment.patient.name, @appointment.patient %></b></p>
+<p><i>to see</i></p>
+<p><b><%= link_to @appointment.doctor.name, @appointment.doctor %></b></p>
+<p><i>on</i></p>
+<%= @appointment.parse %>
