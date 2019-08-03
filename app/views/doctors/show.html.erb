@@ -2,7 +2,7 @@
 
 <ul>
 <%@doctor.appointments.each do |d|%>
-<li><%=d.appointment_datetime.strftime("%B %e, %Y at %I:%M")%></li>
+<%= d.appointment_datetime.strftime("%B %e, %Y at %H:%M") %>
 <% end %>
 </ul>
 
