@@ -7,7 +7,7 @@ class Doctor < ApplicationRecord
     end
 
     def appointments
-       binding.pry
+     #  binding.pry
        self.appointments ? self.appointments.datetime : nil
     end
 end
