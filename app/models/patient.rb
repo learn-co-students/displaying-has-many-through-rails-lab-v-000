@@ -6,5 +6,8 @@ class Patient < ApplicationRecord
         self.appointments = Appointment.find(patient_id: patient.id)
     end
 
-    
+    def appointments
+        #  binding.pry
+          self.appointments ? self.appointments.datetime : nil
+       end
 end
