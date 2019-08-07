@@ -1,6 +1,6 @@
 <h1>Doctors#show</h1>
 <p>Find me in app/views/doctors/show.html.erb</p>
-
+<% binding.pry %>
 <% @doctor.appointments.each do |appt| %>
     <%= appt.datetime %>
     <% end %>
