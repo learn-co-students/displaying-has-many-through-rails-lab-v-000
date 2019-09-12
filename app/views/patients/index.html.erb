@@ -1,0 +1,10 @@
+<h1> Patient's Index </h1>
+<ul>
+  <% @patients.each do |p| %>
+    <h3>Name: <%= p.name %> Number of Appointments: <%= p.appointment_count %></h3>
+      <% p.appointments.each do |a| %>
+      <%=  link_to a.appointment_datetime.strftime('%B %e, %Y at %H:%M'), appointment_path(a) %>
+      <%= link_to a.doctor.name, doctor_path(a.doctor.id)%>
+    <% end %>
+<% end %>
+</ul>
