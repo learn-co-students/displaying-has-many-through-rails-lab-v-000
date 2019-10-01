@@ -6,6 +6,6 @@
         <%= appointment.formated_datetime %>
 
       </li>
-      <!-- <li>   link_to appointment.doctor.name, doctor_path(appointment.doctor) %></li> -->
+      <li>  <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %></li>
     <% end %>
 </ul>

@@ -2,15 +2,15 @@ class Appointment < ApplicationRecord
   belongs_to :doctor
   belongs_to :patient
 
-
-  def datetime_no_utc
-    self.appointment_datetime.to_formatted_s(:long)
-  end
-
   def formated_datetime
-    string = datetime_no_utc.to_s
-    arr = []
-    arr = string.split(" ", )
-    arr.join(" at ")
+    self.appointment_datetime.strftime("%B %d, %Y at %H:%M")
   end
+
+  def doctor_name=(name)
+   self.doctor = Doctor.find_or_create_by(name: name)
+ end
+
+ def doctor_name
+   self.doctor ? self.doctor.name : nil
+ end
 end
