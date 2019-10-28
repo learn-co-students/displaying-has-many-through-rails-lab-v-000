@@ -1,0 +1,4 @@
+<% @appointments.each do |appointment| %>
+  doctor: <%= link_to "#{appointment.doctor.name}", doctor_path("#{appointment.doctor.id}") %><br>
+  patient: <%= link_to "#{appointment.patient.name}", patient_path("#{appointment.patient.id}") %><br><br><br>
+<% end %>
