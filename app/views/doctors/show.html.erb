@@ -1,0 +1,14 @@
+<h1>Dr. <%= @doctor.name %> is in!</h1>
+
+<p>Department: <%= @doctor.department %></p>
+
+<h3>Appointments:</h3>
+<ol>
+  <% @doctor.appointments.each do |a| %>
+    <li>
+      <%= a.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
+      with <%= link_to( a.patient_name, patient_path(a.patient) ) %>
+    </li>
+    <!-- This displays the datetime in a certain format, but is that better suited to the Appointment model? -->
+  <% end %>
+</ol>
