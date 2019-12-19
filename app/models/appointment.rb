@@ -14,8 +14,9 @@ class Appointment < ApplicationRecord
     self.doctor.name
   end
 
-  def name_of(person)
-    # self.send(person).name
-    person.name # This may be better, since it clearly identifies what the person is and what the method returns.
-  end
+  # def name_of(person)
+  #   # self.send(person).name
+  #   person.name # This may be better, since it clearly identifies what the person is and what the method returns.
+  #   Then again, the other way is more concise.
+  # end
 end

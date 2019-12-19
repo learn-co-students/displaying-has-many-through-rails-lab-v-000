@@ -7,7 +7,7 @@
   <% @doctor.appointments.each do |app| %>
     <li>
       <%= app.date_and_time %>
-      with <%= link_to app.name_of(app.patient), patient_path(app.patient) %>
+      with <%= link_to app.patient_name, patient_path(app.patient) %>
     </li>
   <% end %>
 </ol>
