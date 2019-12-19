@@ -2,7 +2,6 @@
   Patient <strong><%= @patient.name %></strong>, age <%= @patient.age %>, 
   currently has <%= pluralize(@patient.number_of_appointments, "appointment") %>:
 <p>
-<!-- Fiddle around with that; use #pluralize on "appointments" (not required, just for fun). -->
 
 <ul>
   <% @patient.appointments.each do |app| %>
