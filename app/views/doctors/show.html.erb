@@ -4,11 +4,10 @@
 
 <h3>Appointments:</h3>
 <ol>
-  <% @doctor.appointments.each do |a| %>
+  <% @doctor.appointments.each do |app| %>
     <li>
-      <%= a.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
-      with <%= link_to( a.patient_name, patient_path(a.patient) ) %>
+      <%= app.date_and_time %>
+      with <%= link_to app.name_of(app.patient), patient_path(app.patient) %>
     </li>
-    <!-- This displays the datetime in a certain format, but is that better suited to the Appointment model? -->
   <% end %>
 </ol>

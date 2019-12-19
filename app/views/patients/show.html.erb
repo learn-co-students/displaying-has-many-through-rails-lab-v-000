@@ -1,6 +1,11 @@
 <p>
   Patient <strong><%= @patient.name %></strong>, age <%= @patient.age %>, 
-  currently has <%= @patient.number_of_appointments %> appointments:
+  currently has <%= pluralize(@patient.number_of_appointments, "appointment") %>:
 <p>
-
 <!-- Fiddle around with that; use #pluralize on "appointments" (not required, just for fun). -->
+
+<ul>
+  <% @patient.appointments.each do |app| %>
+    <li><%= app.date_and_time %> with Dr. <%= link_to app.name_of(app.doctor), doctor_path(app.doctor) %></li>
+  <% end %>
+</ul>
