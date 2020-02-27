@@ -3,7 +3,7 @@ class PatientsController < ApplicationController
   before_action :find_patient, only: [:show, :edit, :update, :destroy]
 
   def index
-    @patient = Patient.all
+    @patients = Patient.all
   end
 
   def show
