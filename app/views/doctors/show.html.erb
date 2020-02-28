@@ -1,0 +1,13 @@
+<h1>Dr. <%= @doctor.name %> is in!</h1>
+
+<p>Department: <%= @doctor.department %></p>
+
+<h3>Appointments:</h3>
+<ol>
+  <% @doctor.appointments.each do |app| %>
+    <li>
+      <%= app.date_and_time %>
+      with <%= link_to app.patient_name, patient_path(app.patient) %>
+    </li>
+  <% end %>
+</ol>
