@@ -1,0 +1,8 @@
+  <%= @patient.name %>
+
+  Details:
+  <% @patient.appointments.each do |appt| %>
+  <ul>
+    <li><%= link_to appt.doctor.name, appt.doctor%>, <%=appt.right_time %></li>
+  </ul>
+  <% end %>
