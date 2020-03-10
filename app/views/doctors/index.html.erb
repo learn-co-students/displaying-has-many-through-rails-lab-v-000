@@ -1,0 +1,7 @@
+<h1>Doctors</h1>
+<% @doctors.each do |doc| %>
+    <p>
+        <%= link_to doc.name, doc %><br>
+        <%= doc.patients.size %>
+    </p>
+<% end %>
