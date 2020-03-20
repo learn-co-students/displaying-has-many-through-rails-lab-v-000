@@ -1,1 +1,9 @@
 <!-- Links to the doctor's show page by name for the doctor of each appointment -->
+<h1><%= @patient.name %></h1>
+<br>
+<%= @patient.appointments.each do |d| %>
+    <%= link_to d.doctor.name, doctor_path(d.doctor_id) %><br>
+    <%= d.convert_time %><br>
+    <br>
+<% end %>
+</ul>

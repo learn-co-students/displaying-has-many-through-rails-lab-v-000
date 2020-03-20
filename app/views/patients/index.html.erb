@@ -1,3 +1,7 @@
-<!-- Lists:
-patients
-number of appointments they have -->
+<ul>
+<%= @patients.each do |f| %>
+    <li>Name: <%= f.name %></li>
+    <li>Number of Appointments: <%= f.total_appointments %></li>
+    <br>
+<% end %>
+</ul>
