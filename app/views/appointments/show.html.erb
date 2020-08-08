@@ -1,0 +1,6 @@
+
+<h2><%= @appointment.appointment_datetime.to_formatted_s(:long) %></h2>
+
+<h2><%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor_id) %></h2>
+<h2><%= link_to @appointment.patient.name, patient_path(@appointment.patient_id) %></h2>
+
