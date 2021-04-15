@@ -1,0 +1,14 @@
+<% require 'pry' %>
+
+<h2>Doctor: <%= @doctor.name %></h2>
+
+<strong>Appointments:</strong><br />
+<br />
+
+<% @doctor.appointments.each do |appointment| %>
+<% a = appointment.appointment_datetime %>
+<% date = a.strftime('%B %d, %Y') %>
+<% time = a.strftime('%H:%M') %>
+<li><%= date %> at <%= time%> - <%= link_to appointment.patient.name, patient_path(appointment.patient) %></li>
+
+<% end %>
