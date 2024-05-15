@@ -1,0 +1,15 @@
+<h2><%= @doctor.name %> from The Department of <%= @doctor.department %> has <%= @doctor.patients.size -%> patients</h2>
+
+<h3>Appointments</h3>
+<ol>
+  <% @doctor.appointments.each do |app| %>
+  <li><%= app.appointment_datetime.strftime("%B %d, %Y at %H:%M") %></li><br>
+  <% end %>
+</ol>
+<br>
+<h3>Patients</h3>
+<ol>
+  <% @doctor.patients.each do |pat| %>
+  <li><%= link_to pat.name, patient_path(pat) %></li><br>
+  <% end %>
+</ol>

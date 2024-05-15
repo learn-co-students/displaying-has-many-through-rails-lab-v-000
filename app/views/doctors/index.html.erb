@@ -1,0 +1,17 @@
+<h2>Doctors:</h2>
+<table>
+  <tr>
+    <th> Doctor's Name </th>
+    <th> Number of Patients </th>
+  </tr>
+  <% @doctors.each do |doctor| %>
+  <tr>
+    <td>
+      <%= link_to doctor.name, doctor_path(doctor) %>
+    </td>
+    <td align="center">
+      <%= doctor.patients.size %>
+    </td>
+  </tr>
+  <% end %>
+</table>
