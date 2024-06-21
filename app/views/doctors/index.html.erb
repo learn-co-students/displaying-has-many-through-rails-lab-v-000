@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doctors on Staff</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td>Doctor: <%= doctor.name %></td>
+        <td>Patient Count: <%= doctor.patients.count%></td>
+        <td><%= link_to 'Show', doctor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doctor', new_doctor_path %>
