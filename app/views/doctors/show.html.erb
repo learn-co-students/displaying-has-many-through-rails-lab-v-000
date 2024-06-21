@@ -1,0 +1,8 @@
+<div>
+<%= @doctor.name %></br>
+<%= @doctor.department %></br>
+<%= pluralize(@doctor.appointment_count, 'Appointment') %></br>
+  <% @doctor.appointments.each do |appt| %>
+    <%= appt.readable_datetime %> - <%= link_to appt.patient_name, patient_path(appt.patient) %></br>
+  <% end %>
+</div>
