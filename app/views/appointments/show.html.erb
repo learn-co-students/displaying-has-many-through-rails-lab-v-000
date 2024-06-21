@@ -1,0 +1,6 @@
+<h2>Seattle Grace Hospital</h2>
+<h3>Appointment</h3>
+
+<p><%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor_id) %></p>
+<p><%= link_to @appointment.patient.name, patient_path(@appointment.patient.id) %></p>
+<p><%= @appointment.date_format %></p>

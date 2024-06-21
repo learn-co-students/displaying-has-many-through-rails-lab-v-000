@@ -1,0 +1,14 @@
+<h2>Seattle Grace Hospital</h2>
+<h3>Dr. <%= @doctor.name %></h3>
+
+<div>Department: <%= @doctor.department %></div>
+<div>
+    <ul>
+        <% @doctor.appointments.each do |appointment| %>
+            <li>
+            <p><%= link_to appointment.date_format, patient_path(appointment.patient_id) %></p>
+            <p><%= link_to appointment.patient.name, patient_path(appointment.patient_id) %></p>
+            </li>
+        <% end %>
+    </ul>
+</div>
