@@ -1,0 +1,6 @@
+<h2>Current Doctors</h2>
+
+<% @doctors.each do |doc| %>
+  <%= link_to doc.name, doctor_path(doc) %>
+  <p>Current Number of patients: <%= doc.patients.count %></p>
+<% end %>
