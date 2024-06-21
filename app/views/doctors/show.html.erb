@@ -1,0 +1,10 @@
+<h1>Dr. <%= @doctor.name %></h1>
+
+<h3>Appointments:</h3>
+<ol>
+  <% @doctor.appointments.each do |appt| %>
+    <li><%= appt.normalize_time %> with patient:<%= link_to appt.patient.name, patient_path(appt.patient) %> </li>
+  
+  
+  <% end %>
+</ol>
