@@ -1,0 +1,10 @@
+<h2>All Doctors in Grey's Anatomy</h2>
+
+
+<p>
+  <% @doctors.each do |doctor|%>
+    <%= link_to doctor.name, doctor_path(doctor) %>
+    Patient Count: <%= doctor.patients.count%>
+    <br>
+  <% end %>
+</p>
