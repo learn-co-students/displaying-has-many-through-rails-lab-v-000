@@ -2,11 +2,11 @@ Doctor.destroy_all
 Patient.destroy_all
 Appointment.destroy_all
 
-meredith = Doctor.create({name: "Meredith Grey", department: "Internal Medicine"})
 hawkeye = Doctor.create({name: "Hawkeye Pierce", department: "Surgery"})
 leonard = Doctor.create({name: "Leonard 'Bones' McCoy", department: "Internal Medicine"})
 phillip = Doctor.create({name: "Phillip Chandler", department: "Internal Medicine"})
 michaela = Doctor.create({name: "Michaela Quinn", department: "Internal Medicine"})
+meredith = Doctor.create({name: "Meredith Grey", department: "Internal Medicine"})
 
 homer = Patient.create({name: "Homer Simpson", age: 38})
 bart = Patient.create({name: "Bart Simpson", age: 10})
