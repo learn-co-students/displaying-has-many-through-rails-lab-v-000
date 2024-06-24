@@ -1,0 +1,10 @@
+<h1>Patients</h1>
+
+<ul>
+  <% @patients.each do |patient| %>
+    <li>Name: <%= patient.name %>
+      Number of Appointments: <%= patient.appointments.count %>
+      <%= link_to "More Info...", patient_path(patient) %>
+    </li>
+  <% end %>
+</ul>
