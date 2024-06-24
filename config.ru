@@ -2,3 +2,8 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+# run ApplicationController
+# use AppointmentsController
+# use PatientsController
+# use DoctorsController
+# use UsersController

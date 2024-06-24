@@ -9,7 +9,7 @@ describe 'Appointment' do
   end
 
   it 'has a date and time' do
-    expect(@appointment.appointment_datetime.strftime('%B %d, %Y')).to eq('December 25, 2016')
+    expect(@appointment.appointment_datetime.to_datetime.strftime('%B %d, %Y')).to eq('December 25, 2016')
   end
 
   it 'belongs to a patient' do
