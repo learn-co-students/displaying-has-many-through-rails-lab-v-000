@@ -1,0 +1,8 @@
+<h1>Dr. <%= @doctor.name %>'s Appointments:</h1>
+<ul>
+<%= @appointments.each do |apt| %>
+<% @patient = Patient.find(apt.patient_id) %>
+<p><%= link_to @patient.name, patient_path(@patient) %></p>
+<li><%= apt.appointment_datetime.strftime('%B %e, %Y at %H:%M') %></li>
+<% end %>
+</ul>
