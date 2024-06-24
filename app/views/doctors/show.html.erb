@@ -1,0 +1,18 @@
+<h2><%= @doctor.name %></h2>
+
+
+<h3>Appointments</h3>
+<table>
+    <thead>
+        <th>Patient</th>
+        <th>Appointment</th>
+    </thead>
+    <tbody>
+        <% @doctor.appointments.each do |appointment| %>
+        <tr>
+            <td><%= link_to appointment.patient_name, appointment.patient %></td>
+            <td><%= appointment.date_time_formatted %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
