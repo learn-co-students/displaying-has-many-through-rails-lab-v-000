@@ -1,0 +1,16 @@
+show.html.erb
+<h1>@patient.name</h1>
+
+<h2>Appointments:</h2>
+<div>
+	
+
+	<% @patient.appointments.each do |appointment| %>
+		Time: 
+		<%= link_to appointment.appointment_datetime.strftime('%B %e, %Y at %H:%M') , appointment_path(appointment) %><br>
+
+		Doctor: 
+		<%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %><br>
+	<% end %>
+
+</div>
