@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Doctor</th>
+    <th>Patient Count</th>
+  </tr>
+
+<% @doctors.each do |doctor|%>
+
+  <tr>
+  <td><%= link_to doctor.name, doctor %></td>
+  <td><%= doctor.patient_count %></td>
+</tr>
+<%end%>
+</table>
