@@ -1,0 +1,5 @@
+<%= @appointment.appointment_datetime %><br><br>
+
+<a href="/doctors/<%= @appointment.doctor.id %>"><%= @appointment.doctor.name %></a><br><br>
+
+<a href="/patients/<%= @appointment.patient.id %>"><%=@appointment.patient.name %></a>
