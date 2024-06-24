@@ -1,0 +1,39 @@
+Doctor
+	name
+	department
+	has many patients through patients
+	has_many appointments
+
+
+Patient
+	name
+	age
+	has many doctors, through appointments
+	has_many appointments
+
+Appointment
+	belongs_to patient
+	belongs_to doctor
+	appointment_datetime // January 12, 21016 at 3:00
+
+doctor index
+	displays name
+	link to show page
+	count of patients
+
+doctor show page
+	doctors name
+	department
+	appointments date, time, patient name with link to patient show
+
+patient show page
+	list each appointment with date a time with doctor name and link to doctor show page
+
+patient index page
+	list each patient with total number of appointments they have
+
+appointments show
+	date, time, doctor, patient
+
+
+
