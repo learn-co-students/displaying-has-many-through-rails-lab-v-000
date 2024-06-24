@@ -19,3 +19,4 @@ describe "doctors", type: :feature do
     end
   end
 end
+ 
