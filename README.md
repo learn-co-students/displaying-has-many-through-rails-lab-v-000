@@ -19,7 +19,7 @@ First, fork and clone this lab.
 
 You'll need to create all of the migrations, models, controllers, and views for this lab.
 
-***NOTE***: As with much of our Rails curriculum, remember to always use the `--no-test-framework` flag when you generate models, controllers, etc. That way, the Rails generators will not create additional tests on top of the test suite that already comes with the lesson. E.g., `rails g model User username:string email:string --no-test-framework`.
+***NOTE***: As with much of our Rails curriculum, remember to always use the `--no-test-framework` flag when you generate models, controllers, etc. That way, the Rails generators will not create additional tests on top of the test suite that already comes with the lesson. E.g.,.
 
 ***Additional note about routes and generators***: We've written the routes for you in the `config/routes.rb` file, so be sure to use the `--skip-routes` flag. This prevents the Rails generators from adding any unnecessary routes. You can use however many flags you need in the generators, so something like `rails g model Post title:string content:text --no-test-framework --skip-routes` is perfectly valid. (If you want to see what other flags and options are available, you can run commands such as `rails g --help` and `rails g model --help`.)
 
