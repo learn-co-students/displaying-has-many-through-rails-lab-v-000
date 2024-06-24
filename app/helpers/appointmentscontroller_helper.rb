@@ -1,0 +1,2 @@
+module AppointmentscontrollerHelper
+end

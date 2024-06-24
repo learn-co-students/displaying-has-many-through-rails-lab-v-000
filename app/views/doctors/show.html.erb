@@ -1,0 +1,9 @@
+
+<% if @doctor %>
+  <% @doctor.appointments.each do |appt| %>
+
+      Appointment with: <h3><%=link_to appt.patient.name, appt.patient %></h3>
+      <%= appt.appointment_datetime.to_formatted_s(:long)  %>
+      <%= appt.appointment_datetime.strftime("%B %e, %Y") %> at <%=appt.appointment_datetime.to_s(:time)%>
+  <% end %>
+<% end %>
