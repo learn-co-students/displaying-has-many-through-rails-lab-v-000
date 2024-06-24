@@ -1,0 +1,9 @@
+<h1><%= @patient.name %> - <%= pluralize(@patient.age, "years") %> old</h1>
+<h2>Appointments:</h2>
+
+<% @patient.appointments.each do |app| %>
+  <%= link_to app.doctor.name, doctor_path(app.doctor) %>
+  <ul>
+    <li><%= app.appointment_datetime.strftime('%B %d, %Y at %k:%M') %></li>
+  </ul>
+<% end %>
