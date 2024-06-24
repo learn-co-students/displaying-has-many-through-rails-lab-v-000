@@ -1,0 +1,9 @@
+<% count = 1 %>
+<h2><%= @patient.name %></h2>
+<p>Upcoming Appointments:</p>
+<ul>
+  <% @patient.appointments.each do |appointment| %>
+  <li><%= appointment.readable_time %> with <%= link_to("Dr. " + appointment.doctor_name, doctor_path(appointment.doctor)) %></li>
+  <% count += 1 %>
+  <% end %>
+</ul>
