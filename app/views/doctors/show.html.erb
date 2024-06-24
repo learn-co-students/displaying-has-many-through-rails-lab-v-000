@@ -1,0 +1,8 @@
+views/doctor/show<br/>
+
+<%= @doctor.name %><br/>
+<%= @doctor.department %><br/>
+<% @doctor.appointments.each do |appt| %>
+  <%= link_to appt.patient.name, appt.patient %>
+  <%= appt.date_nice_format %><br/>
+<% end %>
