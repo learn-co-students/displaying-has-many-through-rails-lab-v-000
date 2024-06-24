@@ -1,0 +1,6 @@
+<h1>Doctors</h1>
+
+<%= @doctors.each do |doctor| %>
+<% doctor.name %>
+<% doctor.department %>
+<% link_to 'Show', doctor %>
