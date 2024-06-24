@@ -1,0 +1,8 @@
+<!-- <h2>Appointments for <%#= @patient.name %></h2> -->
+
+<ol>
+  <% @patient.appointments.each do |appointment| %>
+  <li><%= appointment.appointment_datetime.to_formatted_s(:month_and_day_at_time) %>
+  with: <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %></li>
+  <% end %>
+</ol>
