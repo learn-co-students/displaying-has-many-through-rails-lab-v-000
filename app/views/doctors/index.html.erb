@@ -1,0 +1,9 @@
+<!-- page that displays each doctor's name, a link to their show page, and a count of their patients. -->
+
+<h1>Doctors List</h1>
+
+<ul>
+  <% @doctors.each do |doctor| %>
+    <li><%= link_to doctor.name, doctor_path(doctor.id) %> - <%= pluralize(doctor.patients.size, "patient") %>
+  <% end %>
+</ul>
